@@ -34,10 +34,13 @@ installed as plain files in `ds-eds-assets/` (built in the atlascopco-core-compo
 To update the package and the models:
 
 ```sh
-npm install ./ac-brandsframework-eds-assets-<version>.tgz
-npm run ds:install   # copies the package into ds-eds-assets/
+# copies the package into ds-eds-assets/ (the archive is not committed and not a dependency)
+npx --yes --package ./ac-brandsframework-eds-assets-<version>.tgz eds-assets-install --to ds-eds-assets
 npm run ds:blocks    # regenerates the ac-* models and field tables, then component-*.json
 ```
+
+The site serves the files in `ds-eds-assets/`, which are committed; the package is not an npm
+dependency, so `npm ci` does not need the archive.
 
 ## Prerequisites
 
