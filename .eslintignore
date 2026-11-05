@@ -1,2 +1,4 @@
 helix-importer-ui
 dompurify.min.js
+# The design system package, copied in by eds-assets-install: generated, not this site's code
+ds-eds-assets/
