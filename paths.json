@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/aem-boilerplate-xwalk/:/",
-    "/content/aem-boilerplate-xwalk/configuration:/.helix/config.json",
-    "/content/aem-boilerplate-xwalk/metadata:/metadata.json"
+    "/content/2026/45/cleverwhale25443/:/",
+    "/content/2026/45/cleverwhale25443/configuration:/.helix/config.json",
+    "/content/2026/45/cleverwhale25443/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/aem-boilerplate-xwalk/"
+    "/content/2026/45/cleverwhale25443/"
   ]
 }
