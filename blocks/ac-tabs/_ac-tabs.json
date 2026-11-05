@@ -1,0 +1,172 @@
+{
+  "definitions": [
+    {
+      "title": "AC Tabs",
+      "id": "ac-tabs",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "AC Tabs",
+              "model": "ac-tabs",
+              "key-value": true,
+              "filter": "ac-tabs"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "AC Tabs Item",
+      "id": "ac-tabs-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "AC Tabs Item",
+              "model": "ac-tabs-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-tabs",
+      "fields": [
+        {
+          "component": "boolean",
+          "name": "useResponsiveSelect",
+          "label": "Use Responsive Select",
+          "valueType": "boolean"
+        },
+        {
+          "component": "select",
+          "name": "spacingMb",
+          "label": "Spacing Mb",
+          "options": [
+            {
+              "name": "mb-4 (1rem)",
+              "value": "mb-4"
+            },
+            {
+              "name": "mb-8 (2rem)",
+              "value": "mb-8"
+            },
+            {
+              "name": "mb-12 (3rem)",
+              "value": "mb-12"
+            },
+            {
+              "name": "mb-16 (4rem)",
+              "value": "mb-16"
+            },
+            {
+              "name": "mb-20 (5rem)",
+              "value": "mb-20"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "spacingMy",
+          "label": "Spacing My",
+          "options": [
+            {
+              "name": "my-4 (1rem)",
+              "value": "my-4"
+            },
+            {
+              "name": "my-8 (2rem)",
+              "value": "my-8"
+            },
+            {
+              "name": "my-12 (3rem)",
+              "value": "my-12"
+            },
+            {
+              "name": "my-16 (4rem)",
+              "value": "my-16"
+            },
+            {
+              "name": "my-20 (5rem)",
+              "value": "my-20"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "tabsLayout",
+          "label": "Tabs Layout",
+          "options": [
+            {
+              "name": "Responsive",
+              "value": "ds-brand-responsive-select-run-js ds-container-query"
+            },
+            {
+              "name": "Segmented",
+              "value": "modifier-segmented-buttons"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "themeTypeOption",
+          "label": "Theme Type",
+          "options": [
+            {
+              "name": "Primary",
+              "value": "style-primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "style-secondary"
+            },
+            {
+              "name": "Tertiary",
+              "value": "style-tertiary"
+            },
+            {
+              "name": "Quaternary",
+              "value": "style-quaternary"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "parentId",
+          "label": "Nest inside",
+          "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+        }
+      ]
+    },
+    {
+      "id": "ac-tabs-item",
+      "fields": [
+        {
+          "component": "text",
+          "name": "panelLabel",
+          "label": "Title",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "content",
+          "label": "Content",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "ac-tabs",
+      "components": [
+        "ac-tabs-item"
+      ]
+    }
+  ]
+}

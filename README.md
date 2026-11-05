@@ -16,6 +16,29 @@ Before using the aem-boilerplate, we recommand you to go through the documentati
 Furthremore, we encourage you to watch the recordings of any of our previous presentations or sessions:
 - [Getting started with AEM Authoring and Edge Delivery Services](https://experienceleague.adobe.com/en/docs/events/experience-manager-gems-recordings/gems2024/aem-authoring-and-edge-delivery)
 
+## Design system (ds-eds-assets)
+
+The `ac-*` blocks render the Atlas Copco design system from the package `@ac-brandsframework/eds-assets`,
+installed as plain files in `ds-eds-assets/` (built in the atlascopco-core-components repo with
+`nx run ac-core-lib:build-eds` and `yarn pack:eds-assets`).
+
+- `head.html` loads the package's reset, brand file, fonts and `page-glue.css` before `styles/styles.css`.
+- `scripts/scripts.js` adds the brand body classes, builds the design system's container on each section
+  (section fields: background, grid, content width, spacing), nests blocks into an AC Container
+  ("Nest inside" = the container's "Name") and starts the package's page controllers.
+- `scripts/ds.js` holds what the blocks share; each `blocks/ac-*/ac-*.js` reads its rows and calls the
+  package's render wrapper, which loads the block's CSS bundle.
+- `blocks/ac-*/_ac-*.json` (models) and `blocks/ac-*/ac-*-fields.js` (which field fills which prop or
+  option list) are generated from the package's `contracts/field-contract.json`.
+
+To update the package and the models:
+
+```sh
+npm install ./ac-brandsframework-eds-assets-<version>.tgz
+npm run ds:install   # copies the package into ds-eds-assets/
+npm run ds:blocks    # regenerates the ac-* models and field tables, then component-*.json
+```
+
 ## Prerequisites
 
 - nodejs 18.3.x or newer

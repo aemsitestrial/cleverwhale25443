@@ -1,0 +1,2 @@
+import{a as t,b as i,c as l}from"./chunk-VMZIYAV3.js";var o=t(i());import{jsx as r}from"./vendor/jsx-runtime.js";function m({id:a,isDecorative:e,className:p}){return r("div",{className:(0,o.default)("separator",p),children:r("div",{className:"cmp-separator",id:a,children:r("hr",{className:"cmp-separator__horizontal-rule",...e?{"aria-hidden":!0,role:"none"}:null})})})}export{l as GridTypeClassnames,m as Separator};
+//# sourceMappingURL=separator.js.map

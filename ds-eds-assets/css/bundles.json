@@ -1,0 +1,781 @@
+{
+  "version": 1,
+  "roots": [
+    "foundational/reset.css",
+    "foundational/ac-core-lib.css"
+  ],
+  "order": [
+    "container-layout",
+    "ac-container",
+    "block-table-of-content-layout--ac-block-table-of-content-layout",
+    "tabs--ac-tabs",
+    "title--ac-title",
+    "text--ac-text",
+    "teaser",
+    "splide-carousel--ac-splide-carousel",
+    "button",
+    "image",
+    "ac-teaser",
+    "ac-card-aem",
+    "ac-card-feature",
+    "ac-card-icon",
+    "ac-card-product",
+    "ac-content-banner",
+    "ac-innovation-banner",
+    "ac-innovation-hero-banner",
+    "ac-product-banner",
+    "ac-promo-banner",
+    "ac-section-banner",
+    "ac-card-content",
+    "ac-section-teaser",
+    "ac-startpage-banner",
+    "ac-sticky-banner",
+    "ac-quote",
+    "ac-highlight",
+    "key-figure",
+    "list",
+    "ac-block-quote-section",
+    "ac-block-section-banner-with-cards",
+    "ac-button",
+    "ac-block-splide-grid-carousel",
+    "ac-block-content-with-splide-grid-carousel",
+    "ac-block-country-selector",
+    "ac-block-cta-section",
+    "ds-atlascopco-text",
+    "ac-list",
+    "download--ac-download",
+    "ac-block-teasers-with-filter",
+    "ac-footer",
+    "ac-header--and-22-more",
+    "breadcrumb--ac-breadcrumb",
+    "ds-atlascopco-text-locator--ac-locator-select--ac-locator",
+    "privacy-policy--ac-block-privacy-notice",
+    "accordion--ac-accordion",
+    "ac-table",
+    "carousel--ac-carousel",
+    "embed-video-iframe",
+    "embed-video",
+    "ac-link",
+    "separator--ac-separator",
+    "ac-table-of-content"
+  ],
+  "parts": {
+    "ac-block-content-with-splide-grid-carousel": {
+      "file": "graph/ac-block-content-with-splide-grid-carousel.css",
+      "components": [
+        "ac-block-content-with-splide-grid-carousel"
+      ]
+    },
+    "ac-block-country-selector": {
+      "file": "graph/ac-block-country-selector.css",
+      "components": [
+        "ac-block-country-selector"
+      ]
+    },
+    "ac-block-cta-section": {
+      "file": "graph/ac-block-cta-section.css",
+      "components": [
+        "ac-block-cta-section"
+      ]
+    },
+    "ac-block-quote-section": {
+      "file": "graph/ac-block-quote-section.css",
+      "components": [
+        "ac-block-quote-section"
+      ]
+    },
+    "ac-block-section-banner-with-cards": {
+      "file": "graph/ac-block-section-banner-with-cards.css",
+      "components": [
+        "ac-block-section-banner-with-cards"
+      ]
+    },
+    "ac-block-splide-grid-carousel": {
+      "file": "graph/ac-block-splide-grid-carousel.css",
+      "components": [
+        "ac-block-splide-grid-carousel"
+      ]
+    },
+    "ac-block-teasers-with-filter": {
+      "file": "graph/ac-block-teasers-with-filter.css",
+      "components": [
+        "ac-block-teasers-with-filter"
+      ]
+    },
+    "ac-button": {
+      "file": "graph/ac-button.css",
+      "components": [
+        "ac-button"
+      ]
+    },
+    "ac-card-aem": {
+      "file": "graph/ac-card-aem.css",
+      "components": [
+        "ac-card-aem"
+      ]
+    },
+    "ac-card-content": {
+      "file": "graph/ac-card-content.css",
+      "components": [
+        "ac-card-content"
+      ]
+    },
+    "ac-card-feature": {
+      "file": "graph/ac-card-feature.css",
+      "components": [
+        "ac-card-feature"
+      ]
+    },
+    "ac-card-icon": {
+      "file": "graph/ac-card-icon.css",
+      "components": [
+        "ac-card-icon"
+      ]
+    },
+    "ac-card-product": {
+      "file": "graph/ac-card-product.css",
+      "components": [
+        "ac-card-product"
+      ]
+    },
+    "ac-container": {
+      "file": "graph/ac-container.css",
+      "components": [
+        "ac-container"
+      ]
+    },
+    "ac-content-banner": {
+      "file": "graph/ac-content-banner.css",
+      "components": [
+        "ac-content-banner"
+      ]
+    },
+    "ac-footer": {
+      "file": "graph/ac-footer.css",
+      "components": [
+        "ac-footer"
+      ]
+    },
+    "ac-header--and-22-more": {
+      "file": "graph/ac-header--and-22-more.css",
+      "components": [
+        "ac-header",
+        "ac-header-skip-button",
+        "ac-header-top-bar",
+        "ac-header-top-bar-local",
+        "ac-header-top-bar-global",
+        "ac-header-top-bar-global-link",
+        "ac-header-top-bar-global-button",
+        "ac-header-middle-bar",
+        "ac-header-logo",
+        "ac-header-navigation",
+        "ac-header-burger",
+        "ac-header-language-switcher",
+        "ac-header-cart",
+        "ac-header-profile",
+        "ac-header-stock",
+        "ac-header-statistic",
+        "ac-mega-menu",
+        "ac-mega-menu-featured-list",
+        "ac-mega-menu-featured-item",
+        "ac-mega-menu-resource-list",
+        "ac-mega-menu-resource-item",
+        "ac-mega-menu-article-list",
+        "ac-mega-menu-article-item"
+      ]
+    },
+    "ac-highlight": {
+      "file": "graph/ac-highlight.css",
+      "components": [
+        "ac-highlight"
+      ]
+    },
+    "ac-innovation-banner": {
+      "file": "graph/ac-innovation-banner.css",
+      "components": [
+        "ac-innovation-banner"
+      ]
+    },
+    "ac-innovation-hero-banner": {
+      "file": "graph/ac-innovation-hero-banner.css",
+      "components": [
+        "ac-innovation-hero-banner"
+      ]
+    },
+    "ac-link": {
+      "file": "graph/ac-link.css",
+      "components": [
+        "ac-link"
+      ]
+    },
+    "ac-list": {
+      "file": "graph/ac-list.css",
+      "components": [
+        "ac-list"
+      ]
+    },
+    "ac-product-banner": {
+      "file": "graph/ac-product-banner.css",
+      "components": [
+        "ac-product-banner"
+      ]
+    },
+    "ac-promo-banner": {
+      "file": "graph/ac-promo-banner.css",
+      "components": [
+        "ac-promo-banner"
+      ]
+    },
+    "ac-quote": {
+      "file": "graph/ac-quote.css",
+      "components": [
+        "ac-quote"
+      ]
+    },
+    "ac-section-banner": {
+      "file": "graph/ac-section-banner.css",
+      "components": [
+        "ac-section-banner"
+      ]
+    },
+    "ac-section-teaser": {
+      "file": "graph/ac-section-teaser.css",
+      "components": [
+        "ac-section-teaser"
+      ]
+    },
+    "ac-startpage-banner": {
+      "file": "graph/ac-startpage-banner.css",
+      "components": [
+        "ac-startpage-banner"
+      ]
+    },
+    "ac-sticky-banner": {
+      "file": "graph/ac-sticky-banner.css",
+      "components": [
+        "ac-sticky-banner"
+      ]
+    },
+    "ac-table": {
+      "file": "graph/ac-table.css",
+      "components": [
+        "ac-table"
+      ]
+    },
+    "ac-table-of-content": {
+      "file": "graph/ac-table-of-content.css",
+      "components": [
+        "ac-table-of-content"
+      ]
+    },
+    "ac-teaser": {
+      "file": "graph/ac-teaser.css",
+      "components": [
+        "ac-teaser"
+      ]
+    },
+    "accordion--ac-accordion": {
+      "file": "graph/accordion--ac-accordion.css",
+      "components": [
+        "accordion",
+        "ac-accordion"
+      ]
+    },
+    "block-table-of-content-layout--ac-block-table-of-content-layout": {
+      "file": "graph/block-table-of-content-layout--ac-block-table-of-content-layout.css",
+      "components": [
+        "block-table-of-content-layout",
+        "ac-block-table-of-content-layout"
+      ]
+    },
+    "breadcrumb--ac-breadcrumb": {
+      "file": "graph/breadcrumb--ac-breadcrumb.css",
+      "components": [
+        "breadcrumb",
+        "ac-breadcrumb"
+      ]
+    },
+    "button": {
+      "file": "graph/button.css",
+      "components": [
+        "button"
+      ]
+    },
+    "carousel--ac-carousel": {
+      "file": "graph/carousel--ac-carousel.css",
+      "components": [
+        "carousel",
+        "ac-carousel"
+      ]
+    },
+    "container-layout": {
+      "file": "graph/container-layout.css",
+      "components": [
+        "container-layout"
+      ]
+    },
+    "download--ac-download": {
+      "file": "graph/download--ac-download.css",
+      "components": [
+        "download",
+        "ac-download"
+      ]
+    },
+    "ds-atlascopco-text": {
+      "file": "graph/ds-atlascopco-text.css",
+      "components": [
+        "ds-atlascopco-text"
+      ]
+    },
+    "ds-atlascopco-text-locator--ac-locator-select--ac-locator": {
+      "file": "graph/ds-atlascopco-text-locator--ac-locator-select--ac-locator.css",
+      "components": [
+        "ds-atlascopco-text-locator",
+        "ac-locator-select",
+        "ac-locator"
+      ]
+    },
+    "embed-video": {
+      "file": "graph/embed-video.css",
+      "components": [
+        "embed-video"
+      ]
+    },
+    "embed-video-iframe": {
+      "file": "graph/embed-video-iframe.css",
+      "components": [
+        "embed-video-iframe"
+      ]
+    },
+    "image": {
+      "file": "graph/image.css",
+      "components": [
+        "image"
+      ]
+    },
+    "key-figure": {
+      "file": "graph/key-figure.css",
+      "components": [
+        "key-figure"
+      ]
+    },
+    "list": {
+      "file": "graph/list.css",
+      "components": [
+        "list"
+      ]
+    },
+    "privacy-policy--ac-block-privacy-notice": {
+      "file": "graph/privacy-policy--ac-block-privacy-notice.css",
+      "components": [
+        "privacy-policy",
+        "ac-block-privacy-notice"
+      ]
+    },
+    "separator--ac-separator": {
+      "file": "graph/separator--ac-separator.css",
+      "components": [
+        "separator",
+        "ac-separator"
+      ]
+    },
+    "splide-carousel--ac-splide-carousel": {
+      "file": "graph/splide-carousel--ac-splide-carousel.css",
+      "components": [
+        "splide-carousel",
+        "ac-splide-carousel"
+      ]
+    },
+    "tabs--ac-tabs": {
+      "file": "graph/tabs--ac-tabs.css",
+      "components": [
+        "tabs",
+        "ac-tabs"
+      ]
+    },
+    "teaser": {
+      "file": "graph/teaser.css",
+      "components": [
+        "teaser"
+      ]
+    },
+    "text--ac-text": {
+      "file": "graph/text--ac-text.css",
+      "components": [
+        "text",
+        "ac-text"
+      ]
+    },
+    "title--ac-title": {
+      "file": "graph/title--ac-title.css",
+      "components": [
+        "title",
+        "ac-title"
+      ]
+    }
+  },
+  "bundles": {
+    "ac-accordion": {
+      "parts": [
+        "accordion--ac-accordion",
+        "ac-table"
+      ]
+    },
+    "ac-accordion-item": {
+      "parts": []
+    },
+    "ac-block-content-with-splide-grid-carousel": {
+      "parts": [
+        "container-layout",
+        "ac-container",
+        "title--ac-title",
+        "text--ac-text",
+        "splide-carousel--ac-splide-carousel",
+        "button",
+        "ac-button",
+        "ac-block-splide-grid-carousel",
+        "ac-block-content-with-splide-grid-carousel"
+      ]
+    },
+    "ac-block-country-selector": {
+      "parts": [
+        "tabs--ac-tabs",
+        "title--ac-title",
+        "text--ac-text",
+        "ac-block-country-selector"
+      ]
+    },
+    "ac-block-cta-section": {
+      "parts": [
+        "ac-block-cta-section"
+      ]
+    },
+    "ac-block-privacy-notice": {
+      "parts": [
+        "container-layout",
+        "ac-container",
+        "privacy-policy--ac-block-privacy-notice"
+      ]
+    },
+    "ac-block-quote-section": {
+      "parts": [
+        "container-layout",
+        "ac-container",
+        "teaser",
+        "ac-teaser",
+        "ac-quote",
+        "ac-block-quote-section"
+      ]
+    },
+    "ac-block-section-banner-with-cards": {
+      "parts": [
+        "container-layout",
+        "ac-container",
+        "teaser",
+        "ac-teaser",
+        "ac-section-banner",
+        "ac-card-content",
+        "ac-block-section-banner-with-cards"
+      ]
+    },
+    "ac-block-splide-grid-carousel": {
+      "parts": [
+        "container-layout",
+        "ac-container",
+        "splide-carousel--ac-splide-carousel",
+        "button",
+        "ac-button",
+        "ac-block-splide-grid-carousel"
+      ]
+    },
+    "ac-block-table-of-content-layout": {
+      "parts": [
+        "container-layout",
+        "block-table-of-content-layout--ac-block-table-of-content-layout"
+      ]
+    },
+    "ac-block-teasers-with-filter": {
+      "parts": [
+        "container-layout",
+        "ac-container",
+        "title--ac-title",
+        "text--ac-text",
+        "teaser",
+        "ac-teaser",
+        "list",
+        "ac-list",
+        "download--ac-download",
+        "ac-block-teasers-with-filter"
+      ]
+    },
+    "ac-button": {
+      "parts": [
+        "button",
+        "ac-button"
+      ]
+    },
+    "ac-card": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-card-content"
+      ]
+    },
+    "ac-card-aem": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-card-aem"
+      ]
+    },
+    "ac-card-feature": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-card-feature"
+      ]
+    },
+    "ac-card-icon": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-card-icon"
+      ]
+    },
+    "ac-card-product": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-card-product"
+      ]
+    },
+    "ac-carousel": {
+      "parts": [
+        "carousel--ac-carousel"
+      ]
+    },
+    "ac-carousel-item": {
+      "parts": []
+    },
+    "ac-chrome-breadcrumb": {
+      "parts": [
+        "breadcrumb--ac-breadcrumb"
+      ]
+    },
+    "ac-chrome-footer": {
+      "parts": [
+        "button",
+        "image",
+        "list",
+        "ds-atlascopco-text",
+        "ac-list",
+        "ac-footer"
+      ]
+    },
+    "ac-chrome-header": {
+      "parts": [
+        "button",
+        "ac-button",
+        "ac-header--and-22-more"
+      ]
+    },
+    "ac-content-banner": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-content-banner"
+      ]
+    },
+    "ac-download": {
+      "parts": [
+        "download--ac-download"
+      ]
+    },
+    "ac-embed-iframe": {
+      "parts": [
+        "embed-video-iframe"
+      ]
+    },
+    "ac-embed-video": {
+      "parts": [
+        "embed-video"
+      ]
+    },
+    "ac-highlight": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-highlight"
+      ]
+    },
+    "ac-image": {
+      "parts": [
+        "image"
+      ]
+    },
+    "ac-innovation-banner": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-innovation-banner"
+      ]
+    },
+    "ac-innovation-hero-banner": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-innovation-hero-banner"
+      ]
+    },
+    "ac-key-figure": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "key-figure"
+      ]
+    },
+    "ac-link": {
+      "parts": [
+        "ac-link"
+      ]
+    },
+    "ac-list": {
+      "parts": [
+        "list",
+        "ac-list"
+      ]
+    },
+    "ac-list-item": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser"
+      ]
+    },
+    "ac-locator": {
+      "parts": [
+        "container-layout",
+        "ac-container",
+        "text--ac-text",
+        "button",
+        "ac-button",
+        "ds-atlascopco-text-locator--ac-locator-select--ac-locator"
+      ]
+    },
+    "ac-product-banner": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-product-banner"
+      ]
+    },
+    "ac-promo-banner": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-promo-banner"
+      ]
+    },
+    "ac-quote": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-quote"
+      ]
+    },
+    "ac-section-banner": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-section-banner"
+      ]
+    },
+    "ac-section-teaser": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-section-teaser"
+      ]
+    },
+    "ac-separator": {
+      "parts": [
+        "separator--ac-separator"
+      ]
+    },
+    "ac-splide-carousel": {
+      "parts": [
+        "splide-carousel--ac-splide-carousel"
+      ]
+    },
+    "ac-splide-carousel-item": {
+      "parts": []
+    },
+    "ac-startpage-banner": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-startpage-banner"
+      ]
+    },
+    "ac-sticky-banner": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser",
+        "ac-sticky-banner"
+      ]
+    },
+    "ac-table": {
+      "parts": [
+        "ac-table"
+      ]
+    },
+    "ac-table-of-content": {
+      "parts": [
+        "ac-table-of-content"
+      ]
+    },
+    "ac-tabs": {
+      "parts": [
+        "tabs--ac-tabs",
+        "ac-table"
+      ]
+    },
+    "ac-tabs-item": {
+      "parts": []
+    },
+    "ac-teaser": {
+      "parts": [
+        "teaser",
+        "image",
+        "ac-teaser"
+      ]
+    },
+    "ac-text": {
+      "parts": [
+        "text--ac-text"
+      ]
+    },
+    "ac-title": {
+      "parts": [
+        "title--ac-title"
+      ]
+    }
+  }
+}

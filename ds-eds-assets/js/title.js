@@ -1,0 +1,2 @@
+import{a as m,b as c,c as s}from"./chunk-VMZIYAV3.js";var a=m(c());import{jsx as e}from"./vendor/jsx-runtime.js";function d({id:p,className:r,link:t,text:o,type:i}){let l=i;return e("div",{className:(0,a.default)("title",r),children:e("div",{"data-cmp-data-layer":"",id:p,className:"cmp-title",children:e(l,{className:"cmp-title__text",children:t&&t?.valid?e("a",{className:"cmp-title__link","data-cmp-clickable":"",href:t.url,...t.attributes,children:o}):o})})})}export{s as GridTypeClassnames,d as Title};
+//# sourceMappingURL=title.js.map

@@ -1,0 +1,58 @@
+/* The section rules that the output of page-glue.js (decorateContainerSections) depends on. The
+   glue sets only an inline background-image and the class content-width-bleed on a section, and
+   adds the design system's container as the section's direct child. This file makes those work;
+   it sets no margin or padding of its own for ordinary sections, which are the site's layout.
+   Load it after the brand file. */
+
+/* Contains floated design-system roots (e.g. `.download { float: left }`) within their block
+   wrapper so they do not leak out of the section. `::after` with `clear`, not `flow-root`, which
+   would change margin collapsing. */
+main > .section > div:not(.default-content-wrapper)::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* Full bleed: a section with content width "Full bleed" gets the class content-width-bleed and no
+   container, so a site's margin, padding and max-width on the section's direct children would cap
+   and inset it (the Adobe boilerplate caps them at 1200px). They are dropped here. */
+main > .section.content-width-bleed > div {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+/* A grid section keeps the margin and padding under bleed. The glue puts the grid class
+   (grid-col-N) on the section, so the grid's .cmp-container is a plain direct-child div that the
+   rule above would strip. */
+main > .section.content-width-bleed.grid-col-1 > div,
+main > .section.content-width-bleed.grid-col-2 > div,
+main > .section.content-width-bleed.grid-col-3 > div,
+main > .section.content-width-bleed.grid-col-4 > div,
+main > .section.content-width-bleed.grid-col-5 > div,
+main > .section.content-width-bleed.grid-col-1-2 > div,
+main > .section.content-width-bleed.grid-col-2-1 > div {
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* The glue writes a section's background image as an inline background-image, across the page,
+   and the content inside keeps its own width. Without a size the image tiles at its natural
+   size. It is cover-fitted and centred on the section, as the design system's container rule does
+   for a container block's image. */
+main > .section[style*='background-image'] {
+  background-size: cover;
+  background-position: center;
+}
+
+@media (width >= 900px) {
+  main > .section.content-width-bleed.grid-col-1 > div,
+  main > .section.content-width-bleed.grid-col-2 > div,
+  main > .section.content-width-bleed.grid-col-3 > div,
+  main > .section.content-width-bleed.grid-col-4 > div,
+  main > .section.content-width-bleed.grid-col-5 > div,
+  main > .section.content-width-bleed.grid-col-1-2 > div,
+  main > .section.content-width-bleed.grid-col-2-1 > div {
+    padding: 0 32px;
+  }
+}

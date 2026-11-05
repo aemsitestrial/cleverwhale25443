@@ -11,6 +11,12 @@ import {
   loadSections,
   loadCSS,
 } from './aem.js';
+import {
+  applyBrandBodyClasses, decorateContainerSections, attachNestRefreshListeners,
+} from '../ds-eds-assets/js/vendor/page-glue.js';
+import nestByParent, { isAuthoringContext } from '../ds-eds-assets/js/vendor/nest-by-parent.js';
+import { startPageControllers } from '../ds-eds-assets/js/vendor/start-page-controllers.js';
+import { NESTABLE_SELECTOR, LAYOUT_MODELS } from './ds.js';
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -83,6 +89,26 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  // The design system's container on each section, from its section fields (background, grid,
+  // content width, spacing). After decorateBlocks, before the blocks load.
+  decorateContainerSections(main);
+}
+
+/**
+ * The design system's page steps, once the blocks are decorated: blocks that name a container in
+ * their "Nest inside" field move into it, then the page controllers start (carousels, table of
+ * contents layout, anchor links, header and footer). Both are safe to run again.
+ * @param {Element} main The main element
+ */
+async function finishDesignSystemPage(main) {
+  nestByParent(main, { layoutSelector: NESTABLE_SELECTOR, layoutModels: LAYOUT_MODELS });
+  await startPageControllers(document, {
+    inEditor: isAuthoringContext(document),
+    onWarning(problems) {
+      // eslint-disable-next-line no-console
+      problems.forEach(({ element, message, source }) => console.warn(`[${source}] ${message}`, element));
+    },
+  });
 }
 
 /**
@@ -92,6 +118,8 @@ export function decorateMain(main) {
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+  // The design system's body classes (ac-core, ds-atlascopco): its CSS is scoped under them.
+  applyBrandBodyClasses();
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
@@ -116,6 +144,9 @@ async function loadEager(doc) {
 async function loadLazy(doc) {
   const main = doc.querySelector('main');
   await loadSections(main);
+  await finishDesignSystemPage(main);
+  // The Universal Editor swaps in a decorated block after an edit without running the page steps.
+  attachNestRefreshListeners(main, () => finishDesignSystemPage(main));
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;

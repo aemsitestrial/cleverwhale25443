@@ -1,0 +1,2 @@
+import{a as c,b,c as s}from"./chunk-VMZIYAV3.js";var r=c(b());import{jsx as e}from"./vendor/jsx-runtime.js";function u({id:o,className:m,height:i,width:a,src:d,allow:l="autoplay; fullscreen",title:t,ariaLabel:f,frameBorder:p}){return e("div",{className:(0,r.default)("embed embed-video-iframe",m),children:e("div",{id:o,className:"cmp-embed",children:e("iframe",{title:t,width:a,height:i,src:d,frameBorder:p,allowFullScreen:!0,allow:l,"aria-label":f})})})}export{u as EmbedVideoIframe,s as GridTypeClassnames};
+//# sourceMappingURL=embed-iframe.js.map

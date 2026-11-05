@@ -1,0 +1,645 @@
+{
+  "_generated": "by tools/eds-emitter/storybook/build-storybook-map.js -- do not hand-edit",
+  "host": "https://test.acg-brands-designsystem.pages.dev/storybook/",
+  "blocks": {
+    "ac-accordion": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Accordion/Light Mode",
+          "id": "ac-components-accordion-light-mode--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-accordion-light-mode--default"
+        },
+        {
+          "title": "AC/Components/Accordion/Dark Mode",
+          "id": "ac-components-accordion-dark-mode--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-accordion-dark-mode--default"
+        },
+        {
+          "title": "Components/Accordion",
+          "id": "components-accordion--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-accordion--default"
+        }
+      ]
+    },
+    "ac-accordion-item": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Accordion/Light Mode",
+          "id": "ac-components-accordion-light-mode--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-accordion-light-mode--default"
+        },
+        {
+          "title": "AC/Components/Accordion/Dark Mode",
+          "id": "ac-components-accordion-dark-mode--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-accordion-dark-mode--default"
+        },
+        {
+          "title": "Components/Accordion",
+          "id": "components-accordion--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-accordion--default"
+        }
+      ]
+    },
+    "ac-banner": {
+      "types": [
+        {
+          "class": "ac-core-content-banner",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Banners/Content Banner/Light Mode",
+              "id": "ac-banners-content-banner-light-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-content-banner-light-mode--primary"
+            },
+            {
+              "title": "AC/Banners/Content Banner/Dark Mode",
+              "id": "ac-banners-content-banner-dark-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-content-banner-dark-mode--primary"
+            }
+          ]
+        },
+        {
+          "class": "ac-core-innovation-banner",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Banners/Innovation Banner/Light Mode",
+              "id": "ac-banners-innovation-banner-light-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-innovation-banner-light-mode--primary"
+            },
+            {
+              "title": "AC/Banners/Innovation Banner/Dark Mode",
+              "id": "ac-banners-innovation-banner-dark-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-innovation-banner-dark-mode--primary"
+            }
+          ]
+        },
+        {
+          "class": "ac-core-innovation-hero-banner",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Banners/Innovation Hero Banner/Light Mode",
+              "id": "ac-banners-innovation-hero-banner-light-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-innovation-hero-banner-light-mode--primary"
+            },
+            {
+              "title": "AC/Banners/Innovation Hero Banner/Dark Mode",
+              "id": "ac-banners-innovation-hero-banner-dark-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-innovation-hero-banner-dark-mode--primary"
+            }
+          ]
+        },
+        {
+          "class": "ac-core-product-banner",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Banners/Product Banner/Light Mode",
+              "id": "ac-banners-product-banner-light-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-product-banner-light-mode--primary"
+            },
+            {
+              "title": "AC/Banners/Product Banner/Dark Mode",
+              "id": "ac-banners-product-banner-dark-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-product-banner-dark-mode--primary"
+            }
+          ]
+        },
+        {
+          "class": "ac-core-promo-banner",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Banners/Promo Banner/Light Mode",
+              "id": "ac-banners-promo-banner-light-mode--primary-card",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-promo-banner-light-mode--primary-card"
+            },
+            {
+              "title": "AC/Banners/Promo Banner/Dark Mode",
+              "id": "ac-banners-promo-banner-dark-mode--primary-card",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-promo-banner-dark-mode--primary-card"
+            }
+          ]
+        },
+        {
+          "class": "ac-core-section-banner",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Banners/Section Banner/Light Mode",
+              "id": "ac-banners-section-banner-light-mode--default",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-section-banner-light-mode--default"
+            },
+            {
+              "title": "AC/Banners/Section Banner/Dark Mode",
+              "id": "ac-banners-section-banner-dark-mode--default",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-section-banner-dark-mode--default"
+            }
+          ]
+        },
+        {
+          "class": "ac-core-section-teaser",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Banners/Section Teaser/Light Mode",
+              "id": "ac-banners-section-teaser-light-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-section-teaser-light-mode--primary"
+            },
+            {
+              "title": "AC/Banners/Section Teaser/Dark Mode",
+              "id": "ac-banners-section-teaser-dark-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-section-teaser-dark-mode--primary"
+            }
+          ]
+        },
+        {
+          "class": "ac-core-startpage-banner",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Banners/StartPage Banner/Light Mode",
+              "id": "ac-banners-startpage-banner-light-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-startpage-banner-light-mode--primary"
+            },
+            {
+              "title": "AC/Banners/StartPage Banner/Dark Mode",
+              "id": "ac-banners-startpage-banner-dark-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-startpage-banner-dark-mode--primary"
+            }
+          ]
+        },
+        {
+          "class": "ac-core-sticky-banner",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Banners/Sticky Banner/Light Mode",
+              "id": "ac-banners-sticky-banner-light-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-sticky-banner-light-mode--primary"
+            },
+            {
+              "title": "AC/Banners/Sticky Banner/Dark Mode",
+              "id": "ac-banners-sticky-banner-dark-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-banners-sticky-banner-dark-mode--primary"
+            }
+          ]
+        }
+      ]
+    },
+    "ac-button": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Button",
+          "id": "ac-components-button--primary-negative-solid",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-button--primary-negative-solid"
+        },
+        {
+          "title": "Components/Button",
+          "id": "components-button--button",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-button--button"
+        }
+      ]
+    },
+    "ac-card": {
+      "types": [
+        {
+          "class": "ac-core-card-content",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Components/Cards/Card Content/Light Mode",
+              "id": "ac-components-cards-card-content-light-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-cards-card-content-light-mode--primary"
+            },
+            {
+              "title": "AC/Components/Cards/Card Content/Dark Mode",
+              "id": "ac-components-cards-card-content-dark-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-cards-card-content-dark-mode--primary"
+            },
+            {
+              "title": "AC/Components/Cards/Card Content/Labs",
+              "id": "ac-components-cards-card-content-labs--lab-g-no-image-crop",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-cards-card-content-labs--lab-g-no-image-crop"
+            }
+          ]
+        },
+        {
+          "class": "ac-core-card-aem",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Components/Cards/Card Aem/Light Mode",
+              "id": "ac-components-cards-card-aem-light-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-cards-card-aem-light-mode--primary"
+            },
+            {
+              "title": "AC/Components/Cards/Card Aem/Dark Mode",
+              "id": "ac-components-cards-card-aem-dark-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-cards-card-aem-dark-mode--primary"
+            }
+          ]
+        },
+        {
+          "class": "ac-core-card-feature",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Components/Cards/Card Feature/Light Mode",
+              "id": "ac-components-cards-card-feature-light-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-cards-card-feature-light-mode--primary"
+            },
+            {
+              "title": "AC/Components/Cards/Card Feature/Dark Mode",
+              "id": "ac-components-cards-card-feature-dark-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-cards-card-feature-dark-mode--primary"
+            }
+          ]
+        },
+        {
+          "class": "ac-core-card-icon",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Components/Cards/Card Icon/Light Mode",
+              "id": "ac-components-cards-card-icon-light-mode--primary-vertical-solid",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-cards-card-icon-light-mode--primary-vertical-solid"
+            },
+            {
+              "title": "AC/Components/Cards/Card Icon/Dark Mode",
+              "id": "ac-components-cards-card-icon-dark-mode--primary-vertical-solid",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-cards-card-icon-dark-mode--primary-vertical-solid"
+            }
+          ]
+        },
+        {
+          "class": "ac-core-card-product",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Components/Cards/Card Product/Light Mode",
+              "id": "ac-components-cards-card-product-light-mode--primary-solid",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-cards-card-product-light-mode--primary-solid"
+            },
+            {
+              "title": "AC/Components/Cards/Card Product/Dark Mode",
+              "id": "ac-components-cards-card-product-dark-mode--primary-solid",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-cards-card-product-dark-mode--primary-solid"
+            }
+          ]
+        }
+      ]
+    },
+    "ac-carousel": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Carousel/Light Mode",
+          "id": "ac-components-carousel-light-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-carousel-light-mode--primary"
+        },
+        {
+          "title": "AC/Components/Carousel/Dark Mode",
+          "id": "ac-components-carousel-dark-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-carousel-dark-mode--primary"
+        },
+        {
+          "title": "Components/Carousel",
+          "id": "components-carousel--image",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-carousel--image"
+        }
+      ]
+    },
+    "ac-carousel-item": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Carousel/Light Mode",
+          "id": "ac-components-carousel-light-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-carousel-light-mode--primary"
+        },
+        {
+          "title": "AC/Components/Carousel/Dark Mode",
+          "id": "ac-components-carousel-dark-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-carousel-dark-mode--primary"
+        },
+        {
+          "title": "Components/Carousel",
+          "id": "components-carousel--image",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-carousel--image"
+        }
+      ]
+    },
+    "ac-container": {
+      "lib": "aem-core-lib",
+      "stories": [
+        {
+          "title": "Components/Container",
+          "id": "components-container--content-width",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/aem-core-lib/?path=/story/components-container--content-width"
+        }
+      ]
+    },
+    "ac-download": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Download/Light Mode",
+          "id": "ac-components-download-light-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-download-light-mode--primary"
+        },
+        {
+          "title": "AC/Components/Download/Dark Mode",
+          "id": "ac-components-download-dark-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-download-dark-mode--primary"
+        },
+        {
+          "title": "Components/Download",
+          "id": "components-download--download",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-download--download"
+        }
+      ]
+    },
+    "ac-image": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Image",
+          "id": "ac-components-image--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-image--default"
+        }
+      ]
+    },
+    "ac-link": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Link",
+          "id": "ac-link--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-link--primary"
+        }
+      ]
+    },
+    "ac-list": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/List",
+          "id": "ac-components-list--teasers",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-list--teasers"
+        },
+        {
+          "title": "Components/List",
+          "id": "components-list--teasers",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-list--teasers"
+        }
+      ]
+    },
+    "ac-list-item": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/List",
+          "id": "ac-components-list--teasers",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-list--teasers"
+        },
+        {
+          "title": "Components/List",
+          "id": "components-list--teasers",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-list--teasers"
+        }
+      ]
+    },
+    "ac-separator": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "Components/Separator",
+          "id": "components-separator--separator-primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-separator--separator-primary"
+        }
+      ]
+    },
+    "ac-splide-carousel": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Splide Carousel",
+          "id": "ac-components-splide-carousel--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-splide-carousel--default"
+        }
+      ]
+    },
+    "ac-splide-carousel-item": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Splide Carousel",
+          "id": "ac-components-splide-carousel--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-splide-carousel--default"
+        }
+      ]
+    },
+    "ac-table": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Table/Light Mode",
+          "id": "ac-components-table-light-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-table-light-mode--primary"
+        },
+        {
+          "title": "AC/Components/Table/Dark Mode",
+          "id": "ac-components-table-dark-mode--priamry",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-table-dark-mode--priamry"
+        },
+        {
+          "title": "Components/Table",
+          "id": "components-table--priamry",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-table--priamry"
+        }
+      ]
+    },
+    "ac-table-of-content": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Table Of Content/Light Mode",
+          "id": "ac-components-table-of-content-light-mode--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-table-of-content-light-mode--default"
+        },
+        {
+          "title": "AC/Components/Table Of Content/Dark Mode",
+          "id": "ac-components-table-of-content-dark-mode--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-table-of-content-dark-mode--default"
+        }
+      ]
+    },
+    "ac-tabs": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Tabs/Light Mode",
+          "id": "ac-components-tabs-light-mode--horizontal",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-tabs-light-mode--horizontal"
+        },
+        {
+          "title": "AC/Components/Tabs/Light Mode",
+          "id": "ac-components-tabs-light-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-tabs-light-mode--primary"
+        },
+        {
+          "title": "AC/Components/Tabs/Dark Mode",
+          "id": "ac-components-tabs-dark-mode--horizontal",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-tabs-dark-mode--horizontal"
+        },
+        {
+          "title": "AC/Components/Tabs/Dark Mode",
+          "id": "ac-components-tabs-dark-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-tabs-dark-mode--primary"
+        },
+        {
+          "title": "Components/Tabs",
+          "id": "components-tabs--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-tabs--primary"
+        }
+      ]
+    },
+    "ac-tabs-item": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Tabs/Light Mode",
+          "id": "ac-components-tabs-light-mode--horizontal",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-tabs-light-mode--horizontal"
+        },
+        {
+          "title": "AC/Components/Tabs/Light Mode",
+          "id": "ac-components-tabs-light-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-tabs-light-mode--primary"
+        },
+        {
+          "title": "AC/Components/Tabs/Dark Mode",
+          "id": "ac-components-tabs-dark-mode--horizontal",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-tabs-dark-mode--horizontal"
+        },
+        {
+          "title": "AC/Components/Tabs/Dark Mode",
+          "id": "ac-components-tabs-dark-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-tabs-dark-mode--primary"
+        },
+        {
+          "title": "Components/Tabs",
+          "id": "components-tabs--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-tabs--primary"
+        }
+      ]
+    },
+    "ac-text": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Text/Light Mode",
+          "id": "ac-components-text-light-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-text-light-mode--primary"
+        },
+        {
+          "title": "AC/Components/Text/Dark Mode",
+          "id": "ac-components-text-dark-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-text-dark-mode--primary"
+        },
+        {
+          "title": "AC/Components/Text/Text Variants",
+          "id": "ac-components-text-text-variants--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-text-text-variants--default"
+        },
+        {
+          "title": "Components/Text",
+          "id": "components-text--standard",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-text--standard"
+        },
+        {
+          "title": "Components/Text/Text Variants",
+          "id": "components-text-text-variants--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-text-text-variants--default"
+        }
+      ]
+    },
+    "ac-text-content": {
+      "types": [
+        {
+          "class": "ac-core-highlight",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Components/Highlight/Light Mode",
+              "id": "ac-components-highlight-light-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-highlight-light-mode--primary"
+            },
+            {
+              "title": "AC/Components/Highlight/Dark Mode",
+              "id": "ac-components-highlight-dark-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-highlight-dark-mode--primary"
+            }
+          ]
+        },
+        {
+          "class": "quote",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Components/Quote/Light Mode",
+              "id": "ac-components-quote-light-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-quote-light-mode--primary"
+            },
+            {
+              "title": "AC/Components/Quote/Dark Mode",
+              "id": "ac-components-quote-dark-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-quote-dark-mode--primary"
+            }
+          ]
+        },
+        {
+          "class": "ac-core-teaser",
+          "lib": "ac-core-lib",
+          "stories": [
+            {
+              "title": "AC/Components/Teaser/Light Mode",
+              "id": "ac-components-teaser-light-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-teaser-light-mode--primary"
+            },
+            {
+              "title": "AC/Components/Teaser/Dark Mode",
+              "id": "ac-components-teaser-dark-mode--primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-teaser-dark-mode--primary"
+            }
+          ]
+        }
+      ]
+    },
+    "ac-title": {
+      "lib": "ac-core-lib",
+      "stories": [
+        {
+          "title": "AC/Components/Title/Light Mode",
+          "id": "ac-components-title-light-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-title-light-mode--primary"
+        },
+        {
+          "title": "AC/Components/Title/Dark Mode",
+          "id": "ac-components-title-dark-mode--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/ac-components-title-dark-mode--primary"
+        },
+        {
+          "title": "Components/Title",
+          "id": "components-title--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/ac-core-lib/?path=/story/components-title--default"
+        }
+      ]
+    }
+  }
+}

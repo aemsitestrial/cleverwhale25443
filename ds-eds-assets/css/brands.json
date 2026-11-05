@@ -1,0 +1,11 @@
+{
+  "ac-core-lib": {
+    "bodyClasses": [
+      "ac-core",
+      "ds-atlascopco"
+    ],
+    "pathPrefix": null,
+    "navPath": "/nav",
+    "homePath": "/"
+  }
+}

@@ -35,6 +35,242 @@
               "value": "highlight"
             }
           ]
+        },
+        {
+          "component": "text",
+          "name": "backgroundColor",
+          "label": "Background colour",
+          "description": "A CSS colour, e.g. #f5f2ef"
+        },
+        {
+          "component": "reference",
+          "name": "backgroundImageReference",
+          "label": "Background image",
+          "multi": false
+        },
+        {
+          "component": "select",
+          "name": "gridVariant",
+          "label": "Grid",
+          "options": [
+            {
+              "name": "1 column",
+              "value": "grid-col-1"
+            },
+            {
+              "name": "2 columns",
+              "value": "grid-col-2"
+            },
+            {
+              "name": "3 columns",
+              "value": "grid-col-3"
+            },
+            {
+              "name": "4 columns",
+              "value": "grid-col-4"
+            },
+            {
+              "name": "5 columns",
+              "value": "grid-col-5"
+            },
+            {
+              "name": "1/3 + 2/3",
+              "value": "grid-col-1-2"
+            },
+            {
+              "name": "2/3 + 1/3",
+              "value": "grid-col-2-1"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "contentWidth",
+          "label": "Content width",
+          "options": [
+            {
+              "name": "Narrow (6)",
+              "value": "6"
+            },
+            {
+              "name": "Standard (8)",
+              "value": "8"
+            },
+            {
+              "name": "Wide (10)",
+              "value": "10"
+            },
+            {
+              "name": "Default (12)",
+              "value": "12"
+            },
+            {
+              "name": "Full bleed",
+              "value": "bleed"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "padding",
+          "label": "Padding (top and bottom)",
+          "options": [
+            {
+              "name": "py-4 (1rem)",
+              "value": "py-4"
+            },
+            {
+              "name": "py-8 (2rem)",
+              "value": "py-8"
+            },
+            {
+              "name": "py-12 (3rem)",
+              "value": "py-12"
+            },
+            {
+              "name": "py-16 (4rem)",
+              "value": "py-16"
+            },
+            {
+              "name": "py-20 (5rem)",
+              "value": "py-20"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "paddingTop",
+          "label": "Padding top",
+          "options": [
+            {
+              "name": "pt-4 (1rem)",
+              "value": "pt-4"
+            },
+            {
+              "name": "pt-8 (2rem)",
+              "value": "pt-8"
+            },
+            {
+              "name": "pt-12 (3rem)",
+              "value": "pt-12"
+            },
+            {
+              "name": "pt-16 (4rem)",
+              "value": "pt-16"
+            },
+            {
+              "name": "pt-20 (5rem)",
+              "value": "pt-20"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "paddingBottom",
+          "label": "Padding bottom",
+          "options": [
+            {
+              "name": "pb-4 (1rem)",
+              "value": "pb-4"
+            },
+            {
+              "name": "pb-8 (2rem)",
+              "value": "pb-8"
+            },
+            {
+              "name": "pb-12 (3rem)",
+              "value": "pb-12"
+            },
+            {
+              "name": "pb-16 (4rem)",
+              "value": "pb-16"
+            },
+            {
+              "name": "pb-20 (5rem)",
+              "value": "pb-20"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "margin",
+          "label": "Margin (top and bottom)",
+          "options": [
+            {
+              "name": "my-4 (1rem)",
+              "value": "my-4"
+            },
+            {
+              "name": "my-8 (2rem)",
+              "value": "my-8"
+            },
+            {
+              "name": "my-12 (3rem)",
+              "value": "my-12"
+            },
+            {
+              "name": "my-16 (4rem)",
+              "value": "my-16"
+            },
+            {
+              "name": "my-20 (5rem)",
+              "value": "my-20"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "marginTop",
+          "label": "Margin top",
+          "options": [
+            {
+              "name": "mt-4 (1rem)",
+              "value": "mt-4"
+            },
+            {
+              "name": "mt-8 (2rem)",
+              "value": "mt-8"
+            },
+            {
+              "name": "mt-12 (3rem)",
+              "value": "mt-12"
+            },
+            {
+              "name": "mt-16 (4rem)",
+              "value": "mt-16"
+            },
+            {
+              "name": "mt-20 (5rem)",
+              "value": "mt-20"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "marginBottom",
+          "label": "Margin bottom",
+          "options": [
+            {
+              "name": "mb-4 (1rem)",
+              "value": "mb-4"
+            },
+            {
+              "name": "mb-8 (2rem)",
+              "value": "mb-8"
+            },
+            {
+              "name": "mb-12 (3rem)",
+              "value": "mb-12"
+            },
+            {
+              "name": "mb-16 (4rem)",
+              "value": "mb-16"
+            },
+            {
+              "name": "mb-20 (5rem)",
+              "value": "mb-20"
+            }
+          ]
         }
       ]
     }
@@ -50,7 +286,27 @@
         "hero",
         "cards",
         "columns",
-        "fragment"
+        "fragment",
+        "ac-card",
+        "ac-banner",
+        "ac-container",
+        "ac-text-content",
+        "ac-accordion",
+        "ac-button",
+        "ac-carousel",
+        "ac-download",
+        "ac-embed-iframe",
+        "ac-embed-video",
+        "ac-image",
+        "ac-link",
+        "ac-list",
+        "ac-separator",
+        "ac-splide-carousel",
+        "ac-table",
+        "ac-table-of-content",
+        "ac-tabs",
+        "ac-text",
+        "ac-title"
       ]
     }
   ]

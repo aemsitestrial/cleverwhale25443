@@ -1,0 +1,2 @@
+import{a as l,b as a,c}from"./chunk-VMZIYAV3.js";var i=l(a());import{jsx as o}from"./vendor/jsx-runtime.js";function f({id:n,title:t,tooltip:e,assetPathWithQueryParams:r,target:p="_self",className:m}){return o("div",{className:(0,i.default)("linkcomponent link",m),children:o("div",{className:"cmp-link",children:o("a",{id:n,className:"cmp-link__anchor coral-Link",href:r,title:e,target:p,children:t})})})}export{c as GridTypeClassnames,f as Link};
+//# sourceMappingURL=link.js.map

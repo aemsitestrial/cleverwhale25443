@@ -15,7 +15,57 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "ac-card",
+      "ac-banner",
+      "ac-container",
+      "ac-text-content",
+      "ac-accordion",
+      "ac-button",
+      "ac-carousel",
+      "ac-download",
+      "ac-embed-iframe",
+      "ac-embed-video",
+      "ac-image",
+      "ac-link",
+      "ac-list",
+      "ac-separator",
+      "ac-splide-carousel",
+      "ac-table",
+      "ac-table-of-content",
+      "ac-tabs",
+      "ac-text",
+      "ac-title"
+    ]
+  },
+  {
+    "id": "ac-accordion",
+    "components": [
+      "ac-accordion-item"
+    ]
+  },
+  {
+    "id": "ac-carousel",
+    "components": [
+      "ac-carousel-item"
+    ]
+  },
+  {
+    "id": "ac-list",
+    "components": [
+      "ac-list-item"
+    ]
+  },
+  {
+    "id": "ac-splide-carousel",
+    "components": [
+      "ac-splide-carousel-item"
+    ]
+  },
+  {
+    "id": "ac-tabs",
+    "components": [
+      "ac-tabs-item"
     ]
   },
   {

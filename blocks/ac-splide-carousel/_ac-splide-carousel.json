@@ -1,0 +1,166 @@
+{
+  "definitions": [
+    {
+      "title": "AC Splide Carousel",
+      "id": "ac-splide-carousel",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "AC Splide Carousel",
+              "model": "ac-splide-carousel",
+              "key-value": true,
+              "filter": "ac-splide-carousel"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "AC Splide Carousel Item",
+      "id": "ac-splide-carousel-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "AC Splide Carousel Item",
+              "model": "ac-splide-carousel-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-splide-carousel",
+      "fields": [
+        {
+          "component": "select",
+          "name": "spacingMb",
+          "label": "Spacing Mb",
+          "options": [
+            {
+              "name": "mb-4 (1rem)",
+              "value": "mb-4"
+            },
+            {
+              "name": "mb-8 (2rem)",
+              "value": "mb-8"
+            },
+            {
+              "name": "mb-12 (3rem)",
+              "value": "mb-12"
+            },
+            {
+              "name": "mb-16 (4rem)",
+              "value": "mb-16"
+            },
+            {
+              "name": "mb-20 (5rem)",
+              "value": "mb-20"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "spacingMy",
+          "label": "Spacing My",
+          "options": [
+            {
+              "name": "my-4 (1rem)",
+              "value": "my-4"
+            },
+            {
+              "name": "my-8 (2rem)",
+              "value": "my-8"
+            },
+            {
+              "name": "my-12 (3rem)",
+              "value": "my-12"
+            },
+            {
+              "name": "my-16 (4rem)",
+              "value": "my-16"
+            },
+            {
+              "name": "my-20 (5rem)",
+              "value": "my-20"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "splideCarouselItemTypeOption",
+          "label": "Splide Carousel Item Type",
+          "options": [
+            {
+              "name": "Image",
+              "value": "image"
+            },
+            {
+              "name": "Teaser",
+              "value": "teaser"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "parentId",
+          "label": "Nest inside",
+          "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+        }
+      ]
+    },
+    {
+      "id": "ac-splide-carousel-item",
+      "fields": [
+        {
+          "component": "reference",
+          "name": "imagePath",
+          "label": "Image Path",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "alt",
+          "label": "Alt",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "title",
+          "label": "Title",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "pretitle",
+          "label": "Pretitle",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "label": "Description",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "ac-splide-carousel",
+      "components": [
+        "ac-splide-carousel-item"
+      ]
+    }
+  ]
+}

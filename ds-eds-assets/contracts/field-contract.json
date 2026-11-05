@@ -1,0 +1,3760 @@
+{
+  "rows": {
+    "parentId": {
+      "readBy": "js/vendor/nest-by-parent.js",
+      "reads": "The block's `data-parent-id`: the name of the layout block (a container, accordion or tabs, or an item of one) it is moved into. A block with no `parentId` stays where it is."
+    },
+    "titleType": {
+      "readBy": "js/vendor/teaser-family.js",
+      "reads": "The heading level of a Teaser-family title. A `title` field with a `titleType` field beside it arrives as one cell holding an `<h1>` to `<h5>` element, and no `titleType` row. The reader takes the level from that element's tag into the content prop `titleTag`; a cell with no heading keeps any `titleType` row it was given. The Title block takes its level as the option list `headingTag` instead (h2 when none is chosen)."
+    }
+  },
+  "blocks": {
+    "ac-card": {
+      "wrapper": "render-card",
+      "content": {
+        "imagePath": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "pretitle": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "title": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "description": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "date": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "link": {
+          "kind": "link",
+          "type": "TeaserLink",
+          "fields": {
+            "url": {
+              "kind": "string",
+              "type": "string",
+              "required": true
+            }
+          },
+          "required": false
+        },
+        "actions": {
+          "kind": "list",
+          "type": "readonly (TeaserActionContent | undefined)[]",
+          "items": {
+            "kind": "object",
+            "type": "TeaserActionContent",
+            "fields": {
+              "title": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "link": {
+                "kind": "link",
+                "type": "TeaserLink",
+                "fields": {
+                  "url": {
+                    "kind": "string",
+                    "type": "string",
+                    "required": true
+                  }
+                },
+                "required": false
+              }
+            }
+          },
+          "required": false
+        },
+        "picture": {
+          "kind": "element",
+          "type": "HTMLElement",
+          "required": false
+        },
+        "titleTag": {
+          "kind": "enum",
+          "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\"",
+          "values": [
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5"
+          ],
+          "required": false
+        }
+      },
+      "options": {
+        "cardAction": {
+          "appliedAs": "prop",
+          "multiple": false,
+          "values": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "link",
+              "label": "Whole-card link"
+            },
+            {
+              "value": "buttons",
+              "label": "Buttons"
+            }
+          ]
+        },
+        "cardAemModifier": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-linked-video",
+              "label": "Linked video"
+            }
+          ]
+        },
+        "cardContentModifier": {
+          "appliedAs": "class",
+          "multiple": true,
+          "values": [
+            {
+              "value": "modifier-media-filled",
+              "label": "Media filled"
+            },
+            {
+              "value": "modifier-media-filled-animation",
+              "label": "Media filled (animated)"
+            },
+            {
+              "value": "modifier-content-center",
+              "label": "Content center"
+            },
+            {
+              "value": "modifier-banner",
+              "label": "Banner"
+            },
+            {
+              "value": "modifier-content-right",
+              "label": "Content right"
+            },
+            {
+              "value": "modifier-overlap-image",
+              "label": "Overlap image"
+            }
+          ]
+        },
+        "cardFeatureModifier": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-check",
+              "label": "Check"
+            },
+            {
+              "value": "modifier-circle-check",
+              "label": "Circle check"
+            }
+          ]
+        },
+        "cardIconType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-vertical",
+              "label": "Vertical"
+            },
+            {
+              "value": "modifier-horizontal",
+              "label": "Horizontal"
+            },
+            {
+              "value": "modifier-centered",
+              "label": "Centered"
+            }
+          ]
+        },
+        "cardIconVariant": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-solid",
+              "label": "Solid"
+            },
+            {
+              "value": "modifier-outline",
+              "label": "Outline"
+            },
+            {
+              "value": "modifier-transparent",
+              "label": "Transparent"
+            },
+            {
+              "value": "modifier-transparent-filled",
+              "label": "Transparent filled"
+            }
+          ]
+        },
+        "cardImageCroppingType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-no-image-crop",
+              "label": "No image crop"
+            }
+          ]
+        },
+        "cardType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ac-core-card-content",
+              "label": "Card content"
+            },
+            {
+              "value": "ac-core-card-aem",
+              "label": "Card AEM"
+            },
+            {
+              "value": "ac-core-card-feature",
+              "label": "Card feature"
+            },
+            {
+              "value": "ac-core-card-icon",
+              "label": "Card icon"
+            },
+            {
+              "value": "ac-core-card-product",
+              "label": "Card product"
+            }
+          ]
+        },
+        "descriptionLineClamp": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "teaser-description-line-clamp-2",
+              "label": "2 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-4",
+              "label": "4 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-6",
+              "label": "6 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-8",
+              "label": "8 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-10",
+              "label": "10 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-12",
+              "label": "12 lines"
+            }
+          ]
+        },
+        "headlineLineClamp": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "teaser-headline-line-clamp-1",
+              "label": "1 line"
+            },
+            {
+              "value": "teaser-headline-line-clamp-2",
+              "label": "2 lines"
+            }
+          ]
+        },
+        "modifierVariant": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-solid",
+              "label": "Solid"
+            },
+            {
+              "value": "modifier-outline",
+              "label": "Outline"
+            },
+            {
+              "value": "modifier-ghost",
+              "label": "Ghost"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "themeType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "style-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "style-secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "style-tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "style-quaternary",
+              "label": "Quaternary"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "imagePath",
+          "selector": ".cmp-image"
+        },
+        {
+          "prop": "pretitle",
+          "selector": ".cmp-teaser__pretitle"
+        },
+        {
+          "prop": "title",
+          "selector": ".cmp-teaser__title"
+        },
+        {
+          "prop": "description",
+          "selector": ".cmp-teaser__description"
+        },
+        {
+          "prop": "date",
+          "selector": ".cmp-teaser__date"
+        },
+        {
+          "prop": "actions.0.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.1.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.2.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.3.title",
+          "selector": null
+        }
+      ]
+    },
+    "ac-banner": {
+      "wrapper": "render-banner",
+      "content": {
+        "imagePath": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "pretitle": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "title": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "description": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "date": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "link": {
+          "kind": "link",
+          "type": "TeaserLink",
+          "fields": {
+            "url": {
+              "kind": "string",
+              "type": "string",
+              "required": true
+            }
+          },
+          "required": false
+        },
+        "actions": {
+          "kind": "list",
+          "type": "readonly (TeaserActionContent | undefined)[]",
+          "items": {
+            "kind": "object",
+            "type": "TeaserActionContent",
+            "fields": {
+              "title": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "link": {
+                "kind": "link",
+                "type": "TeaserLink",
+                "fields": {
+                  "url": {
+                    "kind": "string",
+                    "type": "string",
+                    "required": true
+                  }
+                },
+                "required": false
+              }
+            }
+          },
+          "required": false
+        },
+        "picture": {
+          "kind": "element",
+          "type": "HTMLElement",
+          "required": false
+        },
+        "titleTag": {
+          "kind": "enum",
+          "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\"",
+          "values": [
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5"
+          ],
+          "required": false
+        }
+      },
+      "options": {
+        "bannerContentAlignment": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-content-center",
+              "label": "Content center"
+            },
+            {
+              "value": "modifier-content-right",
+              "label": "Content right"
+            }
+          ]
+        },
+        "bannerReverseContent": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-reverse-content",
+              "label": "Reverse"
+            }
+          ]
+        },
+        "bannerType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ac-core-content-banner",
+              "label": "Content banner"
+            },
+            {
+              "value": "ac-core-innovation-banner",
+              "label": "Innovation banner"
+            },
+            {
+              "value": "ac-core-innovation-hero-banner",
+              "label": "Innovation hero banner"
+            },
+            {
+              "value": "ac-core-product-banner",
+              "label": "Product banner"
+            },
+            {
+              "value": "ac-core-promo-banner",
+              "label": "Promo banner"
+            },
+            {
+              "value": "ac-core-section-banner",
+              "label": "Section banner"
+            },
+            {
+              "value": "ac-core-section-teaser",
+              "label": "Section teaser"
+            },
+            {
+              "value": "ac-core-startpage-banner",
+              "label": "Startpage banner"
+            },
+            {
+              "value": "ac-core-sticky-banner",
+              "label": "Sticky banner"
+            }
+          ]
+        },
+        "cardAction": {
+          "appliedAs": "prop",
+          "multiple": false,
+          "values": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "link",
+              "label": "Whole-card link"
+            },
+            {
+              "value": "buttons",
+              "label": "Buttons"
+            }
+          ]
+        },
+        "descriptionLineClamp": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "teaser-description-line-clamp-2",
+              "label": "2 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-4",
+              "label": "4 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-6",
+              "label": "6 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-8",
+              "label": "8 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-10",
+              "label": "10 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-12",
+              "label": "12 lines"
+            }
+          ]
+        },
+        "headlineLineClamp": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "teaser-headline-line-clamp-1",
+              "label": "1 line"
+            },
+            {
+              "value": "teaser-headline-line-clamp-2",
+              "label": "2 lines"
+            }
+          ]
+        },
+        "promoBannerStyle": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-boxed",
+              "label": "Boxed"
+            },
+            {
+              "value": "modifier-card",
+              "label": "Card"
+            }
+          ]
+        },
+        "sectionTeaserImage": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-image-primary",
+              "label": "Image primary"
+            },
+            {
+              "value": "modifier-image-secondary",
+              "label": "Image secondary"
+            },
+            {
+              "value": "modifier-image-tertiary",
+              "label": "Image tertiary"
+            },
+            {
+              "value": "modifier-image-quaternary",
+              "label": "Image quaternary"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "startpageBannerModifier": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-reverse-content",
+              "label": "Reverse"
+            },
+            {
+              "value": "modifier-no-icons",
+              "label": "No icon"
+            }
+          ]
+        },
+        "stickyBannerContentType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-contact",
+              "label": "Contact"
+            },
+            {
+              "value": "modifier-e-learning",
+              "label": "E-learning"
+            },
+            {
+              "value": "modifier-download",
+              "label": "Download"
+            }
+          ]
+        },
+        "themeType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "style-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "style-secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "style-tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "style-quaternary",
+              "label": "Quaternary"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "imagePath",
+          "selector": ".cmp-image"
+        },
+        {
+          "prop": "pretitle",
+          "selector": ".cmp-teaser__pretitle"
+        },
+        {
+          "prop": "title",
+          "selector": ".cmp-teaser__title"
+        },
+        {
+          "prop": "description",
+          "selector": ".cmp-teaser__description"
+        },
+        {
+          "prop": "date",
+          "selector": ".cmp-teaser__date"
+        },
+        {
+          "prop": "actions.0.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.1.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.2.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.3.title",
+          "selector": null
+        }
+      ]
+    },
+    "ac-container": {
+      "wrapper": "render-container-block",
+      "content": {
+        "children": {
+          "kind": "list",
+          "type": "readonly HTMLElement[]",
+          "items": {
+            "kind": "element",
+            "type": "HTMLElement"
+          },
+          "required": false
+        },
+        "gridVariant": {
+          "kind": "enum",
+          "type": "\"grid-col-1\" | \"grid-col-2\" | \"grid-col-3\" | \"grid-col-4\" | \"grid-col-5\" | \"grid-col-1-2\" | \"grid-col-2-1\"",
+          "values": [
+            "grid-col-1",
+            "grid-col-2",
+            "grid-col-3",
+            "grid-col-4",
+            "grid-col-5",
+            "grid-col-1-2",
+            "grid-col-2-1"
+          ],
+          "required": false
+        },
+        "contentWidth": {
+          "kind": "enum",
+          "type": "\"6\" | \"8\" | \"10\" | \"12\"",
+          "values": [
+            "6",
+            "8",
+            "10",
+            "12"
+          ],
+          "required": false
+        }
+      },
+      "options": {
+        "blockContainerVariant": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ac-core-block-quote-section",
+              "label": "Quote Section"
+            },
+            {
+              "value": "ac-core-block-section-banner-with-cards",
+              "label": "Section Banner with cards"
+            },
+            {
+              "value": "ac-core-block-content-with-splide-grid-carousel",
+              "label": "Content with splide grid carousel"
+            },
+            {
+              "value": "ac-core-block-content-with-splide-grid-carousel modifier-horizontal",
+              "label": "Content with splide grid carousel horizontal"
+            },
+            {
+              "value": "ac-core-block-splide-grid-carousel",
+              "label": "Splide Grid carousel"
+            },
+            {
+              "value": "ac-core-block-country-selector",
+              "label": "Block Country Selector"
+            },
+            {
+              "value": "ac-core-block-cta-section",
+              "label": "CTA Section"
+            },
+            {
+              "value": "ac-core-block-cta-section modifier-content-centered",
+              "label": "CTA Section centered"
+            }
+          ]
+        },
+        "carouselVariant": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ac-core-splide-carousel ds-splide-carousel",
+              "label": "Splide Carousel"
+            },
+            {
+              "value": "ac-core-splide-grid-carousel ds-splide-carousel",
+              "label": "Splide Grid Carousel"
+            }
+          ]
+        },
+        "filterBlockVariant": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ac-core-block-teasers-with-filter",
+              "label": "Filter block"
+            },
+            {
+              "value": "ac-core-block-teasers-with-filter-top-content",
+              "label": "Top content"
+            },
+            {
+              "value": "ac-core-filter",
+              "label": "Filter search"
+            },
+            {
+              "value": "ac-core-block-teasers-with-filter-cards",
+              "label": "Cards"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMt": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mt-4",
+              "label": "mt-4 (1rem)"
+            },
+            {
+              "value": "mt-8",
+              "label": "mt-8 (2rem)"
+            },
+            {
+              "value": "mt-12",
+              "label": "mt-12 (3rem)"
+            },
+            {
+              "value": "mt-16",
+              "label": "mt-16 (4rem)"
+            },
+            {
+              "value": "mt-20",
+              "label": "mt-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "spacingPb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "pb-4",
+              "label": "pb-4 (1rem)"
+            },
+            {
+              "value": "pb-8",
+              "label": "pb-8 (2rem)"
+            },
+            {
+              "value": "pb-12",
+              "label": "pb-12 (3rem)"
+            },
+            {
+              "value": "pb-16",
+              "label": "pb-16 (4rem)"
+            },
+            {
+              "value": "pb-20",
+              "label": "pb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingPt": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "pt-4",
+              "label": "pt-4 (1rem)"
+            },
+            {
+              "value": "pt-8",
+              "label": "pt-8 (2rem)"
+            },
+            {
+              "value": "pt-12",
+              "label": "pt-12 (3rem)"
+            },
+            {
+              "value": "pt-16",
+              "label": "pt-16 (4rem)"
+            },
+            {
+              "value": "pt-20",
+              "label": "pt-20 (5rem)"
+            }
+          ]
+        },
+        "spacingPy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "py-4",
+              "label": "py-4 (1rem)"
+            },
+            {
+              "value": "py-8",
+              "label": "py-8 (2rem)"
+            },
+            {
+              "value": "py-12",
+              "label": "py-12 (3rem)"
+            },
+            {
+              "value": "py-16",
+              "label": "py-16 (4rem)"
+            },
+            {
+              "value": "py-20",
+              "label": "py-20 (5rem)"
+            }
+          ]
+        },
+        "themeType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "style-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "style-secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "style-tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "style-quaternary",
+              "label": "Quaternary"
+            }
+          ]
+        },
+        "tocLayout": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ds-brand-block-toc-layout",
+              "label": "TOC"
+            },
+            {
+              "value": "ds-brand-block-toc-layout-sidebar",
+              "label": "Sidebar"
+            },
+            {
+              "value": "ds-brand-sticky-container",
+              "label": "Sticky container"
+            },
+            {
+              "value": "TOC-content-container",
+              "label": "TOC Content block"
+            }
+          ]
+        }
+      },
+      "editable": []
+    },
+    "ac-text-content": {
+      "wrapper": "render-text-content",
+      "content": {
+        "imagePath": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "pretitle": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "title": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "description": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "date": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "link": {
+          "kind": "link",
+          "type": "TeaserLink",
+          "fields": {
+            "url": {
+              "kind": "string",
+              "type": "string",
+              "required": true
+            }
+          },
+          "required": false
+        },
+        "actions": {
+          "kind": "list",
+          "type": "readonly (TeaserActionContent | undefined)[]",
+          "items": {
+            "kind": "object",
+            "type": "TeaserActionContent",
+            "fields": {
+              "title": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "link": {
+                "kind": "link",
+                "type": "TeaserLink",
+                "fields": {
+                  "url": {
+                    "kind": "string",
+                    "type": "string",
+                    "required": true
+                  }
+                },
+                "required": false
+              }
+            }
+          },
+          "required": false
+        },
+        "picture": {
+          "kind": "element",
+          "type": "HTMLElement",
+          "required": false
+        },
+        "titleTag": {
+          "kind": "enum",
+          "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\"",
+          "values": [
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5"
+          ],
+          "required": false
+        }
+      },
+      "options": {
+        "descriptionLineClamp": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "teaser-description-line-clamp-2",
+              "label": "2 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-4",
+              "label": "4 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-6",
+              "label": "6 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-8",
+              "label": "8 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-10",
+              "label": "10 lines"
+            },
+            {
+              "value": "teaser-description-line-clamp-12",
+              "label": "12 lines"
+            }
+          ]
+        },
+        "headlineLineClamp": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "teaser-headline-line-clamp-1",
+              "label": "1 line"
+            },
+            {
+              "value": "teaser-headline-line-clamp-2",
+              "label": "2 lines"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "textContentModifier": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-content-center",
+              "label": "Content center"
+            },
+            {
+              "value": "modifier-content-right",
+              "label": "Content right"
+            },
+            {
+              "value": "modifier-pretitle-secondary",
+              "label": "Pretitle secondary"
+            },
+            {
+              "value": "modifier-pretitle-tertiary",
+              "label": "Pretitle tertiary"
+            },
+            {
+              "value": "modifier-transparent",
+              "label": "Transparent"
+            },
+            {
+              "value": "modifier-icon-phone-on-links",
+              "label": "Icon on phone links"
+            },
+            {
+              "value": "modifier-icon-email-on-links",
+              "label": "Icon on email links"
+            },
+            {
+              "value": "modifier-icon-phone-email-order-icon-links",
+              "label": "Icons on phone and email links (order)"
+            }
+          ]
+        },
+        "textContentType": {
+          "appliedAs": "prop",
+          "multiple": false,
+          "values": [
+            {
+              "value": "teaser",
+              "label": "Teaser"
+            },
+            {
+              "value": "quote",
+              "label": "Quote"
+            },
+            {
+              "value": "highlight",
+              "label": "Highlight"
+            }
+          ]
+        },
+        "themeType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "style-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "style-secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "style-tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "style-quaternary",
+              "label": "Quaternary"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "imagePath",
+          "selector": ".cmp-image"
+        },
+        {
+          "prop": "pretitle",
+          "selector": ".cmp-teaser__pretitle"
+        },
+        {
+          "prop": "title",
+          "selector": ".cmp-teaser__title"
+        },
+        {
+          "prop": "description",
+          "selector": ".cmp-teaser__description"
+        },
+        {
+          "prop": "date",
+          "selector": ".cmp-teaser__date"
+        },
+        {
+          "prop": "actions.0.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.1.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.2.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.3.title",
+          "selector": null
+        }
+      ]
+    },
+    "ac-accordion": {
+      "wrapper": "render-accordion",
+      "content": {
+        "items": {
+          "kind": "list",
+          "type": "readonly AccordionItem[]",
+          "items": {
+            "kind": "object",
+            "type": "AccordionItem",
+            "fields": {
+              "cq:panelTitle": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "content": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              }
+            }
+          },
+          "required": false
+        },
+        "singleExpansion": {
+          "kind": "boolean",
+          "type": "boolean",
+          "required": false
+        }
+      },
+      "options": {
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "`items.${number}`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.cq:panelTitle`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.content`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.panel`",
+          "selector": null
+        }
+      ],
+      "itemBlock": "ac-accordion-item"
+    },
+    "ac-accordion-item": {
+      "wrapper": "render-accordion",
+      "itemOf": "ac-accordion",
+      "content": {
+        "cq:panelTitle": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "content": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        }
+      },
+      "options": {},
+      "editable": []
+    },
+    "ac-button": {
+      "wrapper": "render-button",
+      "content": {
+        "text": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "buttonLink": {
+          "kind": "link",
+          "type": "Omit<ILink, \"valid\">",
+          "fields": {
+            "url": {
+              "kind": "string",
+              "type": "string",
+              "required": true
+            }
+          },
+          "required": false
+        }
+      },
+      "options": {
+        "buttonGridCarouselSwitch": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ac-core-grid-button active text-capitalize",
+              "label": "Grid"
+            },
+            {
+              "value": "ac-core-carousel-button text-capitalize",
+              "label": "Carousel"
+            }
+          ]
+        },
+        "buttonIcon": {
+          "appliedAs": "prop",
+          "multiple": false,
+          "values": [
+            {
+              "value": "chevron-right",
+              "label": "Chevron right"
+            },
+            {
+              "value": "chevron-up",
+              "label": "Chevron up"
+            },
+            {
+              "value": "close",
+              "label": "Close"
+            },
+            {
+              "value": "email",
+              "label": "Email"
+            },
+            {
+              "value": "phone",
+              "label": "Phone"
+            },
+            {
+              "value": "play",
+              "label": "Play"
+            },
+            {
+              "value": "chevron-left",
+              "label": "Chevron left"
+            },
+            {
+              "value": "chevron-down",
+              "label": "Chevron down"
+            },
+            {
+              "value": "contact",
+              "label": "Contact"
+            },
+            {
+              "value": "launch",
+              "label": "Launch"
+            },
+            {
+              "value": "download",
+              "label": "Download"
+            },
+            {
+              "value": "arrow-right",
+              "label": "Arrow right"
+            },
+            {
+              "value": "planet",
+              "label": "Planet"
+            }
+          ]
+        },
+        "buttonIconPosition": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-leading",
+              "label": "Leading"
+            },
+            {
+              "value": "modifier-trailing",
+              "label": "Trailing"
+            }
+          ]
+        },
+        "buttonTheme": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "style-primary-positive",
+              "label": "Primary positive"
+            },
+            {
+              "value": "style-primary-negative",
+              "label": "Primary negative"
+            },
+            {
+              "value": "style-secondary-positive",
+              "label": "Secondary positive"
+            },
+            {
+              "value": "style-secondary-negative",
+              "label": "Secondary negative"
+            }
+          ]
+        },
+        "linkTarget": {
+          "appliedAs": "prop",
+          "multiple": false,
+          "values": [
+            {
+              "value": "_self",
+              "label": "Same tab"
+            },
+            {
+              "value": "_blank",
+              "label": "New tab"
+            }
+          ]
+        },
+        "modifierVariant": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-solid",
+              "label": "Solid"
+            },
+            {
+              "value": "modifier-outline",
+              "label": "Outline"
+            },
+            {
+              "value": "modifier-ghost",
+              "label": "Ghost"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "text",
+          "selector": ".cmp-button__text"
+        }
+      ]
+    },
+    "ac-carousel": {
+      "wrapper": "render-carousel",
+      "content": {
+        "items": {
+          "kind": "list",
+          "type": "CarouselItem[]",
+          "items": {
+            "kind": "object",
+            "type": "CarouselItem",
+            "fields": {
+              "imagePath": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "alt": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "title": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "pretitle": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "description": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "link": {
+                "kind": "link",
+                "type": "{ url?: string | undefined; }",
+                "fields": {
+                  "url": {
+                    "kind": "string",
+                    "type": "string",
+                    "required": false
+                  }
+                },
+                "required": false
+              }
+            }
+          },
+          "required": false
+        }
+      },
+      "options": {
+        "carouselItemType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "hero",
+              "label": "Hero image"
+            },
+            {
+              "value": "teaser",
+              "label": "Teaser"
+            },
+            {
+              "value": "hero-teaser",
+              "label": "Hero teaser"
+            }
+          ]
+        },
+        "carouselTheme": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "style-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "style-secondary",
+              "label": "Secondary"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "`items.${number}`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.imagePath`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.pretitle`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.title`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.description`",
+          "selector": null
+        }
+      ],
+      "itemBlock": "ac-carousel-item"
+    },
+    "ac-carousel-item": {
+      "wrapper": "render-carousel",
+      "itemOf": "ac-carousel",
+      "content": {
+        "imagePath": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "alt": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "title": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "pretitle": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "description": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "link": {
+          "kind": "link",
+          "type": "{ url?: string | undefined; }",
+          "fields": {
+            "url": {
+              "kind": "string",
+              "type": "string",
+              "required": false
+            }
+          },
+          "required": false
+        }
+      },
+      "options": {},
+      "editable": []
+    },
+    "ac-download": {
+      "wrapper": "render-download",
+      "content": {
+        "title": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "description": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "url": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "filename": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "format": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "size": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "actionText": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "image": {
+          "kind": "object",
+          "type": "Partial<Pick<DownloadImageProps, \"src\">>",
+          "fields": {
+            "src": {
+              "kind": "string",
+              "type": "string",
+              "required": false
+            }
+          },
+          "required": false
+        }
+      },
+      "options": {
+        "downloadDensity": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-compact",
+              "label": "Compact"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "themeType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "style-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "style-secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "style-tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "style-quaternary",
+              "label": "Quaternary"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "title",
+          "selector": ".cmp-download__title-link"
+        },
+        {
+          "prop": "description",
+          "selector": ".cmp-download__description"
+        },
+        {
+          "prop": "actionText",
+          "selector": ".cmp-download__action-text"
+        },
+        {
+          "prop": "image.src",
+          "selector": ".cmp-image"
+        }
+      ]
+    },
+    "ac-embed-iframe": {
+      "wrapper": "render-embed-iframe",
+      "content": {
+        "title": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "src": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "width": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "height": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        }
+      },
+      "options": {
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        }
+      },
+      "editable": []
+    },
+    "ac-embed-video": {
+      "wrapper": "render-embed-video",
+      "content": {
+        "poster": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "autoPlay": {
+          "kind": "boolean",
+          "type": "boolean",
+          "required": false
+        },
+        "loop": {
+          "kind": "boolean",
+          "type": "boolean",
+          "required": false
+        },
+        "muted": {
+          "kind": "boolean",
+          "type": "boolean",
+          "required": false
+        },
+        "controls": {
+          "kind": "boolean",
+          "type": "boolean",
+          "required": false
+        },
+        "source": {
+          "kind": "list",
+          "type": "readonly Partial<Pick<VideoType, \"url\" | \"type\">>[]",
+          "items": {
+            "kind": "link",
+            "type": "Partial<Pick<VideoType, \"url\" | \"type\">>",
+            "fields": {
+              "url": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "type": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              }
+            }
+          },
+          "required": false
+        }
+      },
+      "options": {
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        }
+      },
+      "editable": []
+    },
+    "ac-image": {
+      "wrapper": "render-image",
+      "content": {
+        "src": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "alt": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        }
+      },
+      "options": {
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "src",
+          "selector": ".cmp-image"
+        }
+      ]
+    },
+    "ac-link": {
+      "wrapper": "render-link",
+      "content": {
+        "title": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "assetPathWithQueryParams": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "tooltip": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        }
+      },
+      "options": {
+        "linkModifier": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-arrow",
+              "label": "With arrow"
+            }
+          ]
+        },
+        "linkTarget": {
+          "appliedAs": "prop",
+          "multiple": false,
+          "values": [
+            {
+              "value": "_self",
+              "label": "Same tab"
+            },
+            {
+              "value": "_blank",
+              "label": "New tab"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "themeType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "style-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "style-secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "style-tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "style-quaternary",
+              "label": "Quaternary"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "title",
+          "selector": ".cmp-link__anchor"
+        }
+      ]
+    },
+    "ac-list": {
+      "wrapper": "render-list",
+      "content": {
+        "items": {
+          "kind": "list",
+          "type": "ListItem[]",
+          "items": {
+            "kind": "object",
+            "type": "ListItem",
+            "fields": {
+              "imagePath": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "pretitle": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "title": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "description": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "link": {
+                "kind": "link",
+                "type": "TeaserLink",
+                "fields": {
+                  "url": {
+                    "kind": "string",
+                    "type": "string",
+                    "required": true
+                  }
+                },
+                "required": false
+              },
+              "picture": {
+                "kind": "element",
+                "type": "HTMLElement",
+                "required": false
+              },
+              "itemStyle": {
+                "kind": "enum",
+                "type": "\"ac-core-teaser\" | \"ac-core-card-aem ac-core-teaser\" | \"ac-core-card-content ac-core-teaser\" | \"ac-core-card-icon ac-core-teaser modifier-vertical modifier-solid\" | \"ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid\"",
+                "values": [
+                  "ac-core-teaser",
+                  "ac-core-card-aem ac-core-teaser",
+                  "ac-core-card-content ac-core-teaser",
+                  "ac-core-card-icon ac-core-teaser modifier-vertical modifier-solid",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ],
+                "required": false
+              }
+            }
+          },
+          "required": false
+        }
+      },
+      "options": {
+        "listGridRows": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ds-brand-list-per-2",
+              "label": "Grid row 2"
+            },
+            {
+              "value": "ds-brand-list-per-3",
+              "label": "Grid row 3"
+            },
+            {
+              "value": "ds-brand-list-per-4",
+              "label": "Grid row 4"
+            },
+            {
+              "value": "ds-brand-list-per-5",
+              "label": "Grid row 5"
+            }
+          ]
+        },
+        "listItemType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ac-core-teaser",
+              "label": "Teasers"
+            },
+            {
+              "value": "ac-core-card-aem ac-core-teaser",
+              "label": "Card Aem"
+            },
+            {
+              "value": "ac-core-card-content ac-core-teaser",
+              "label": "Card content"
+            },
+            {
+              "value": "ac-core-card-icon ac-core-teaser modifier-vertical modifier-solid",
+              "label": "Card icon"
+            },
+            {
+              "value": "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid",
+              "label": "Key figure"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "themeType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "style-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "style-secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "style-tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "style-quaternary",
+              "label": "Quaternary"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "`items.${number}`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.imagePath`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.pretitle`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.title`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.description`",
+          "selector": null
+        }
+      ],
+      "itemBlock": "ac-list-item"
+    },
+    "ac-list-item": {
+      "wrapper": "render-list",
+      "itemOf": "ac-list",
+      "content": {
+        "imagePath": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "pretitle": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "title": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "description": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "link": {
+          "kind": "link",
+          "type": "TeaserLink",
+          "fields": {
+            "url": {
+              "kind": "string",
+              "type": "string",
+              "required": true
+            }
+          },
+          "required": false
+        },
+        "picture": {
+          "kind": "element",
+          "type": "HTMLElement",
+          "required": false
+        },
+        "itemStyle": {
+          "kind": "enum",
+          "type": "\"ac-core-teaser\" | \"ac-core-card-aem ac-core-teaser\" | \"ac-core-card-content ac-core-teaser\" | \"ac-core-card-icon ac-core-teaser modifier-vertical modifier-solid\" | \"ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid\"",
+          "values": [
+            "ac-core-teaser",
+            "ac-core-card-aem ac-core-teaser",
+            "ac-core-card-content ac-core-teaser",
+            "ac-core-card-icon ac-core-teaser modifier-vertical modifier-solid",
+            "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+          ],
+          "required": false
+        }
+      },
+      "options": {},
+      "editable": []
+    },
+    "ac-separator": {
+      "wrapper": "render-separator",
+      "content": {
+        "isDecorative": {
+          "kind": "boolean",
+          "type": "boolean",
+          "required": false
+        }
+      },
+      "options": {
+        "separatorTheme": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ds-brand-separator__primary",
+              "label": "Primary"
+            },
+            {
+              "value": "ds-brand-separator__secondary",
+              "label": "Secondary"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        }
+      },
+      "editable": []
+    },
+    "ac-splide-carousel": {
+      "wrapper": "render-splide-carousel",
+      "content": {
+        "items": {
+          "kind": "list",
+          "type": "CarouselItem[]",
+          "items": {
+            "kind": "object",
+            "type": "CarouselItem",
+            "fields": {
+              "imagePath": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "alt": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "title": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "pretitle": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "description": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "link": {
+                "kind": "link",
+                "type": "{ url?: string | undefined; }",
+                "fields": {
+                  "url": {
+                    "kind": "string",
+                    "type": "string",
+                    "required": false
+                  }
+                },
+                "required": false
+              }
+            }
+          },
+          "required": false
+        }
+      },
+      "options": {
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "splideCarouselItemType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "teaser",
+              "label": "Teaser"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "`items.${number}`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.imagePath`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.pretitle`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.title`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.description`",
+          "selector": null
+        }
+      ],
+      "itemBlock": "ac-splide-carousel-item"
+    },
+    "ac-splide-carousel-item": {
+      "wrapper": "render-splide-carousel",
+      "itemOf": "ac-splide-carousel",
+      "content": {
+        "imagePath": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "alt": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "title": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "pretitle": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "description": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "link": {
+          "kind": "link",
+          "type": "{ url?: string | undefined; }",
+          "fields": {
+            "url": {
+              "kind": "string",
+              "type": "string",
+              "required": false
+            }
+          },
+          "required": false
+        }
+      },
+      "options": {},
+      "editable": []
+    },
+    "ac-table": {
+      "wrapper": "render-table",
+      "content": {
+        "text": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        }
+      },
+      "options": {
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "themeType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "style-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "style-secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "style-tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "style-quaternary",
+              "label": "Quaternary"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "text",
+          "selector": ".cmp-text"
+        }
+      ]
+    },
+    "ac-table-of-content": {
+      "wrapper": "render-table-of-content",
+      "content": {
+        "startLevel": {
+          "kind": "enum",
+          "type": "HeadingTag",
+          "values": [
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6"
+          ],
+          "required": false
+        },
+        "stopLevel": {
+          "kind": "enum",
+          "type": "HeadingTag",
+          "values": [
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6"
+          ],
+          "required": false
+        },
+        "items": {
+          "kind": "list",
+          "type": "(Omit<TableOfContentChild, \"children\"> & { children?: readonly unknown[] | undefined; })[]",
+          "items": {
+            "kind": "object",
+            "type": "Omit<TableOfContentChild, \"children\"> & { children?: readonly unknown[] | undefined; }",
+            "fields": {
+              "id": {
+                "kind": "string",
+                "type": "string",
+                "required": true
+              },
+              "text": {
+                "kind": "string",
+                "type": "string",
+                "required": true
+              },
+              "href": {
+                "kind": "string",
+                "type": "string",
+                "required": true
+              },
+              "active": {
+                "kind": "boolean",
+                "type": "boolean",
+                "required": true
+              },
+              "children": {
+                "kind": "list",
+                "type": "readonly unknown[]",
+                "items": {
+                  "kind": "object",
+                  "type": "{}"
+                },
+                "required": false
+              }
+            }
+          },
+          "required": false
+        }
+      },
+      "options": {
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "tocListType": {
+          "appliedAs": "prop",
+          "multiple": false,
+          "values": [
+            {
+              "value": "numbered",
+              "label": "Numbered"
+            },
+            {
+              "value": "bulleted",
+              "label": "Bulleted"
+            }
+          ]
+        }
+      },
+      "editable": []
+    },
+    "ac-tabs": {
+      "wrapper": "render-tabs",
+      "content": {
+        "items": {
+          "kind": "list",
+          "type": "readonly TabsItem[]",
+          "items": {
+            "kind": "object",
+            "type": "TabsItem",
+            "fields": {
+              "cq:panelTitle": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "content": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              }
+            }
+          },
+          "required": false
+        },
+        "useResponsiveSelect": {
+          "kind": "boolean",
+          "type": "boolean",
+          "required": false
+        }
+      },
+      "options": {
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "tabsLayout": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ds-brand-responsive-select-run-js ds-container-query",
+              "label": "Responsive"
+            },
+            {
+              "value": "modifier-segmented-buttons",
+              "label": "Segmented"
+            }
+          ]
+        },
+        "themeType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "style-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "style-secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "style-tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "style-quaternary",
+              "label": "Quaternary"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "`items.${number}`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.cq:panelTitle`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.content`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.panel`",
+          "selector": null
+        }
+      ],
+      "itemBlock": "ac-tabs-item"
+    },
+    "ac-tabs-item": {
+      "wrapper": "render-tabs",
+      "itemOf": "ac-tabs",
+      "content": {
+        "cq:panelTitle": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "content": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        }
+      },
+      "options": {},
+      "editable": []
+    },
+    "ac-text": {
+      "wrapper": "render-text",
+      "content": {
+        "text": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        }
+      },
+      "options": {
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "textContentAlignment": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modifier-content-center",
+              "label": "Center"
+            },
+            {
+              "value": "modifier-content-right",
+              "label": "Right"
+            }
+          ]
+        },
+        "textIcon": {
+          "appliedAs": "prop",
+          "multiple": false,
+          "values": [
+            {
+              "value": "call",
+              "label": "Call"
+            },
+            {
+              "value": "contact_mail",
+              "label": "Contact mail"
+            },
+            {
+              "value": "email",
+              "label": "Email"
+            },
+            {
+              "value": "account",
+              "label": "Account"
+            },
+            {
+              "value": "language",
+              "label": "Language"
+            },
+            {
+              "value": "arrow-left",
+              "label": "Arrow left"
+            },
+            {
+              "value": "arrow-right",
+              "label": "Arrow right"
+            },
+            {
+              "value": "pin-drop",
+              "label": "Pin drop"
+            },
+            {
+              "value": "3d-rotation",
+              "label": "3d rotation"
+            },
+            {
+              "value": "alarm",
+              "label": "Alarm"
+            }
+          ]
+        },
+        "textLargeSize": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "modification-text-large",
+              "label": "Large"
+            }
+          ]
+        },
+        "themeType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "style-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "style-secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "style-tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "style-quaternary",
+              "label": "Quaternary"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "text",
+          "selector": ".cmp-text"
+        }
+      ]
+    },
+    "ac-title": {
+      "wrapper": "render-title",
+      "content": {
+        "text": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "link": {
+          "kind": "link",
+          "type": "Omit<{ valid: boolean; attributes?: { [key: string]: string; } | undefined; url: string; }, \"valid\" | \"attributes\">",
+          "fields": {
+            "url": {
+              "kind": "string",
+              "type": "string",
+              "required": true
+            }
+          },
+          "required": false
+        }
+      },
+      "options": {
+        "headingTag": {
+          "appliedAs": "prop",
+          "multiple": false,
+          "values": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "themeType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "style-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "style-secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "style-tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "style-quaternary",
+              "label": "Quaternary"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "text",
+          "selector": ".cmp-title__text"
+        }
+      ]
+    }
+  }
+}

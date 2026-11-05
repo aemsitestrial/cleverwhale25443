@@ -138,6 +138,3847 @@
             "value": "highlight"
           }
         ]
+      },
+      {
+        "component": "text",
+        "name": "backgroundColor",
+        "label": "Background colour",
+        "description": "A CSS colour, e.g. #f5f2ef"
+      },
+      {
+        "component": "reference",
+        "name": "backgroundImageReference",
+        "label": "Background image",
+        "multi": false
+      },
+      {
+        "component": "select",
+        "name": "gridVariant",
+        "label": "Grid",
+        "options": [
+          {
+            "name": "1 column",
+            "value": "grid-col-1"
+          },
+          {
+            "name": "2 columns",
+            "value": "grid-col-2"
+          },
+          {
+            "name": "3 columns",
+            "value": "grid-col-3"
+          },
+          {
+            "name": "4 columns",
+            "value": "grid-col-4"
+          },
+          {
+            "name": "5 columns",
+            "value": "grid-col-5"
+          },
+          {
+            "name": "1/3 + 2/3",
+            "value": "grid-col-1-2"
+          },
+          {
+            "name": "2/3 + 1/3",
+            "value": "grid-col-2-1"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "contentWidth",
+        "label": "Content width",
+        "options": [
+          {
+            "name": "Narrow (6)",
+            "value": "6"
+          },
+          {
+            "name": "Standard (8)",
+            "value": "8"
+          },
+          {
+            "name": "Wide (10)",
+            "value": "10"
+          },
+          {
+            "name": "Default (12)",
+            "value": "12"
+          },
+          {
+            "name": "Full bleed",
+            "value": "bleed"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "padding",
+        "label": "Padding (top and bottom)",
+        "options": [
+          {
+            "name": "py-4 (1rem)",
+            "value": "py-4"
+          },
+          {
+            "name": "py-8 (2rem)",
+            "value": "py-8"
+          },
+          {
+            "name": "py-12 (3rem)",
+            "value": "py-12"
+          },
+          {
+            "name": "py-16 (4rem)",
+            "value": "py-16"
+          },
+          {
+            "name": "py-20 (5rem)",
+            "value": "py-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "paddingTop",
+        "label": "Padding top",
+        "options": [
+          {
+            "name": "pt-4 (1rem)",
+            "value": "pt-4"
+          },
+          {
+            "name": "pt-8 (2rem)",
+            "value": "pt-8"
+          },
+          {
+            "name": "pt-12 (3rem)",
+            "value": "pt-12"
+          },
+          {
+            "name": "pt-16 (4rem)",
+            "value": "pt-16"
+          },
+          {
+            "name": "pt-20 (5rem)",
+            "value": "pt-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "paddingBottom",
+        "label": "Padding bottom",
+        "options": [
+          {
+            "name": "pb-4 (1rem)",
+            "value": "pb-4"
+          },
+          {
+            "name": "pb-8 (2rem)",
+            "value": "pb-8"
+          },
+          {
+            "name": "pb-12 (3rem)",
+            "value": "pb-12"
+          },
+          {
+            "name": "pb-16 (4rem)",
+            "value": "pb-16"
+          },
+          {
+            "name": "pb-20 (5rem)",
+            "value": "pb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "margin",
+        "label": "Margin (top and bottom)",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "marginTop",
+        "label": "Margin top",
+        "options": [
+          {
+            "name": "mt-4 (1rem)",
+            "value": "mt-4"
+          },
+          {
+            "name": "mt-8 (2rem)",
+            "value": "mt-8"
+          },
+          {
+            "name": "mt-12 (3rem)",
+            "value": "mt-12"
+          },
+          {
+            "name": "mt-16 (4rem)",
+            "value": "mt-16"
+          },
+          {
+            "name": "mt-20 (5rem)",
+            "value": "mt-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "marginBottom",
+        "label": "Margin bottom",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ac-accordion",
+    "fields": [
+      {
+        "component": "boolean",
+        "name": "singleExpansion",
+        "label": "Single Expansion",
+        "valueType": "boolean"
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-accordion-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "panelLabel",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "ac-banner",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "imagePath",
+        "label": "Image Path",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "pretitle",
+        "label": "Pretitle",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Title type",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "date",
+        "label": "Date",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "action1Label",
+        "label": "Action 1 text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "action1Link",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "name": "action2Label",
+        "label": "Action 2 text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "action2Link",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "select",
+        "name": "bannerTypeOption",
+        "label": "Banner Type",
+        "options": [
+          {
+            "name": "Content banner",
+            "value": "ac-core-content-banner"
+          },
+          {
+            "name": "Innovation banner",
+            "value": "ac-core-innovation-banner"
+          },
+          {
+            "name": "Innovation hero banner",
+            "value": "ac-core-innovation-hero-banner"
+          },
+          {
+            "name": "Product banner",
+            "value": "ac-core-product-banner"
+          },
+          {
+            "name": "Promo banner",
+            "value": "ac-core-promo-banner"
+          },
+          {
+            "name": "Section banner",
+            "value": "ac-core-section-banner"
+          },
+          {
+            "name": "Section teaser",
+            "value": "ac-core-section-teaser"
+          },
+          {
+            "name": "Startpage banner",
+            "value": "ac-core-startpage-banner"
+          },
+          {
+            "name": "Sticky banner",
+            "value": "ac-core-sticky-banner"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "bannerContentAlignment",
+        "label": "Banner Content Alignment",
+        "options": [
+          {
+            "name": "Content center",
+            "value": "modifier-content-center"
+          },
+          {
+            "name": "Content right",
+            "value": "modifier-content-right"
+          }
+        ],
+        "condition": {
+          "!": {
+            "in": [
+              {
+                "var": "bannerTypeOption"
+              },
+              [
+                "ac-core-innovation-banner",
+                "ac-core-innovation-hero-banner",
+                "ac-core-product-banner",
+                "ac-core-promo-banner",
+                "ac-core-section-banner",
+                "ac-core-section-teaser",
+                "ac-core-startpage-banner",
+                "ac-core-sticky-banner"
+              ]
+            ]
+          }
+        }
+      },
+      {
+        "component": "select",
+        "name": "bannerReverseContent",
+        "label": "Banner Reverse Content",
+        "options": [
+          {
+            "name": "Reverse",
+            "value": "modifier-reverse-content"
+          }
+        ],
+        "condition": {
+          "in": [
+            {
+              "var": "bannerTypeOption"
+            },
+            [
+              "ac-core-innovation-banner",
+              "ac-core-innovation-hero-banner",
+              "ac-core-product-banner"
+            ]
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "name": "cardAction",
+        "label": "Card Action",
+        "options": [
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "Whole-card link",
+            "value": "link"
+          },
+          {
+            "name": "Buttons",
+            "value": "buttons"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "descriptionLineClamp",
+        "label": "Description Line Clamp",
+        "options": [
+          {
+            "name": "2 lines",
+            "value": "teaser-description-line-clamp-2"
+          },
+          {
+            "name": "4 lines",
+            "value": "teaser-description-line-clamp-4"
+          },
+          {
+            "name": "6 lines",
+            "value": "teaser-description-line-clamp-6"
+          },
+          {
+            "name": "8 lines",
+            "value": "teaser-description-line-clamp-8"
+          },
+          {
+            "name": "10 lines",
+            "value": "teaser-description-line-clamp-10"
+          },
+          {
+            "name": "12 lines",
+            "value": "teaser-description-line-clamp-12"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "headlineLineClamp",
+        "label": "Headline Line Clamp",
+        "options": [
+          {
+            "name": "1 line",
+            "value": "teaser-headline-line-clamp-1"
+          },
+          {
+            "name": "2 lines",
+            "value": "teaser-headline-line-clamp-2"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "promoBannerStyle",
+        "label": "Promo Banner Style",
+        "options": [
+          {
+            "name": "Boxed",
+            "value": "modifier-boxed"
+          },
+          {
+            "name": "Card",
+            "value": "modifier-card"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "bannerTypeOption"
+            },
+            "ac-core-promo-banner"
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "name": "sectionTeaserImage",
+        "label": "Section Teaser Image",
+        "options": [
+          {
+            "name": "Image primary",
+            "value": "modifier-image-primary"
+          },
+          {
+            "name": "Image secondary",
+            "value": "modifier-image-secondary"
+          },
+          {
+            "name": "Image tertiary",
+            "value": "modifier-image-tertiary"
+          },
+          {
+            "name": "Image quaternary",
+            "value": "modifier-image-quaternary"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "bannerTypeOption"
+            },
+            "ac-core-section-teaser"
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "startpageBannerModifier",
+        "label": "Startpage Banner Modifier",
+        "options": [
+          {
+            "name": "Reverse",
+            "value": "modifier-reverse-content"
+          },
+          {
+            "name": "No icon",
+            "value": "modifier-no-icons"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "bannerTypeOption"
+            },
+            "ac-core-startpage-banner"
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "name": "stickyBannerContentTypeOption",
+        "label": "Sticky Banner Content Type",
+        "options": [
+          {
+            "name": "Contact",
+            "value": "modifier-contact"
+          },
+          {
+            "name": "E-learning",
+            "value": "modifier-e-learning"
+          },
+          {
+            "name": "Download",
+            "value": "modifier-download"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "bannerTypeOption"
+            },
+            "ac-core-sticky-banner"
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "name": "themeTypeOption",
+        "label": "Theme Type",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "style-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "style-secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "style-tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "style-quaternary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-button",
+    "fields": [
+      {
+        "component": "text",
+        "name": "text",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "buttonLink",
+        "label": "Button Link"
+      },
+      {
+        "component": "select",
+        "name": "buttonGridCarouselSwitch",
+        "label": "Button Grid Carousel Switch",
+        "options": [
+          {
+            "name": "Grid",
+            "value": "ac-core-grid-button active text-capitalize"
+          },
+          {
+            "name": "Carousel",
+            "value": "ac-core-carousel-button text-capitalize"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "buttonIcon",
+        "label": "Button Icon",
+        "options": [
+          {
+            "name": "Chevron right",
+            "value": "chevron-right"
+          },
+          {
+            "name": "Chevron up",
+            "value": "chevron-up"
+          },
+          {
+            "name": "Close",
+            "value": "close"
+          },
+          {
+            "name": "Email",
+            "value": "email"
+          },
+          {
+            "name": "Phone",
+            "value": "phone"
+          },
+          {
+            "name": "Play",
+            "value": "play"
+          },
+          {
+            "name": "Chevron left",
+            "value": "chevron-left"
+          },
+          {
+            "name": "Chevron down",
+            "value": "chevron-down"
+          },
+          {
+            "name": "Contact",
+            "value": "contact"
+          },
+          {
+            "name": "Launch",
+            "value": "launch"
+          },
+          {
+            "name": "Download",
+            "value": "download"
+          },
+          {
+            "name": "Arrow right",
+            "value": "arrow-right"
+          },
+          {
+            "name": "Planet",
+            "value": "planet"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "buttonIconPosition",
+        "label": "Button Icon Position",
+        "options": [
+          {
+            "name": "Leading",
+            "value": "modifier-leading"
+          },
+          {
+            "name": "Trailing",
+            "value": "modifier-trailing"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "buttonTheme",
+        "label": "Button Theme",
+        "options": [
+          {
+            "name": "Primary positive",
+            "value": "style-primary-positive"
+          },
+          {
+            "name": "Primary negative",
+            "value": "style-primary-negative"
+          },
+          {
+            "name": "Secondary positive",
+            "value": "style-secondary-positive"
+          },
+          {
+            "name": "Secondary negative",
+            "value": "style-secondary-negative"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "linkTarget",
+        "label": "Link Target",
+        "options": [
+          {
+            "name": "Same tab",
+            "value": "_self"
+          },
+          {
+            "name": "New tab",
+            "value": "_blank"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "modifierVariant",
+        "label": "Modifier Variant",
+        "options": [
+          {
+            "name": "Solid",
+            "value": "modifier-solid"
+          },
+          {
+            "name": "Outline",
+            "value": "modifier-outline"
+          },
+          {
+            "name": "Ghost",
+            "value": "modifier-ghost"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-card",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "imagePath",
+        "label": "Image Path",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "pretitle",
+        "label": "Pretitle",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Title type",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "date",
+        "label": "Date",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "action1Label",
+        "label": "Action 1 text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "action1Link",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "name": "action2Label",
+        "label": "Action 2 text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "action2Link",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "select",
+        "name": "cardTypeOption",
+        "label": "Card Type",
+        "options": [
+          {
+            "name": "Card content",
+            "value": "ac-core-card-content"
+          },
+          {
+            "name": "Card AEM",
+            "value": "ac-core-card-aem"
+          },
+          {
+            "name": "Card feature",
+            "value": "ac-core-card-feature"
+          },
+          {
+            "name": "Card icon",
+            "value": "ac-core-card-icon"
+          },
+          {
+            "name": "Card product",
+            "value": "ac-core-card-product"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "cardAction",
+        "label": "Card Action",
+        "options": [
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "Whole-card link",
+            "value": "link"
+          },
+          {
+            "name": "Buttons",
+            "value": "buttons"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "cardAemModifier",
+        "label": "Card Aem Modifier",
+        "options": [
+          {
+            "name": "Linked video",
+            "value": "modifier-linked-video"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "cardTypeOption"
+            },
+            "ac-core-card-aem"
+          ]
+        }
+      },
+      {
+        "component": "multiselect",
+        "name": "cardContentModifier",
+        "label": "Card Content Modifier",
+        "options": [
+          {
+            "name": "Media filled",
+            "value": "modifier-media-filled"
+          },
+          {
+            "name": "Media filled (animated)",
+            "value": "modifier-media-filled-animation"
+          },
+          {
+            "name": "Content center",
+            "value": "modifier-content-center"
+          },
+          {
+            "name": "Banner",
+            "value": "modifier-banner"
+          },
+          {
+            "name": "Content right",
+            "value": "modifier-content-right"
+          },
+          {
+            "name": "Overlap image",
+            "value": "modifier-overlap-image"
+          }
+        ],
+        "condition": {
+          "!": {
+            "in": [
+              {
+                "var": "cardTypeOption"
+              },
+              [
+                "ac-core-card-aem",
+                "ac-core-card-feature",
+                "ac-core-card-icon",
+                "ac-core-card-product"
+              ]
+            ]
+          }
+        }
+      },
+      {
+        "component": "select",
+        "name": "cardFeatureModifier",
+        "label": "Card Feature Modifier",
+        "options": [
+          {
+            "name": "Check",
+            "value": "modifier-check"
+          },
+          {
+            "name": "Circle check",
+            "value": "modifier-circle-check"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "cardTypeOption"
+            },
+            "ac-core-card-feature"
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "name": "cardIconTypeOption",
+        "label": "Card Icon Type",
+        "options": [
+          {
+            "name": "Vertical",
+            "value": "modifier-vertical"
+          },
+          {
+            "name": "Horizontal",
+            "value": "modifier-horizontal"
+          },
+          {
+            "name": "Centered",
+            "value": "modifier-centered"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "cardTypeOption"
+            },
+            "ac-core-card-icon"
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "name": "cardIconVariant",
+        "label": "Card Icon Variant",
+        "options": [
+          {
+            "name": "Solid",
+            "value": "modifier-solid"
+          },
+          {
+            "name": "Outline",
+            "value": "modifier-outline"
+          },
+          {
+            "name": "Transparent",
+            "value": "modifier-transparent"
+          },
+          {
+            "name": "Transparent filled",
+            "value": "modifier-transparent-filled"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "cardTypeOption"
+            },
+            "ac-core-card-icon"
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "name": "cardImageCroppingTypeOption",
+        "label": "Card Image Cropping Type",
+        "options": [
+          {
+            "name": "No image crop",
+            "value": "modifier-no-image-crop"
+          }
+        ],
+        "condition": {
+          "!": {
+            "in": [
+              {
+                "var": "cardTypeOption"
+              },
+              [
+                "ac-core-card-aem",
+                "ac-core-card-feature",
+                "ac-core-card-icon",
+                "ac-core-card-product"
+              ]
+            ]
+          }
+        }
+      },
+      {
+        "component": "select",
+        "name": "descriptionLineClamp",
+        "label": "Description Line Clamp",
+        "options": [
+          {
+            "name": "2 lines",
+            "value": "teaser-description-line-clamp-2"
+          },
+          {
+            "name": "4 lines",
+            "value": "teaser-description-line-clamp-4"
+          },
+          {
+            "name": "6 lines",
+            "value": "teaser-description-line-clamp-6"
+          },
+          {
+            "name": "8 lines",
+            "value": "teaser-description-line-clamp-8"
+          },
+          {
+            "name": "10 lines",
+            "value": "teaser-description-line-clamp-10"
+          },
+          {
+            "name": "12 lines",
+            "value": "teaser-description-line-clamp-12"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "headlineLineClamp",
+        "label": "Headline Line Clamp",
+        "options": [
+          {
+            "name": "1 line",
+            "value": "teaser-headline-line-clamp-1"
+          },
+          {
+            "name": "2 lines",
+            "value": "teaser-headline-line-clamp-2"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "modifierVariant",
+        "label": "Modifier Variant",
+        "options": [
+          {
+            "name": "Solid",
+            "value": "modifier-solid"
+          },
+          {
+            "name": "Outline",
+            "value": "modifier-outline"
+          },
+          {
+            "name": "Ghost",
+            "value": "modifier-ghost"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "cardTypeOption"
+            },
+            "ac-core-card-product"
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "themeTypeOption",
+        "label": "Theme Type",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "style-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "style-secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "style-tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "style-quaternary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-carousel",
+    "fields": [
+      {
+        "component": "select",
+        "name": "carouselItemTypeOption",
+        "label": "Carousel Item Type",
+        "options": [
+          {
+            "name": "Image",
+            "value": "image"
+          },
+          {
+            "name": "Hero image",
+            "value": "hero"
+          },
+          {
+            "name": "Teaser",
+            "value": "teaser"
+          },
+          {
+            "name": "Hero teaser",
+            "value": "hero-teaser"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "carouselTheme",
+        "label": "Carousel Theme",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "style-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "style-secondary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-carousel-item",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "imagePath",
+        "label": "Image Path",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "alt",
+        "label": "Alt",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "pretitle",
+        "label": "Pretitle",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      }
+    ]
+  },
+  {
+    "id": "ac-container",
+    "fields": [
+      {
+        "component": "select",
+        "name": "gridVariant",
+        "label": "Grid Variant",
+        "options": [
+          {
+            "name": "1 column",
+            "value": "grid-col-1"
+          },
+          {
+            "name": "2 columns",
+            "value": "grid-col-2"
+          },
+          {
+            "name": "3 columns",
+            "value": "grid-col-3"
+          },
+          {
+            "name": "4 columns",
+            "value": "grid-col-4"
+          },
+          {
+            "name": "5 columns",
+            "value": "grid-col-5"
+          },
+          {
+            "name": "1/3 + 2/3",
+            "value": "grid-col-1-2"
+          },
+          {
+            "name": "2/3 + 1/3",
+            "value": "grid-col-2-1"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "contentWidth",
+        "label": "Content Width",
+        "options": [
+          {
+            "name": "Narrow (6)",
+            "value": "6"
+          },
+          {
+            "name": "Standard (8)",
+            "value": "8"
+          },
+          {
+            "name": "Wide (10)",
+            "value": "10"
+          },
+          {
+            "name": "Default (12)",
+            "value": "12"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "blockContainerVariant",
+        "label": "Block Container Variant",
+        "options": [
+          {
+            "name": "Quote Section",
+            "value": "ac-core-block-quote-section"
+          },
+          {
+            "name": "Section Banner with cards",
+            "value": "ac-core-block-section-banner-with-cards"
+          },
+          {
+            "name": "Content with splide grid carousel",
+            "value": "ac-core-block-content-with-splide-grid-carousel"
+          },
+          {
+            "name": "Content with splide grid carousel horizontal",
+            "value": "ac-core-block-content-with-splide-grid-carousel modifier-horizontal"
+          },
+          {
+            "name": "Splide Grid carousel",
+            "value": "ac-core-block-splide-grid-carousel"
+          },
+          {
+            "name": "Block Country Selector",
+            "value": "ac-core-block-country-selector"
+          },
+          {
+            "name": "CTA Section",
+            "value": "ac-core-block-cta-section"
+          },
+          {
+            "name": "CTA Section centered",
+            "value": "ac-core-block-cta-section modifier-content-centered"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "carouselVariant",
+        "label": "Carousel Variant",
+        "options": [
+          {
+            "name": "Splide Carousel",
+            "value": "ac-core-splide-carousel ds-splide-carousel"
+          },
+          {
+            "name": "Splide Grid Carousel",
+            "value": "ac-core-splide-grid-carousel ds-splide-carousel"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "filterBlockVariant",
+        "label": "Filter Block Variant",
+        "options": [
+          {
+            "name": "Filter block",
+            "value": "ac-core-block-teasers-with-filter"
+          },
+          {
+            "name": "Top content",
+            "value": "ac-core-block-teasers-with-filter-top-content"
+          },
+          {
+            "name": "Filter search",
+            "value": "ac-core-filter"
+          },
+          {
+            "name": "Cards",
+            "value": "ac-core-block-teasers-with-filter-cards"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMt",
+        "label": "Spacing Mt",
+        "options": [
+          {
+            "name": "mt-4 (1rem)",
+            "value": "mt-4"
+          },
+          {
+            "name": "mt-8 (2rem)",
+            "value": "mt-8"
+          },
+          {
+            "name": "mt-12 (3rem)",
+            "value": "mt-12"
+          },
+          {
+            "name": "mt-16 (4rem)",
+            "value": "mt-16"
+          },
+          {
+            "name": "mt-20 (5rem)",
+            "value": "mt-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingPb",
+        "label": "Spacing Pb",
+        "options": [
+          {
+            "name": "pb-4 (1rem)",
+            "value": "pb-4"
+          },
+          {
+            "name": "pb-8 (2rem)",
+            "value": "pb-8"
+          },
+          {
+            "name": "pb-12 (3rem)",
+            "value": "pb-12"
+          },
+          {
+            "name": "pb-16 (4rem)",
+            "value": "pb-16"
+          },
+          {
+            "name": "pb-20 (5rem)",
+            "value": "pb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingPt",
+        "label": "Spacing Pt",
+        "options": [
+          {
+            "name": "pt-4 (1rem)",
+            "value": "pt-4"
+          },
+          {
+            "name": "pt-8 (2rem)",
+            "value": "pt-8"
+          },
+          {
+            "name": "pt-12 (3rem)",
+            "value": "pt-12"
+          },
+          {
+            "name": "pt-16 (4rem)",
+            "value": "pt-16"
+          },
+          {
+            "name": "pt-20 (5rem)",
+            "value": "pt-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingPy",
+        "label": "Spacing Py",
+        "options": [
+          {
+            "name": "py-4 (1rem)",
+            "value": "py-4"
+          },
+          {
+            "name": "py-8 (2rem)",
+            "value": "py-8"
+          },
+          {
+            "name": "py-12 (3rem)",
+            "value": "py-12"
+          },
+          {
+            "name": "py-16 (4rem)",
+            "value": "py-16"
+          },
+          {
+            "name": "py-20 (5rem)",
+            "value": "py-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "themeTypeOption",
+        "label": "Theme Type",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "style-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "style-secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "style-tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "style-quaternary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "tocLayout",
+        "label": "Toc Layout",
+        "options": [
+          {
+            "name": "TOC",
+            "value": "ds-brand-block-toc-layout"
+          },
+          {
+            "name": "Sidebar",
+            "value": "ds-brand-block-toc-layout-sidebar"
+          },
+          {
+            "name": "Sticky container",
+            "value": "ds-brand-sticky-container"
+          },
+          {
+            "name": "TOC Content block",
+            "value": "TOC-content-container"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "nestId",
+        "label": "Name",
+        "description": "The name blocks give in \"Nest inside\" to be moved into this container."
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-download",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "url",
+        "label": "Url"
+      },
+      {
+        "component": "text",
+        "name": "filename",
+        "label": "Filename",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "format",
+        "label": "Format",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "size",
+        "label": "Size",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "actionLabel",
+        "label": "Action Label",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "select",
+        "name": "downloadDensity",
+        "label": "Download Density",
+        "options": [
+          {
+            "name": "Compact",
+            "value": "modifier-compact"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "themeTypeOption",
+        "label": "Theme Type",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "style-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "style-secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "style-tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "style-quaternary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-embed-iframe",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "src",
+        "label": "Src",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "width",
+        "label": "Width",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "height",
+        "label": "Height",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-embed-video",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "poster",
+        "label": "Poster",
+        "multi": false
+      },
+      {
+        "component": "boolean",
+        "name": "autoPlay",
+        "label": "Auto Play",
+        "valueType": "boolean"
+      },
+      {
+        "component": "boolean",
+        "name": "loop",
+        "label": "Loop",
+        "valueType": "boolean"
+      },
+      {
+        "component": "boolean",
+        "name": "muted",
+        "label": "Muted",
+        "valueType": "boolean"
+      },
+      {
+        "component": "boolean",
+        "name": "controls",
+        "label": "Controls",
+        "valueType": "boolean"
+      },
+      {
+        "component": "aem-content",
+        "name": "videoUrl",
+        "label": "Video"
+      },
+      {
+        "component": "text",
+        "name": "videoFormat",
+        "label": "Video MIME type (e.g. video/mp4)",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-image",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "src",
+        "label": "Src",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "alt",
+        "label": "Alt",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-link",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "assetPathWithQueryParams",
+        "label": "Asset Path With Query Params"
+      },
+      {
+        "component": "text",
+        "name": "tooltip",
+        "label": "Tooltip",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "linkModifier",
+        "label": "Link Modifier",
+        "options": [
+          {
+            "name": "With arrow",
+            "value": "modifier-arrow"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "linkTarget",
+        "label": "Link Target",
+        "options": [
+          {
+            "name": "Same tab",
+            "value": "_self"
+          },
+          {
+            "name": "New tab",
+            "value": "_blank"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "themeTypeOption",
+        "label": "Theme Type",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "style-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "style-secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "style-tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "style-quaternary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-list",
+    "fields": [
+      {
+        "component": "select",
+        "name": "listGridRows",
+        "label": "List Grid Rows",
+        "options": [
+          {
+            "name": "Grid row 2",
+            "value": "ds-brand-list-per-2"
+          },
+          {
+            "name": "Grid row 3",
+            "value": "ds-brand-list-per-3"
+          },
+          {
+            "name": "Grid row 4",
+            "value": "ds-brand-list-per-4"
+          },
+          {
+            "name": "Grid row 5",
+            "value": "ds-brand-list-per-5"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "listItemTypeOption",
+        "label": "List Item Type",
+        "options": [
+          {
+            "name": "Teasers",
+            "value": "ac-core-teaser"
+          },
+          {
+            "name": "Card Aem",
+            "value": "ac-core-card-aem ac-core-teaser"
+          },
+          {
+            "name": "Card content",
+            "value": "ac-core-card-content ac-core-teaser"
+          },
+          {
+            "name": "Card icon",
+            "value": "ac-core-card-icon ac-core-teaser modifier-vertical modifier-solid"
+          },
+          {
+            "name": "Key figure",
+            "value": "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "themeTypeOption",
+        "label": "Theme Type",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "style-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "style-secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "style-tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "style-quaternary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-list-item",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "imagePath",
+        "label": "Image Path",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "pretitle",
+        "label": "Pretitle",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "select",
+        "name": "itemStyle",
+        "label": "Item type",
+        "options": [
+          {
+            "name": "Teasers",
+            "value": "ac-core-teaser"
+          },
+          {
+            "name": "Card Aem",
+            "value": "ac-core-card-aem ac-core-teaser"
+          },
+          {
+            "name": "Card content",
+            "value": "ac-core-card-content ac-core-teaser"
+          },
+          {
+            "name": "Card icon",
+            "value": "ac-core-card-icon ac-core-teaser modifier-vertical modifier-solid"
+          },
+          {
+            "name": "Key figure",
+            "value": "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ac-separator",
+    "fields": [
+      {
+        "component": "boolean",
+        "name": "isDecorative",
+        "label": "Is Decorative",
+        "valueType": "boolean"
+      },
+      {
+        "component": "select",
+        "name": "separatorTheme",
+        "label": "Separator Theme",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "ds-brand-separator__primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "ds-brand-separator__secondary"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-splide-carousel",
+    "fields": [
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "splideCarouselItemTypeOption",
+        "label": "Splide Carousel Item Type",
+        "options": [
+          {
+            "name": "Image",
+            "value": "image"
+          },
+          {
+            "name": "Teaser",
+            "value": "teaser"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-splide-carousel-item",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "imagePath",
+        "label": "Image Path",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "alt",
+        "label": "Alt",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "pretitle",
+        "label": "Pretitle",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      }
+    ]
+  },
+  {
+    "id": "ac-table-of-content",
+    "fields": [
+      {
+        "component": "select",
+        "name": "startLevel",
+        "label": "Start Level",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          },
+          {
+            "name": "H6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "stopLevel",
+        "label": "Stop Level",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          },
+          {
+            "name": "H6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "tocListTypeOption",
+        "label": "Toc List Type",
+        "options": [
+          {
+            "name": "Numbered",
+            "value": "numbered"
+          },
+          {
+            "name": "Bulleted",
+            "value": "bulleted"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-table",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "themeTypeOption",
+        "label": "Theme Type",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "style-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "style-secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "style-tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "style-quaternary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-tabs",
+    "fields": [
+      {
+        "component": "boolean",
+        "name": "useResponsiveSelect",
+        "label": "Use Responsive Select",
+        "valueType": "boolean"
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "tabsLayout",
+        "label": "Tabs Layout",
+        "options": [
+          {
+            "name": "Responsive",
+            "value": "ds-brand-responsive-select-run-js ds-container-query"
+          },
+          {
+            "name": "Segmented",
+            "value": "modifier-segmented-buttons"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "themeTypeOption",
+        "label": "Theme Type",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "style-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "style-secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "style-tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "style-quaternary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-tabs-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "panelLabel",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "ac-text-content",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "imagePath",
+        "label": "Image Path",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "pretitle",
+        "label": "Pretitle",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Title type",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "date",
+        "label": "Date",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "action1Label",
+        "label": "Action 1 text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "action1Link",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "name": "action2Label",
+        "label": "Action 2 text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "action2Link",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "select",
+        "name": "textContentTypeOption",
+        "label": "Text Content Type",
+        "options": [
+          {
+            "name": "Teaser",
+            "value": "teaser"
+          },
+          {
+            "name": "Quote",
+            "value": "quote"
+          },
+          {
+            "name": "Highlight",
+            "value": "highlight"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "descriptionLineClamp",
+        "label": "Description Line Clamp",
+        "options": [
+          {
+            "name": "2 lines",
+            "value": "teaser-description-line-clamp-2"
+          },
+          {
+            "name": "4 lines",
+            "value": "teaser-description-line-clamp-4"
+          },
+          {
+            "name": "6 lines",
+            "value": "teaser-description-line-clamp-6"
+          },
+          {
+            "name": "8 lines",
+            "value": "teaser-description-line-clamp-8"
+          },
+          {
+            "name": "10 lines",
+            "value": "teaser-description-line-clamp-10"
+          },
+          {
+            "name": "12 lines",
+            "value": "teaser-description-line-clamp-12"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "headlineLineClamp",
+        "label": "Headline Line Clamp",
+        "options": [
+          {
+            "name": "1 line",
+            "value": "teaser-headline-line-clamp-1"
+          },
+          {
+            "name": "2 lines",
+            "value": "teaser-headline-line-clamp-2"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "textContentModifier",
+        "label": "Text Content Modifier",
+        "options": [
+          {
+            "name": "Content center",
+            "value": "modifier-content-center"
+          },
+          {
+            "name": "Content right",
+            "value": "modifier-content-right"
+          },
+          {
+            "name": "Pretitle secondary",
+            "value": "modifier-pretitle-secondary"
+          },
+          {
+            "name": "Pretitle tertiary",
+            "value": "modifier-pretitle-tertiary"
+          },
+          {
+            "name": "Transparent",
+            "value": "modifier-transparent"
+          },
+          {
+            "name": "Icon on phone links",
+            "value": "modifier-icon-phone-on-links"
+          },
+          {
+            "name": "Icon on email links",
+            "value": "modifier-icon-email-on-links"
+          },
+          {
+            "name": "Icons on phone and email links (order)",
+            "value": "modifier-icon-phone-email-order-icon-links"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "themeTypeOption",
+        "label": "Theme Type",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "style-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "style-secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "style-tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "style-quaternary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-text",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "textContentAlignment",
+        "label": "Text Content Alignment",
+        "options": [
+          {
+            "name": "Center",
+            "value": "modifier-content-center"
+          },
+          {
+            "name": "Right",
+            "value": "modifier-content-right"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "textIcon",
+        "label": "Text Icon",
+        "options": [
+          {
+            "name": "Call",
+            "value": "call"
+          },
+          {
+            "name": "Contact mail",
+            "value": "contact_mail"
+          },
+          {
+            "name": "Email",
+            "value": "email"
+          },
+          {
+            "name": "Account",
+            "value": "account"
+          },
+          {
+            "name": "Language",
+            "value": "language"
+          },
+          {
+            "name": "Arrow left",
+            "value": "arrow-left"
+          },
+          {
+            "name": "Arrow right",
+            "value": "arrow-right"
+          },
+          {
+            "name": "Pin drop",
+            "value": "pin-drop"
+          },
+          {
+            "name": "3d rotation",
+            "value": "3d-rotation"
+          },
+          {
+            "name": "Alarm",
+            "value": "alarm"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "textLargeSize",
+        "label": "Text Large Size",
+        "options": [
+          {
+            "name": "Large",
+            "value": "modification-text-large"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "themeTypeOption",
+        "label": "Theme Type",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "style-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "style-secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "style-tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "style-quaternary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
+      }
+    ]
+  },
+  {
+    "id": "ac-title",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Title type",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          },
+          {
+            "name": "H6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "themeTypeOption",
+        "label": "Theme Type",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "style-primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "style-secondary"
+          },
+          {
+            "name": "Tertiary",
+            "value": "style-tertiary"
+          },
+          {
+            "name": "Quaternary",
+            "value": "style-quaternary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
       }
     ]
   },
