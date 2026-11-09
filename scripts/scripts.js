@@ -106,6 +106,8 @@ async function finishDesignSystemPage(main) {
   // The editor swaps in a section without decorateMain: put it into its layout again.
   decorateTocSections(main);
   nestByParent(main, { layoutSelector: NESTABLE_SELECTOR, layoutModels: LAYOUT_MODELS });
+  // Every block has its final markup now: a table of contents lists the page's headings again.
+  document.dispatchEvent(new CustomEvent('ds:page-ready'));
   await startPageControllers(document, {
     inEditor: isAuthoringContext(document),
     onWarning(problems) {
