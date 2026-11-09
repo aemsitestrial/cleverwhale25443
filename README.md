@@ -42,6 +42,44 @@ npm run ds:blocks    # regenerates the ac-* models and field tables, then compon
 The site serves the files in `ds-eds-assets/`, which are committed; the package is not an npm
 dependency, so `npm ci` does not need the archive.
 
+### Header and footer
+
+`blocks/header` and `blocks/footer` build the AC header (with mega menu and breadcrumb) and the AC footer
+from the `/nav` and `/footer` fragments, following the package's `contracts/ac-header.md` and
+`contracts/ac-footer.md`. They load the `ac-chrome-header`, `ac-chrome-breadcrumb` and `ac-chrome-footer`
+bundles and start the `ac-header` and `ac-footer` page controllers. Both fragments are default content
+(text, lists, images); the order of the content decides what it becomes.
+
+`/nav`, four sections in this order:
+
+1. **Brand**: the logo image and its link (the home page when there is no link).
+2. **Navigation**: a nested list, up to four levels deep. It feeds the middle bar (level 0) and the mega
+   menu. A second list holds the mega menu's secondary links.
+3. **Top bar**:
+   - the first list is the local links and the second list is the global links;
+   - links in paragraphs are global link buttons (`:globe:` in the text marks the locations link, bold pins
+     it);
+   - a list whose items hold lists is the language switcher (region, then its languages; a link's title is
+     its `lang`).
+4. **Tools**: links named by an icon (`:search:`) or by their first word (Search, Profile, Cart, Stock,
+   Statistic). The rest of the text is the label. The cart's label is its count. The stock link's title is
+   the change (`+1.2%` or `-0.4%` sets the state).
+
+The breadcrumb is the page's branch of the navigation. Page metadata `breadcrumb: off` hides it, and
+`breadcrumb-title` names the current page.
+
+`/footer`:
+
+- Each heading starts a column. The paragraphs after it are the column's text. The list after it is the
+  column's links; a link's title is its subtitle.
+- A paragraph whose links all hold an icon (`:linkedin:` is `/icons/linkedin.svg`) holds the social links.
+- Any other paragraph is a bottom line:
+  - a paragraph with a single link becomes a link button;
+  - a link to `#cookie-settings` opens the consent dialog;
+  - anything else is text.
+
+Page metadata `back-to-top: off` removes the back-to-top button.
+
 ## Prerequisites
 
 - nodejs 18.3.x or newer
