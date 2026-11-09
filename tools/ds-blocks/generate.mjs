@@ -362,6 +362,12 @@ const sectionFields = [
     component: 'reference', name: 'backgroundImageReference', label: 'Background image', multi: false,
   },
   selectField('gridVariant', 'Grid', containerLists.gridVariant),
+  // The table of contents layout (decorateTocSections in scripts/ds.js): the section's
+  // AC Table Of Content blocks in a sticky sidebar beside the rest of the section.
+  {
+    ...selectField('layout', 'Layout', [{ value: 'toc', label: 'Table of contents beside the content' }]),
+    description: 'Table of contents: the section\'s AC Table Of Content goes into a sticky sidebar beside the rest of the section',
+  },
   selectField('contentWidth', 'Content width', [...containerLists.contentWidth, { value: 'bleed', label: 'Full bleed' }]),
   selectField('padding', 'Padding (top and bottom)', commonLists.spacingPy),
   selectField('paddingTop', 'Padding top', commonLists.spacingPt),

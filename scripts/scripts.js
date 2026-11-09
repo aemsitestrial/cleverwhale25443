@@ -16,7 +16,7 @@ import {
 } from '../ds-eds-assets/js/vendor/page-glue.js';
 import nestByParent, { isAuthoringContext } from '../ds-eds-assets/js/vendor/nest-by-parent.js';
 import { startPageControllers } from '../ds-eds-assets/js/vendor/start-page-controllers.js';
-import { NESTABLE_SELECTOR, LAYOUT_MODELS } from './ds.js';
+import { NESTABLE_SELECTOR, LAYOUT_MODELS, decorateTocSections } from './ds.js';
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -92,6 +92,8 @@ export function decorateMain(main) {
   // The design system's container on each section, from its section fields (background, grid,
   // content width, spacing). After decorateBlocks, before the blocks load.
   decorateContainerSections(main);
+  // A section with the layout "Table of contents": its table of contents beside its content.
+  decorateTocSections(main);
 }
 
 /**
@@ -101,6 +103,8 @@ export function decorateMain(main) {
  * @param {Element} main The main element
  */
 async function finishDesignSystemPage(main) {
+  // The editor swaps in a section without decorateMain: put it into its layout again.
+  decorateTocSections(main);
   nestByParent(main, { layoutSelector: NESTABLE_SELECTOR, layoutModels: LAYOUT_MODELS });
   await startPageControllers(document, {
     inEditor: isAuthoringContext(document),

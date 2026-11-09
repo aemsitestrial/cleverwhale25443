@@ -188,6 +188,18 @@
       },
       {
         "component": "select",
+        "name": "layout",
+        "label": "Layout",
+        "options": [
+          {
+            "name": "Table of contents beside the content",
+            "value": "toc"
+          }
+        ],
+        "description": "Table of contents: the section's AC Table Of Content goes into a sticky sidebar beside the rest of the section"
+      },
+      {
+        "component": "select",
         "name": "contentWidth",
         "label": "Content width",
         "options": [

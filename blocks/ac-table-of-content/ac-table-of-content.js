@@ -20,7 +20,11 @@ export default function decorate(block) {
     editableProps: [],
   });
   const { startLevel = 'h2', stopLevel = 'h3' } = input.content;
-  const items = buildTocItems(block.closest('main') || document.body, { startLevel, stopLevel, exclude: block });
+  // In a section with the table of contents layout (decorateTocSections in scripts/ds.js) the list
+  // is the headings of the content column beside it; elsewhere, of the whole page.
+  const scope = block.closest('.ds-brand-block-toc-layout')?.querySelector('.TOC-content-container')
+    || block.closest('main') || document.body;
+  const items = buildTocItems(scope, { startLevel, stopLevel, exclude: block });
   const root = renderTableOfContent({
     ...input,
     content: {

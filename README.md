@@ -42,6 +42,21 @@ npm run ds:blocks    # regenerates the ac-* models and field tables, then compon
 The site serves the files in `ds-eds-assets/`, which are committed; the package is not an npm
 dependency, so `npm ci` does not need the archive.
 
+### Table of contents layout
+
+To put a table of contents beside the content it lists, set the section's **Layout** to "Table of
+contents beside the content" and add an AC Table Of Content block to that section.
+`decorateTocSections` (`scripts/ds.js`) then builds the design system's `BlockTableOfContentLayout`
+inside the section:
+
+- the AC Table Of Content block goes into the sticky sidebar (`ds-brand-block-toc-layout-sidebar` >
+  `ds-brand-sticky-container`);
+- the rest of the section goes into the content column (`TOC-content-container`);
+- the list holds only the headings of that column.
+
+The `toc-layout` page controller makes the sidebar sticky and marks the heading in view. It handles one
+layout per page.
+
 ### Header and footer
 
 `blocks/header` and `blocks/footer` build the AC header (with mega menu and breadcrumb) and the AC footer

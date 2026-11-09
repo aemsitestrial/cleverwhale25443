@@ -139,6 +139,76 @@ export function containerInput(own, items, fields) {
 
 export { editorAttributes, moveInstrumentation };
 
+// ---- Table of contents layout ------------------------------------------------------------------
+
+// The section field "Layout" and its value for the table of contents layout.
+export const TOC_LAYOUT = 'toc';
+
+/** div.container.responsivegrid.<cls> > div.cmp-container [> div.aem-Grid] > children */
+function layoutContainer(cls, children, grid = true) {
+  const outer = document.createElement('div');
+  outer.className = `container responsivegrid ${cls}`;
+  const inner = document.createElement('div');
+  inner.className = 'cmp-container';
+  outer.append(inner);
+  let holder = inner;
+  if (grid) {
+    holder = document.createElement('div');
+    holder.className = 'aem-Grid aem-Grid--12 aem-Grid--default--12';
+    inner.append(holder);
+  }
+  holder.append(...children);
+  return outer;
+}
+
+/**
+ * Puts a section whose "Layout" is "Table of contents" into the design system's table of contents
+ * layout (BlockTableOfContentLayout): its AC Table Of Content blocks go into the sticky sidebar,
+ * everything else of the section into the content column beside it, so the navigation and the
+ * content it lists are one section. The toc-layout page controller makes the sidebar sticky and
+ * marks the heading in view. The controller handles one layout per page (the first).
+ *
+ * Runs after decorateContainerSections (the layout sits inside the section's container) and again
+ * after an edit in the Universal Editor; a section that has the layout is left as it is, except
+ * that wrappers added to it since are sorted into the sidebar or the content column.
+ * @param {Element} main
+ */
+export function decorateTocSections(main) {
+  main.querySelectorAll(':scope > .section').forEach((section) => {
+    const existing = section.querySelector('.ds-brand-block-toc-layout');
+    if (!existing && section.dataset.layout !== TOC_LAYOUT) return;
+    section.classList.add('ac-toc-layout-section');
+
+    // Where the section's content is: its own container (and grid), when it has one.
+    const holder = existing?.parentElement
+      || section.querySelector(':scope > .cmp-container > .aem-Grid')
+      || section.querySelector(':scope > .cmp-container')
+      || section;
+    const loose = [...holder.children].filter((child) => child !== existing);
+    const isToc = (wrapper) => wrapper.matches('.ac-table-of-content-wrapper')
+      || !!wrapper.querySelector(':scope > .ac-table-of-content');
+    const sidebarItems = loose.filter(isToc);
+    const contentItems = loose.filter((wrapper) => !isToc(wrapper));
+
+    if (existing) {
+      existing.querySelector('.ds-brand-sticky-container > .cmp-container')?.append(...sidebarItems);
+      existing.querySelector('.TOC-content-container > .cmp-container > .aem-Grid')?.append(...contentItems);
+      return;
+    }
+
+    loadBundle('ac-block-table-of-content-layout');
+    const column = 'aem-GridColumn aem-GridColumn--default--12';
+    const layout = layoutContainer('ds-brand-block-toc-layout', [
+      layoutContainer(`ds-brand-block-toc-layout-sidebar ${column}`, [
+        layoutContainer('ds-brand-sticky-container', sidebarItems, false),
+      ]),
+      layoutContainer(`TOC-content-container ${column}`, contentItems),
+    ]);
+    holder.append(layout);
+    delete section.dataset.layout;
+  });
+}
+
 // The ac-* blocks of this site, and the selector of those that may be nested into a container
 // (a block that names one in its "Nest inside" field carries data-parent-id).
 export const DS_BLOCKS = [
