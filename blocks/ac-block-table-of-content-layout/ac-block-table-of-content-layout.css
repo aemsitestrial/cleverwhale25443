@@ -1,1 +1,13 @@
-/* The CSS of ac-block-table-of-content-layout comes from the design system package (loadBundle in ac-block-table-of-content-layout.js). */
+/* The layout's CSS comes from the design system package (bundle ac-block-table-of-content-layout).
+   The block itself is a marker at the top of the content column: hidden on the page, a small
+   label in the Universal Editor. */
+.ac-block-table-of-content-layout-wrapper:has(.ac-toc-layout-marker:empty) {
+  display: none;
+}
+
+.ac-toc-layout-marker:not(:empty) {
+  padding: 4px 8px;
+  border: 1px dashed #888;
+  color: #555;
+  font: 12px/1.4 sans-serif;
+}

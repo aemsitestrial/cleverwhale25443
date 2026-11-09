@@ -18,6 +18,7 @@ import nestByParent, { isAuthoringContext } from '../ds-eds-assets/js/vendor/nes
 import { startPageControllers } from '../ds-eds-assets/js/vendor/start-page-controllers.js';
 import {
   NESTABLE_SELECTOR, LAYOUT_MODELS, decorateTocSections, clearNoneSectionFields,
+  arrangeTocLayoutBlocks,
 } from './ds.js';
 
 /**
@@ -98,6 +99,9 @@ export function decorateMain(main) {
   decorateContainerSections(main);
   // A section with the layout "Table of contents": its table of contents beside its content.
   decorateTocSections(main);
+  // An AC Block Table Of Content Layout: what stands above it in its section goes into its sidebar,
+  // what stands below it into its content column.
+  arrangeTocLayoutBlocks(main);
 }
 
 /**
@@ -109,6 +113,7 @@ export function decorateMain(main) {
 async function finishDesignSystemPage(main) {
   // The editor swaps in a section without decorateMain: put it into its layout again.
   decorateTocSections(main);
+  arrangeTocLayoutBlocks(main);
   nestByParent(main, { layoutSelector: NESTABLE_SELECTOR, layoutModels: LAYOUT_MODELS });
   // Every block has its final markup now: a table of contents lists the page's headings again.
   document.dispatchEvent(new CustomEvent('ds:page-ready'));

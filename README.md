@@ -81,14 +81,22 @@ There are two ways to put a table of contents beside the content it lists. Both 
 system's `BlockTableOfContentLayout`.
 
 **The AC Block Table Of Content Layout block** (`blocks/ac-block-table-of-content-layout`, rendered by
-the package's `render-block-table-of-content-layout`) has two places that other blocks are nested into
-with "Nest inside":
+the package's `render-block-table-of-content-layout`) builds the layout from what follows it in its
+section. `arrangeTocLayoutBlocks` in `scripts/ds.js` does the split. Put the blocks in this order:
 
-- the content column, named by the block's **Name** (`toc-layout` when it is empty);
-- the sticky sidebar, named `<name>-sidebar`. The AC Table Of Content goes there, and any card or other
-  AC block goes under it, in page order.
+1. AC Block Table Of Content Layout.
+2. What goes into the sidebar under the navigation: a card, text, any block.
+3. AC Table Of Content. It goes to the top of the sticky sidebar.
+4. What goes into the content column, including text and headings typed in the section. The table of
+   contents lists the headings of this column.
 
-The table of contents lists the headings of the content column.
+Without an AC Table Of Content, everything after the block goes into the content column. What stands
+above the block stays where it is. A second layout block in the same section starts a new layout.
+
+On the page the block itself is invisible. In the Universal Editor it is a dashed label at the top of the
+content column, where its fields (spacing, Name) can be opened. Blocks from other places can still be
+nested in with "Nest inside": the block's **Name** (`toc-layout` when empty) is the content column, and
+`<name>-sidebar` is the sidebar.
 
 **A section** can be used instead. To put a table of contents beside the content it lists, set the section's **Layout** to "Table of
 contents beside the content" and add an AC Table Of Content block to that section.

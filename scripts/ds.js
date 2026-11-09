@@ -17,6 +17,9 @@ import {
 import { componentInput, renderComponentBlock } from '../ds-eds-assets/js/vendor/component-block.js';
 import { moveInstrumentation } from '../ds-eds-assets/js/vendor/move-instrumentation.js';
 import { dropHidden } from '../ds-eds-assets/js/vendor/model-conditions.js';
+import renderBlockTableOfContentLayout, {
+  layoutSlots,
+} from '../ds-eds-assets/js/vendor/render-block-table-of-content-layout.js';
 
 // The folder the package is installed in, relative to the site root (window.hlx.codeBasePath).
 export const ASSETS = 'ds-eds-assets';
@@ -267,7 +270,8 @@ function layoutContainer(cls, children, grid = true) {
  */
 export function decorateTocSections(main) {
   main.querySelectorAll(':scope > .section').forEach((section) => {
-    const existing = section.querySelector('.ds-brand-block-toc-layout');
+    // The section's own layout, not one an AC Block Table Of Content Layout built in it.
+    const existing = section.querySelector('[data-toc-layout-section]');
     if (!existing && section.dataset.layout !== TOC_LAYOUT) return;
     section.classList.add('ac-toc-layout-section');
 
@@ -304,8 +308,95 @@ export function decorateTocSections(main) {
     // any block whose "Nest inside" is TOC_SIDEBAR.
     const sidebar = layout.querySelector('.ds-brand-sticky-container > .cmp-container');
     sidebar.dataset.nestId = TOC_SIDEBAR;
+    layout.setAttribute('data-toc-layout-section', '');
     holder.append(layout);
     delete section.dataset.layout;
+  });
+}
+
+// ---- AC Block Table Of Content Layout ----------------------------------------------------------
+
+// The block, and the mark on a layout it has built.
+export const TOC_LAYOUT_BLOCK = 'ac-block-table-of-content-layout';
+const LAYOUT_OF_BLOCK = 'data-toc-layout-block';
+
+/**
+ * Puts the settings the block has read (blocks/ac-block-table-of-content-layout) on the layout
+ * around it: its classes (spacing) on the layout's root, and its name on the two places blocks are
+ * nested into by name ("Nest inside": <name> for the content column, <name>-sidebar for the
+ * sidebar). Does nothing until the block is in its layout and has been decorated.
+ * @param {HTMLElement} block
+ */
+export function applyTocLayoutSettings(block) {
+  const layout = block.closest(`[${LAYOUT_OF_BLOCK}]`);
+  const { layoutName, layoutClasses } = block.dataset;
+  if (!layout || layoutName === undefined) return;
+  const previous = (layout.dataset.layoutClasses || '').split(' ').filter(Boolean);
+  layout.classList.remove(...previous);
+  const classes = (layoutClasses || '').split(' ').filter(Boolean);
+  layout.classList.add(...classes);
+  layout.dataset.layoutClasses = classes.join(' ');
+  const { sidebar, content } = layoutSlots(layout);
+  content.dataset.nestId = layoutName;
+  sidebar.dataset.nestId = `${layoutName}-sidebar`;
+}
+
+/**
+ * Builds the layout of each AC Block Table Of Content Layout block in its section, from what
+ * follows the block, in this order:
+ *
+ *   AC Block Table Of Content Layout
+ *   what goes into the sidebar under the navigation (a card, text, any block)
+ *   AC Table Of Content            -> the top of the sticky sidebar
+ *   what goes into the content column (text and headings typed in the section too)
+ *
+ * The AC Table Of Content divides the two. Without one, everything after the block goes into the
+ * content column. What stands above the block stays where it is. The part ends at the next
+ * AC Block Table Of Content Layout of the section.
+ *
+ * The layout is built beside the block, in the section, and the block goes into it (at the top of
+ * the content column): the Universal Editor replaces a block after an edit, and the content must
+ * not be inside what it replaces.
+ *
+ * Runs before the blocks load, and again after an edit in the Universal Editor: a layout that is
+ * built already takes what was added after it in the section into its content column.
+ * @param {Element} main
+ */
+export function arrangeTocLayoutBlocks(main) {
+  const isToc = (el) => el.matches('.ac-table-of-content-wrapper')
+    || !!el.querySelector(':scope > .block.ac-table-of-content');
+  main.querySelectorAll(`:scope > .section .block.${TOC_LAYOUT_BLOCK}`).forEach((block) => {
+    const wrapper = block.parentElement;
+    const built = block.closest(`[${LAYOUT_OF_BLOCK}]`);
+    const layout = built || renderBlockTableOfContentLayout({ loadBundle });
+    const holder = built ? built.parentElement : wrapper.parentElement;
+    if (!holder) return;
+    const isStop = (el) => el.matches(`[${LAYOUT_OF_BLOCK}]`)
+      || !!el.querySelector(`:scope > .block.${TOC_LAYOUT_BLOCK}`);
+    const following = [];
+    let el = (built || wrapper).nextElementSibling;
+    while (el && !isStop(el)) {
+      following.push(el);
+      el = el.nextElementSibling;
+    }
+    const { sidebar, content } = layoutSlots(layout);
+    applyTocLayoutSettings(block);
+    if (built) {
+      content.append(...following);
+      return;
+    }
+    const tocAt = following.findIndex(isToc);
+    const underNavigation = tocAt < 0 ? [] : following.slice(0, tocAt);
+    const toc = tocAt < 0 ? [] : [following[tocAt]];
+    const columnItems = tocAt < 0 ? following : following.slice(tocAt + 1);
+    layout.setAttribute(LAYOUT_OF_BLOCK, '');
+    wrapper.replaceWith(layout);
+    content.append(wrapper, ...columnItems);
+    // The navigation first, what goes under it next, then the blocks nested in by name.
+    const firstNested = sidebar.querySelector(':scope > .block[data-parent-id]');
+    if (firstNested) firstNested.before(...toc, ...underNavigation);
+    else sidebar.append(...toc, ...underNavigation);
+    applyTocLayoutSettings(block);
   });
 }
 
