@@ -312,11 +312,11 @@ export function decorateTocSections(main) {
 // The ac-* blocks of this site, and the selector of those that may be nested into a container
 // (a block that names one in its "Nest inside" field carries data-parent-id).
 export const DS_BLOCKS = [
-  'ac-accordion', 'ac-banner', 'ac-button', 'ac-card', 'ac-carousel', 'ac-container', 'ac-download',
+  'ac-accordion', 'ac-block-table-of-content-layout', 'ac-banner', 'ac-button', 'ac-card', 'ac-carousel', 'ac-container', 'ac-download',
   'ac-embed-iframe', 'ac-embed-video', 'ac-image', 'ac-link', 'ac-list', 'ac-separator',
   'ac-splide-carousel', 'ac-table', 'ac-table-of-content', 'ac-tabs', 'ac-text', 'ac-text-content',
   'ac-title',
 ];
 export const NESTABLE_SELECTOR = DS_BLOCKS.map((name) => `.block.${name}[data-parent-id]`).join(',');
 // The models of the blocks that hold nested blocks.
-export const LAYOUT_MODELS = ['ac-container'];
+export const LAYOUT_MODELS = ['ac-container', 'ac-block-table-of-content-layout'];

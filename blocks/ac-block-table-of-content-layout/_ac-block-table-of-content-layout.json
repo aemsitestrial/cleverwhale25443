@@ -1,0 +1,102 @@
+{
+  "definitions": [
+    {
+      "title": "AC Block Table Of Content Layout",
+      "id": "ac-block-table-of-content-layout",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "AC Block Table Of Content Layout",
+              "model": "ac-block-table-of-content-layout",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-block-table-of-content-layout",
+      "fields": [
+        {
+          "component": "select",
+          "name": "spacingMb",
+          "label": "Spacing Mb",
+          "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
+            {
+              "name": "mb-4 (1rem)",
+              "value": "mb-4"
+            },
+            {
+              "name": "mb-8 (2rem)",
+              "value": "mb-8"
+            },
+            {
+              "name": "mb-12 (3rem)",
+              "value": "mb-12"
+            },
+            {
+              "name": "mb-16 (4rem)",
+              "value": "mb-16"
+            },
+            {
+              "name": "mb-20 (5rem)",
+              "value": "mb-20"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "spacingMy",
+          "label": "Spacing My",
+          "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
+            {
+              "name": "my-4 (1rem)",
+              "value": "my-4"
+            },
+            {
+              "name": "my-8 (2rem)",
+              "value": "my-8"
+            },
+            {
+              "name": "my-12 (3rem)",
+              "value": "my-12"
+            },
+            {
+              "name": "my-16 (4rem)",
+              "value": "my-16"
+            },
+            {
+              "name": "my-20 (5rem)",
+              "value": "my-20"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "nestId",
+          "label": "Name",
+          "description": "The name blocks give in \"Nest inside\": <name> for the content column, <name>-sidebar for the sidebar under the navigation (put the AC Table Of Content there). Empty: toc-layout."
+        },
+        {
+          "component": "text",
+          "name": "parentId",
+          "label": "Nest inside",
+          "description": "The name of the AC Container (or AC Block Table Of Content Layout) this block is moved into; <name>-sidebar for the sidebar of a table of contents layout, under the navigation (toc-sidebar in a section with the table of contents layout). Empty: it stays where it is."
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

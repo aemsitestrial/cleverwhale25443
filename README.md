@@ -77,7 +77,20 @@ with `renderCard`, as the AC Card block would.
 
 ### Table of contents layout
 
-To put a table of contents beside the content it lists, set the section's **Layout** to "Table of
+There are two ways to put a table of contents beside the content it lists. Both build the design
+system's `BlockTableOfContentLayout`.
+
+**The AC Block Table Of Content Layout block** (`blocks/ac-block-table-of-content-layout`, rendered by
+the package's `render-block-table-of-content-layout`) has two places that other blocks are nested into
+with "Nest inside":
+
+- the content column, named by the block's **Name** (`toc-layout` when it is empty);
+- the sticky sidebar, named `<name>-sidebar`. The AC Table Of Content goes there, and any card or other
+  AC block goes under it, in page order.
+
+The table of contents lists the headings of the content column.
+
+**A section** can be used instead. To put a table of contents beside the content it lists, set the section's **Layout** to "Table of
 contents beside the content" and add an AC Table Of Content block to that section.
 `decorateTocSections` (`scripts/ds.js`) then builds the design system's `BlockTableOfContentLayout`
 inside the section:
