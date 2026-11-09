@@ -67,3 +67,17 @@ export const currentPath = () => normalisePath(window.location.pathname);
 
 /** Whether a link goes to another site. */
 export const isExternal = (href) => /^https?:\/\//.test(href) && pathOf(href) === null;
+
+/**
+ * Shows a block of the nav page as a labelled list of its rows, on the nav page itself (the
+ * header reads the block from the nav page's markup, not from this). The rows keep their editor
+ * attributes, so the fields stay editable.
+ * @param {HTMLElement} block
+ * @param {string} title
+ */
+export function decorateNavConfig(block, title) {
+  block.classList.add('ac-nav-config');
+  if (!block.querySelector(':scope > .ac-nav-config-title')) {
+    block.prepend(el('div', { class: 'ac-nav-config-title' }, title));
+  }
+}

@@ -34,7 +34,11 @@
       "ac-table",
       "ac-tabs",
       "ac-text",
-      "ac-title"
+      "ac-title",
+      "ac-nav-header",
+      "ac-nav-links",
+      "ac-nav-languages",
+      "ac-nav-locator"
     ]
   },
   {
@@ -53,6 +57,24 @@
     "id": "ac-list",
     "components": [
       "ac-list-item"
+    ]
+  },
+  {
+    "id": "ac-nav-languages",
+    "components": [
+      "ac-nav-language"
+    ]
+  },
+  {
+    "id": "ac-nav-links",
+    "components": [
+      "ac-nav-link"
+    ]
+  },
+  {
+    "id": "ac-nav-locator",
+    "components": [
+      "ac-nav-locator-country"
     ]
   },
   {

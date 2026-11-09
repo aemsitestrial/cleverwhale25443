@@ -3587,6 +3587,372 @@
     ]
   },
   {
+    "id": "ac-nav-header",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "logo",
+        "label": "Logo",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "logoAlt",
+        "label": "Logo alt text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "homeLink",
+        "label": "Logo link",
+        "description": "The page the logo goes to. Empty: the home page."
+      },
+      {
+        "component": "boolean",
+        "name": "breadcrumb",
+        "label": "Show the breadcrumb",
+        "valueType": "boolean",
+        "value": true
+      },
+      {
+        "component": "aem-content",
+        "name": "searchLink",
+        "label": "Search link",
+        "description": "Empty: no search button."
+      },
+      {
+        "component": "aem-content",
+        "name": "profileLink",
+        "label": "Profile link",
+        "description": "Empty: no profile button."
+      },
+      {
+        "component": "text",
+        "name": "profileLabel",
+        "label": "Profile label",
+        "valueType": "string",
+        "description": "The signed-in user's name; empty when signed out."
+      },
+      {
+        "component": "aem-content",
+        "name": "cartLink",
+        "label": "Cart link",
+        "description": "Empty: no cart button."
+      },
+      {
+        "component": "text",
+        "name": "cartCount",
+        "label": "Cart count",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "stockLink",
+        "label": "Stock link",
+        "description": "Empty: no stock button."
+      },
+      {
+        "component": "text",
+        "name": "stockLabel",
+        "label": "Stock label",
+        "valueType": "string",
+        "description": "e.g. ATCO A"
+      },
+      {
+        "component": "text",
+        "name": "stockChange",
+        "label": "Stock change",
+        "valueType": "string",
+        "description": "e.g. +1.2% or -0.4%: the sign sets the colour."
+      },
+      {
+        "component": "aem-content",
+        "name": "statisticLink",
+        "label": "Statistic link",
+        "description": "Empty: no statistic button."
+      },
+      {
+        "component": "text",
+        "name": "skipLabel",
+        "label": "Skip button label",
+        "valueType": "string",
+        "description": "Default: Skip to main content"
+      },
+      {
+        "component": "text",
+        "name": "menuLabel",
+        "label": "Menu button label",
+        "valueType": "string",
+        "description": "Default: Menu"
+      },
+      {
+        "component": "text",
+        "name": "closeLabel",
+        "label": "Close button label",
+        "valueType": "string",
+        "description": "Default: Close"
+      },
+      {
+        "component": "text",
+        "name": "backLabel",
+        "label": "Back label (mega menu)",
+        "valueType": "string",
+        "description": "Default: Back to"
+      },
+      {
+        "component": "text",
+        "name": "mainMenuLabel",
+        "label": "Main menu label (mega menu)",
+        "valueType": "string",
+        "description": "Default: main menu"
+      },
+      {
+        "component": "text",
+        "name": "navigationLabel",
+        "label": "Navigation label (screen readers)",
+        "valueType": "string",
+        "description": "Default: Main navigation"
+      }
+    ]
+  },
+  {
+    "id": "ac-nav-language",
+    "fields": [
+      {
+        "component": "text",
+        "name": "region",
+        "label": "Region",
+        "valueType": "string",
+        "description": "e.g. Europe. Languages with the same region, one after another, form one group."
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link",
+        "description": "The page in this language."
+      },
+      {
+        "component": "text",
+        "name": "linkText",
+        "label": "Language",
+        "valueType": "string",
+        "description": "e.g. English"
+      },
+      {
+        "component": "text",
+        "name": "lang",
+        "label": "Language code",
+        "valueType": "string",
+        "description": "e.g. en"
+      }
+    ]
+  },
+  {
+    "id": "ac-nav-link",
+    "fields": [
+      {
+        "component": "select",
+        "name": "group",
+        "label": "Group",
+        "options": [
+          {
+            "name": "Main menu (middle bar and mega menu)",
+            "value": "main"
+          },
+          {
+            "name": "Mega menu secondary links",
+            "value": "secondary"
+          },
+          {
+            "name": "Top bar: local links",
+            "value": "local"
+          },
+          {
+            "name": "Top bar: global links",
+            "value": "global"
+          }
+        ],
+        "value": "main"
+      },
+      {
+        "component": "select",
+        "name": "level",
+        "label": "Level",
+        "options": [
+          {
+            "name": "1 (middle bar and mega menu)",
+            "value": "0"
+          },
+          {
+            "name": "2",
+            "value": "1"
+          },
+          {
+            "name": "3",
+            "value": "2"
+          },
+          {
+            "name": "4",
+            "value": "3"
+          }
+        ],
+        "value": "0",
+        "condition": {
+          "==": [
+            {
+              "var": "group"
+            },
+            "main"
+          ]
+        },
+        "description": "A link nests under the closest link above it with a lower level."
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "linkText",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "variant",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Link",
+            "value": "link"
+          },
+          {
+            "name": "Button",
+            "value": "button"
+          },
+          {
+            "name": "Button, pinned",
+            "value": "pinned"
+          },
+          {
+            "name": "Locations (globe icon)",
+            "value": "globe"
+          }
+        ],
+        "value": "link",
+        "condition": {
+          "==": [
+            {
+              "var": "group"
+            },
+            "global"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "ac-nav-locator",
+    "fields": [
+      {
+        "component": "select",
+        "name": "display",
+        "label": "Show the locator",
+        "options": [
+          {
+            "name": "When the visitor's country has another page",
+            "value": "auto"
+          },
+          {
+            "name": "Always",
+            "value": "always"
+          }
+        ],
+        "value": "auto"
+      },
+      {
+        "component": "text",
+        "name": "sentenceLabel",
+        "label": "Sentence",
+        "valueType": "string",
+        "description": "Default: Looks like you're in:"
+      },
+      {
+        "component": "text",
+        "name": "countryPlaceholder",
+        "label": "Country placeholder",
+        "valueType": "string",
+        "description": "Default: Country"
+      },
+      {
+        "component": "text",
+        "name": "languagePlaceholder",
+        "label": "Language placeholder",
+        "valueType": "string",
+        "description": "Default: Language"
+      },
+      {
+        "component": "text",
+        "name": "searchPlaceholder",
+        "label": "Search placeholder",
+        "valueType": "string",
+        "description": "Default: Search country"
+      },
+      {
+        "component": "text",
+        "name": "submitLabel",
+        "label": "Button label",
+        "valueType": "string",
+        "description": "{language} is replaced by the chosen language. Default: Switch to {language}"
+      },
+      {
+        "component": "aem-content",
+        "name": "viewAllLink",
+        "label": "View all link"
+      },
+      {
+        "component": "text",
+        "name": "viewAllLinkText",
+        "label": "View all text",
+        "valueType": "string",
+        "description": "Default: View all locations and languages"
+      }
+    ]
+  },
+  {
+    "id": "ac-nav-locator-country",
+    "fields": [
+      {
+        "component": "text",
+        "name": "countryCode",
+        "label": "Country code",
+        "valueType": "string",
+        "description": "ISO code, e.g. SE. The visitor's browser language region (sv-SE) selects it."
+      },
+      {
+        "component": "text",
+        "name": "country",
+        "label": "Country",
+        "valueType": "string",
+        "description": "e.g. Sweden"
+      },
+      {
+        "component": "text",
+        "name": "language",
+        "label": "Language",
+        "valueType": "string",
+        "description": "e.g. Swedish"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Page",
+        "description": "The page for this country and language."
+      }
+    ]
+  },
+  {
     "id": "ac-separator",
     "fields": [
       {

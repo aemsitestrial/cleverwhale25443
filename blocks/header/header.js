@@ -3,7 +3,13 @@
 // page controllers (burger, navigation, mega menu, language switchers, skip button, breadcrumb)
 // make it work.
 //
-// The nav fragment (/nav, or the page's "nav" metadata) has up to four sections, in this order:
+// The nav page (/nav, or the page's "nav" metadata) is read in one of two ways:
+//
+// With the nav blocks (AC Nav Header, AC Nav Links, AC Nav Languages, AC Nav Locator; see
+// scripts/nav-blocks.js), each part of the header is a field or an item of a block, and the
+// AC Nav Locator adds the Locator above the header (scripts/locator.js).
+//
+// Without them (older nav pages), the page's text has up to four sections, in this order:
 //   1. Brand       the logo (an image), and a link for it (the home page when there is none)
 //   2. Navigation  a nested list, up to four levels: the main navigation and the mega menu;
 //                  a second list is the mega menu's secondary links
@@ -23,8 +29,11 @@ import { startPageControllers } from '../../ds-eds-assets/js/vendor/start-page-c
 import {
   el, sectionsOf, contentOf, iconOf, textOf, hrefOf, pathOf, currentPath, isExternal,
 } from '../../scripts/chrome.js';
+import { hasNavBlocks, readNavBlocks } from '../../scripts/nav-blocks.js';
+import buildLocator from '../../scripts/locator.js';
 
-const LABELS = {
+// The labels, which the AC Nav Header block can replace.
+const DEFAULT_LABELS = {
   skip: 'Skip to main content',
   menu: 'Menu',
   close: 'Close',
@@ -33,6 +42,7 @@ const LABELS = {
   mainMenu: 'main menu',
   navigation: 'Main navigation',
 };
+const LABELS = { ...DEFAULT_LABELS };
 const TOOLS = ['stock', 'search', 'profile', 'statistic', 'cart'];
 const MAX_LEVEL = 3;
 
@@ -235,6 +245,7 @@ function topBar(nav) {
 }
 
 function breadcrumb(nav) {
+  if (nav.showBreadcrumb === false) return null;
   if (/^(off|false|no|hide)$/i.test(getMetadata('breadcrumb'))) return null;
   const here = currentPath();
   if (pathOf(nav.home) === here) return null;
@@ -380,9 +391,16 @@ function megaMenu(nav) {
 export default async function decorate(block) {
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : brand.navPath;
-  const fragment = await loadFragment(navPath);
-  const nav = readNav(fragment);
+  // The nav page as delivered, before any of its blocks is decorated.
+  const resp = await fetch(`${navPath}.plain.html`);
+  const markup = document.createElement('div');
+  if (resp.ok) markup.innerHTML = await resp.text();
+  const nav = hasNavBlocks(markup)
+    ? readNavBlocks(markup, navPath)
+    : readNav(await loadFragment(navPath));
+  Object.assign(LABELS, DEFAULT_LABELS, nav.labels || {});
   const crumb = breadcrumb(nav);
+  const locator = buildLocator(nav.locator);
 
   // The skip button moves focus into #main; its controller looks the id up when it starts.
   const main = document.querySelector('main');
@@ -392,6 +410,7 @@ export default async function decorate(block) {
   await Promise.all([
     loadBundle('ac-chrome-header'),
     crumb ? loadBundle('ac-chrome-breadcrumb') : null,
+    locator ? loadBundle('ac-locator') : null,
   ]);
 
   // The root is a div (a header element with these classes turns the mega menu off); the page's
@@ -399,9 +418,11 @@ export default async function decorate(block) {
   const root = el(
     'div',
     { class: 'ds-v2_c-header', 'design-system': true },
-    el('div', { class: 'ds-v2_c-header__inner' }, topBar(nav), middleBar(nav, crumb)),
+    // The Locator first, above the top bar, as Header() renders it.
+    el('div', { class: 'ds-v2_c-header__inner' }, locator?.root, topBar(nav), middleBar(nav, crumb)),
   );
   block.replaceChildren(root, megaMenu(nav));
+  locator?.start();
 
   // The header is not authored on the page, so its controllers start in the editor too.
   await startPageControllers(block, { inEditor: false });

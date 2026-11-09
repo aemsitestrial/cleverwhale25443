@@ -86,6 +86,8 @@ const SKIPPED_PROPS = ['picture', 'children', 'items', 'titleTag'];
 // table of contents styles (tocLayout). The site builds its table of contents another way.
 const SKIPPED_BLOCKS = ['ac-table-of-content'];
 const SKIPPED_OPTIONS = { 'ac-container': ['tocLayout'] };
+// The blocks of the nav page, written by hand (not from the package's contract).
+const NAV_BLOCKS = ['ac-nav-header', 'ac-nav-links', 'ac-nav-languages', 'ac-nav-locator'];
 // What earlier runs of this generator wrote into models/_section.json and no longer do.
 const DROPPED_SECTION_FIELDS = ['layout'];
 
@@ -480,10 +482,12 @@ sectionModel.fields = [
 const sectionFilter = section.filters.find((f) => f.id === 'section');
 sectionFilter.components = [
   ...sectionFilter.components
-    .filter((c) => !written.includes(c) && !SKIPPED_BLOCKS.includes(c)
+    .filter((c) => !written.includes(c) && !SKIPPED_BLOCKS.includes(c) && !NAV_BLOCKS.includes(c)
       && !['ac-block-table-of-content-layout', 'ac-toc-layout', 'ac-table-of-content-layout']
         .includes(c)),
   ...written,
+  // The site's own blocks of the nav page (blocks/ac-nav-*), which blocks/header/header.js reads.
+  ...NAV_BLOCKS.filter((c) => !written.includes(c)),
 ];
 writeFileSync(sectionFile, `${JSON.stringify(section, null, 2)}\n`);
 console.log(`ds-blocks: models/_section.json has the design system's section fields and allows the ${written.length} ac-* blocks`);

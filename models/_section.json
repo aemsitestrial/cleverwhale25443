@@ -333,7 +333,11 @@
         "ac-table",
         "ac-tabs",
         "ac-text",
-        "ac-title"
+        "ac-title",
+        "ac-nav-header",
+        "ac-nav-links",
+        "ac-nav-languages",
+        "ac-nav-locator"
       ]
     }
   ]

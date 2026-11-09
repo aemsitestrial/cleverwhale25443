@@ -1,0 +1,152 @@
+{
+  "definitions": [
+    {
+      "title": "AC Nav Header",
+      "id": "ac-nav-header",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "AC Nav Header",
+              "model": "ac-nav-header",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-nav-header",
+      "fields": [
+        {
+          "component": "reference",
+          "name": "logo",
+          "label": "Logo",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "logoAlt",
+          "label": "Logo alt text",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "name": "homeLink",
+          "label": "Logo link",
+          "description": "The page the logo goes to. Empty: the home page."
+        },
+        {
+          "component": "boolean",
+          "name": "breadcrumb",
+          "label": "Show the breadcrumb",
+          "valueType": "boolean",
+          "value": true
+        },
+        {
+          "component": "aem-content",
+          "name": "searchLink",
+          "label": "Search link",
+          "description": "Empty: no search button."
+        },
+        {
+          "component": "aem-content",
+          "name": "profileLink",
+          "label": "Profile link",
+          "description": "Empty: no profile button."
+        },
+        {
+          "component": "text",
+          "name": "profileLabel",
+          "label": "Profile label",
+          "valueType": "string",
+          "description": "The signed-in user's name; empty when signed out."
+        },
+        {
+          "component": "aem-content",
+          "name": "cartLink",
+          "label": "Cart link",
+          "description": "Empty: no cart button."
+        },
+        {
+          "component": "text",
+          "name": "cartCount",
+          "label": "Cart count",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "name": "stockLink",
+          "label": "Stock link",
+          "description": "Empty: no stock button."
+        },
+        {
+          "component": "text",
+          "name": "stockLabel",
+          "label": "Stock label",
+          "valueType": "string",
+          "description": "e.g. ATCO A"
+        },
+        {
+          "component": "text",
+          "name": "stockChange",
+          "label": "Stock change",
+          "valueType": "string",
+          "description": "e.g. +1.2% or -0.4%: the sign sets the colour."
+        },
+        {
+          "component": "aem-content",
+          "name": "statisticLink",
+          "label": "Statistic link",
+          "description": "Empty: no statistic button."
+        },
+        {
+          "component": "text",
+          "name": "skipLabel",
+          "label": "Skip button label",
+          "valueType": "string",
+          "description": "Default: Skip to main content"
+        },
+        {
+          "component": "text",
+          "name": "menuLabel",
+          "label": "Menu button label",
+          "valueType": "string",
+          "description": "Default: Menu"
+        },
+        {
+          "component": "text",
+          "name": "closeLabel",
+          "label": "Close button label",
+          "valueType": "string",
+          "description": "Default: Close"
+        },
+        {
+          "component": "text",
+          "name": "backLabel",
+          "label": "Back label (mega menu)",
+          "valueType": "string",
+          "description": "Default: Back to"
+        },
+        {
+          "component": "text",
+          "name": "mainMenuLabel",
+          "label": "Main menu label (mega menu)",
+          "valueType": "string",
+          "description": "Default: main menu"
+        },
+        {
+          "component": "text",
+          "name": "navigationLabel",
+          "label": "Navigation label (screen readers)",
+          "valueType": "string",
+          "description": "Default: Main navigation"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

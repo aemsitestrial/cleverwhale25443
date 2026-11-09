@@ -83,7 +83,37 @@ from the `/nav` and `/footer` fragments, following the package's `contracts/ac-h
 bundles and start the `ac-header` and `ac-footer` page controllers. Both fragments are default content
 (text, lists, images); the order of the content decides what it becomes.
 
-`/nav`, four sections in this order:
+**`/nav` with the nav blocks** (recommended). Add these blocks to the `/nav` page in the Universal Editor;
+`scripts/nav-blocks.js` reads them:
+
+- **AC Nav Header** (fields):
+  - logo, its alt text and link;
+  - breadcrumb on or off;
+  - the middle bar's buttons: Search, Profile (with the signed-in name), Cart (with the count), Stock
+    (label, and the change, whose sign sets the colour) and Statistic. A button shows when its link is set;
+  - the labels: Skip, Menu, Close, Back, main menu, navigation.
+- **AC Nav Links** (one item per link). Each item has a **Group**:
+  - Main menu: the middle bar and the mega menu. A **Level** of 1 to 4 nests a link under the closest
+    link above it with a lower level;
+  - Mega menu secondary links;
+  - Top bar local links;
+  - Top bar global links. A **Style** makes the link a button, a pinned button or the locations link
+    (globe).
+- **AC Nav Languages** (one item per language): region, link with the language's name, and language
+  code. Consecutive items with the same region form one group of the language switcher.
+- **AC Nav Locator**: the Locator above the header (`scripts/locator.js`, following
+  `contracts/ac-locator.md`; bundle `ac-locator`).
+  - Fields: when it shows, its texts, and the "view all locations" link.
+  - Items: one per country and language — country code, country, language, and the page to go to.
+  - The visitor's country is the region of the browser's language (`sv-SE` → `SE`). No service is
+    called.
+  - "When the visitor's country has another page" shows it only when that country is listed and the
+    page is not one of its pages. "Always" shows it on every page.
+
+On the `/nav` page itself these blocks show as labelled lists. A `/nav` page without them is read the
+old way:
+
+**`/nav` as text**, four sections in this order:
 
 1. **Brand**: the logo image and its link (the home page when there is no link).
 2. **Navigation**: a nested list, up to four levels deep. It feeds the middle bar (level 0) and the mega

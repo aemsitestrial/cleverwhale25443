@@ -1,0 +1,151 @@
+{
+  "definitions": [
+    {
+      "title": "AC Nav Links",
+      "id": "ac-nav-links",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "AC Nav Links",
+              "filter": "ac-nav-links"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Nav Link",
+      "id": "ac-nav-link",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Nav Link",
+              "model": "ac-nav-link",
+              "group": "main",
+              "level": "0"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "ac-nav-link",
+      "fields": [
+        {
+          "component": "select",
+          "name": "group",
+          "label": "Group",
+          "options": [
+            {
+              "name": "Main menu (middle bar and mega menu)",
+              "value": "main"
+            },
+            {
+              "name": "Mega menu secondary links",
+              "value": "secondary"
+            },
+            {
+              "name": "Top bar: local links",
+              "value": "local"
+            },
+            {
+              "name": "Top bar: global links",
+              "value": "global"
+            }
+          ],
+          "value": "main"
+        },
+        {
+          "component": "select",
+          "name": "level",
+          "label": "Level",
+          "options": [
+            {
+              "name": "1 (middle bar and mega menu)",
+              "value": "0"
+            },
+            {
+              "name": "2",
+              "value": "1"
+            },
+            {
+              "name": "3",
+              "value": "2"
+            },
+            {
+              "name": "4",
+              "value": "3"
+            }
+          ],
+          "value": "0",
+          "condition": {
+            "==": [
+              {
+                "var": "group"
+              },
+              "main"
+            ]
+          },
+          "description": "A link nests under the closest link above it with a lower level."
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link"
+        },
+        {
+          "component": "text",
+          "name": "linkText",
+          "label": "Text",
+          "valueType": "string"
+        },
+        {
+          "component": "select",
+          "name": "variant",
+          "label": "Style",
+          "options": [
+            {
+              "name": "Link",
+              "value": "link"
+            },
+            {
+              "name": "Button",
+              "value": "button"
+            },
+            {
+              "name": "Button, pinned",
+              "value": "pinned"
+            },
+            {
+              "name": "Locations (globe icon)",
+              "value": "globe"
+            }
+          ],
+          "value": "link",
+          "condition": {
+            "==": [
+              {
+                "var": "group"
+              },
+              "global"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "ac-nav-links",
+      "components": [
+        "ac-nav-link"
+      ]
+    }
+  ]
+}
