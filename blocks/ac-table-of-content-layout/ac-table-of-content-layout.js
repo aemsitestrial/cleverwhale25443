@@ -1,4 +1,4 @@
-// ac-toc-layout: the design system's BlockTableOfContentLayout, as on the wiki page of
+// ac-table-of-content-layout: the design system's BlockTableOfContentLayout, as on the wiki page of
 // ac-core-lib: a sticky sidebar that holds a TableOfContent with other components above and below
 // it, beside a content column whose headings the table of contents lists.
 //
@@ -22,7 +22,7 @@ import { componentInput } from '../../ds-eds-assets/js/vendor/component-block.js
 import {
   loadBundle, readBlock, replaceBlock, applyNone, NONE,
 } from '../../scripts/ds.js';
-import * as fields from './ac-toc-layout-fields.js';
+import * as fields from './ac-table-of-content-layout-fields.js';
 
 const HEADINGS = 'h1, h2, h3, h4, h5, h6';
 // A class the heading scan skips (build-toc-items.js ignoreClasses), set for one scan.
@@ -83,7 +83,9 @@ const RESOURCE_ATTRS = ['data-aue-resource', 'data-aue-type', 'data-aue-behavior
 function itemAsBlock(name, names, cells, attributes) {
   const block = document.createElement('div');
   block.className = name;
-  const inner = document.createElement('div');
+  // In the editor the rows sit in an inner element with the item's resource, as the editor
+  // delivers a block (field-rows.js blockRows); on the page they are the block's own rows.
+  const inner = attributes ? document.createElement('div') : block;
   Object.entries(attributes || {}).forEach(([attr, value]) => inner.setAttribute(attr, value));
   names.forEach((field, i) => {
     const cell = cells[i];
@@ -94,7 +96,7 @@ function itemAsBlock(name, names, cells, attributes) {
     row.append(label, cell);
     inner.append(row);
   });
-  block.append(inner);
+  if (inner !== block) block.append(inner);
   const wrapper = document.createElement('div');
   wrapper.className = `${name}-wrapper`;
   wrapper.append(block);

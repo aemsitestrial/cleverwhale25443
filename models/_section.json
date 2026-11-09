@@ -315,6 +315,7 @@
         "cards",
         "columns",
         "fragment",
+        "ac-table-of-content-layout",
         "ac-card",
         "ac-banner",
         "ac-container",

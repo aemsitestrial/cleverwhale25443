@@ -77,7 +77,7 @@ with `renderCard`, as the AC Card block would.
 
 ### AC Table Of Content Layout
 
-`blocks/ac-toc-layout` is the design system's `BlockTableOfContentLayout`, as on the wiki page of
+`blocks/ac-table-of-content-layout` is the design system's `BlockTableOfContentLayout`, as on the wiki page of
 ac-core-lib: a sticky sidebar with a table of contents and other components, beside a content column.
 The Universal Editor does not put blocks inside a block, so you fill the layout with its **items**
 (the "+" inside the block):
@@ -96,6 +96,9 @@ How it works:
   and behaves like the block on its own.
 - An item's first cell is its read-only "kind", filled by the item's template. The delivered page says
   nothing of an item's model, so this cell tells the block what the item is.
+- The page names a block by its title, so the folder is `ac-table-of-content-layout`. The ids of the
+  model, the filter and the items stay `ac-toc-layout` and `ac-toc-layout-<kind>`, because authored
+  content keeps them.
 - An item is not a `.block` of its own. After any edit the Universal Editor re-renders the whole layout.
 - The table of contents leaves out the titles that cards and highlights render for themselves.
 - The `toc-layout` page controller makes the sidebar sticky.
