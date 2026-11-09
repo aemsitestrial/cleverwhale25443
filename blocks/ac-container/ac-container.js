@@ -2,7 +2,7 @@
 // theme,
 // spacing and composition styles. It holds the blocks that name it in their "Nest inside" field
 // (scripts.js nests them once the blocks are decorated, nest-by-parent.js): its "Name" field is the
-// name they give. A composition style (Block Containers, Filter block, Carousel, TOC) loads its
+// name they give. A composition style (Block Containers, Filter block, Carousel) loads its
 // bundle.
 import renderContainerBlock from '../../ds-eds-assets/js/vendor/render-container-block.js';
 import { fieldsByName, valuesByName } from '../../ds-eds-assets/js/vendor/field-rows.js';

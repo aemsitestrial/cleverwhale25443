@@ -390,33 +390,6 @@
           ]
         },
         {
-          "component": "select",
-          "name": "tocLayout",
-          "label": "Toc Layout",
-          "options": [
-            {
-              "name": "None",
-              "value": "_none"
-            },
-            {
-              "name": "TOC",
-              "value": "ds-brand-block-toc-layout"
-            },
-            {
-              "name": "Sidebar",
-              "value": "ds-brand-block-toc-layout-sidebar"
-            },
-            {
-              "name": "Sticky container",
-              "value": "ds-brand-sticky-container"
-            },
-            {
-              "name": "TOC Content block",
-              "value": "TOC-content-container"
-            }
-          ]
-        },
-        {
           "component": "text",
           "name": "nestId",
           "label": "Name",
@@ -426,7 +399,7 @@
           "component": "text",
           "name": "parentId",
           "label": "Nest inside",
-          "description": "The name of the AC Container (or AC Block Table Of Content Layout) this block is moved into; <name>-sidebar for the sidebar of a table of contents layout, under the navigation (toc-sidebar in a section with the table of contents layout). Empty: it stays where it is."
+          "description": "The name of the AC Container this block is moved into. Empty: it stays where it is."
         }
       ]
     }

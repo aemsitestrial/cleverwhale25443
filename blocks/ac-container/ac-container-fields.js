@@ -15,7 +15,6 @@ export const NAMES = [
   'spacingPt',
   'spacingPy',
   'themeTypeOption',
-  'tocLayout',
 ];
 
 // How field-rows.js reads a field that is not plain text.
@@ -36,7 +35,6 @@ export const OPTION_FIELDS = {
   spacingPt: { list: 'spacingPt' },
   spacingPy: { list: 'spacingPy' },
   themeTypeOption: { list: 'themeType' },
-  tocLayout: { list: 'tocLayout' },
 };
 
 // The option fields the model shows only for some types (as in the model).

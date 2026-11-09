@@ -89,22 +89,6 @@
         },
         {
           "component": "select",
-          "name": "layout",
-          "label": "Layout",
-          "options": [
-            {
-              "name": "None",
-              "value": "_none"
-            },
-            {
-              "name": "Table of contents beside the content",
-              "value": "toc"
-            }
-          ],
-          "description": "Table of contents: the section's AC Table Of Content goes into a sticky sidebar beside the rest of the section"
-        },
-        {
-          "component": "select",
           "name": "contentWidth",
           "label": "Content width",
           "options": [
@@ -336,7 +320,6 @@
         "ac-container",
         "ac-text-content",
         "ac-accordion",
-        "ac-block-table-of-content-layout",
         "ac-button",
         "ac-carousel",
         "ac-download",
@@ -348,10 +331,10 @@
         "ac-separator",
         "ac-splide-carousel",
         "ac-table",
-        "ac-table-of-content",
         "ac-tabs",
         "ac-text",
-        "ac-title"
+        "ac-title",
+        "ac-toc-layout"
       ]
     }
   ]

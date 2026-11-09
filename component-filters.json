@@ -21,7 +21,6 @@
       "ac-container",
       "ac-text-content",
       "ac-accordion",
-      "ac-block-table-of-content-layout",
       "ac-button",
       "ac-carousel",
       "ac-download",
@@ -33,10 +32,10 @@
       "ac-separator",
       "ac-splide-carousel",
       "ac-table",
-      "ac-table-of-content",
       "ac-tabs",
       "ac-text",
-      "ac-title"
+      "ac-title",
+      "ac-toc-layout"
     ]
   },
   {
@@ -67,6 +66,22 @@
     "id": "ac-tabs",
     "components": [
       "ac-tabs-item"
+    ]
+  },
+  {
+    "id": "ac-toc-layout",
+    "components": [
+      "ac-toc-layout-toc",
+      "ac-toc-layout-title",
+      "ac-toc-layout-text",
+      "ac-toc-layout-card",
+      "ac-toc-layout-text-content",
+      "ac-toc-layout-image",
+      "ac-toc-layout-button",
+      "ac-toc-layout-link",
+      "ac-toc-layout-table",
+      "ac-toc-layout-separator",
+      "ac-toc-layout-download"
     ]
   },
   {

@@ -17,8 +17,7 @@ import {
 import nestByParent, { isAuthoringContext } from '../ds-eds-assets/js/vendor/nest-by-parent.js';
 import { startPageControllers } from '../ds-eds-assets/js/vendor/start-page-controllers.js';
 import {
-  NESTABLE_SELECTOR, LAYOUT_MODELS, decorateTocSections, clearNoneSectionFields,
-  arrangeTocLayoutBlocks,
+  NESTABLE_SELECTOR, LAYOUT_MODELS, clearNoneSectionFields,
 } from './ds.js';
 
 /**
@@ -92,31 +91,21 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
-  // A section field chosen as None (grid, spacing, layout) adds nothing.
+  // A section field chosen as None (grid, spacing) adds nothing.
   clearNoneSectionFields(main);
   // The design system's container on each section, from its section fields (background, grid,
   // content width, spacing). After decorateBlocks, before the blocks load.
   decorateContainerSections(main);
-  // A section with the layout "Table of contents": its table of contents beside its content.
-  decorateTocSections(main);
-  // An AC Block Table Of Content Layout: what stands above it in its section goes into its sidebar,
-  // what stands below it into its content column.
-  arrangeTocLayoutBlocks(main);
 }
 
 /**
  * The design system's page steps, once the blocks are decorated: blocks that name a container in
- * their "Nest inside" field move into it, then the page controllers start (carousels, table of
- * contents layout, anchor links, header and footer). Both are safe to run again.
+ * their "Nest inside" field move into it, then the page controllers start (carousels, anchor
+ * links, header and footer). Both are safe to run again.
  * @param {Element} main The main element
  */
 async function finishDesignSystemPage(main) {
-  // The editor swaps in a section without decorateMain: put it into its layout again.
-  decorateTocSections(main);
-  arrangeTocLayoutBlocks(main);
   nestByParent(main, { layoutSelector: NESTABLE_SELECTOR, layoutModels: LAYOUT_MODELS });
-  // Every block has its final markup now: a table of contents lists the page's headings again.
-  document.dispatchEvent(new CustomEvent('ds:page-ready'));
   await startPageControllers(document, {
     inEditor: isAuthoringContext(document),
     onWarning(problems) {
