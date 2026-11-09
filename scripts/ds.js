@@ -16,6 +16,7 @@ import {
 } from '../ds-eds-assets/js/vendor/field-rows.js';
 import { componentInput, renderComponentBlock } from '../ds-eds-assets/js/vendor/component-block.js';
 import { moveInstrumentation } from '../ds-eds-assets/js/vendor/move-instrumentation.js';
+import { dropHidden } from '../ds-eds-assets/js/vendor/model-conditions.js';
 
 // The folder the package is installed in, relative to the site root (window.hlx.codeBasePath).
 export const ASSETS = 'ds-eds-assets';
@@ -103,6 +104,9 @@ export function decorateComponentBlock(block, { bundle, render, fields }) {
  * The design-system input of a container block (accordion, tabs, list, carousels): its own fields,
  * and `content.items` built from its item rows by the item field table, with the editor's
  * attributes of each item (`items.<n>`) and of each of its editable fields (`items.<n>.<prop>`).
+ * An item's option fields (ITEM_OPTION_FIELDS) go into the item's `options`, without those the
+ * model hides for the item's type (ITEM_FIELD_CONDITIONS). A title cell that holds a heading gives
+ * the item's `titleTag` (the editor folds titleType into the title).
  * @param {Element[]} own the block's key-value rows
  * @param {Element[]} items the item rows
  * @param {object} fields the block's <block>-fields.js
@@ -114,15 +118,25 @@ export function containerInput(own, items, fields) {
     optionFields: fields.OPTION_FIELDS,
     editableProps: [],
   });
+  const contentFields = fields.ITEM_CONTENT_FIELDS;
+  const optionFields = fields.ITEM_OPTION_FIELDS || {};
+  const fieldOf = (path) => Object.keys(contentFields).find((f) => contentFields[f] === path);
+  const titleField = fieldOf('title');
+  const levelField = fieldOf('titleTag');
   const editable = {};
   input.content.items = items.map((row, index) => {
     // An item row holds one cell per field, in model order.
     const itemFields = Object.fromEntries(fields.ITEM_NAMES
       .map((name, i) => [name, { row: row.children[i], cell: row.children[i] }]));
-    const values = valuesByName(itemFields, fields.ITEM_KINDS);
+    const stored = valuesByName(itemFields, fields.ITEM_KINDS);
+    const heading = titleField && itemFields[titleField]?.cell?.querySelector(':scope > h1, :scope > h2, :scope > h3, :scope > h4, :scope > h5');
+    if (levelField && heading) stored[levelField] = heading.tagName.toLowerCase();
+    const shown = dropHidden(stored, fields.ITEM_FIELD_CONDITIONS || {});
+    const values = Object.fromEntries(Object.entries(stored)
+      .filter(([name]) => !(name in optionFields) || name in shown));
     const item = componentInput(itemFields, values, {
-      contentFields: fields.ITEM_CONTENT_FIELDS,
-      optionFields: fields.ITEM_OPTION_FIELDS || {},
+      contentFields,
+      optionFields,
       editableProps: fields.ITEM_EDITABLE_PROPS,
     });
     const itemAttributes = instrumentationOf(row);
@@ -130,8 +144,12 @@ export function containerInput(own, items, fields) {
     Object.entries(item.editable).forEach(([prop, attributes]) => {
       editable[`items.${index}.${prop}`] = attributes;
     });
-    const itemOptions = Object.entries(item.options).filter(([, v]) => v !== undefined);
-    return { ...item.content, ...Object.fromEntries(itemOptions) };
+    const itemOptions = Object.fromEntries(Object.entries(item.options)
+      .filter(([, v]) => v !== undefined && v !== ''));
+    return {
+      ...item.content,
+      ...(Object.keys(itemOptions).length && { options: itemOptions }),
+    };
   });
   input.editable = editable;
   return input;

@@ -42,6 +42,19 @@ npm run ds:blocks    # regenerates the ac-* models and field tables, then compon
 The site serves the files in `ds-eds-assets/`, which are committed; the package is not an npm
 dependency, so `npm ci` does not need the archive.
 
+### AC List items
+
+An AC List Item whose type is a card type (Card content, Card AEM or Card icon) is that card. Its type is
+the item's own "Item type", or the list's when the item has none. The package's `render-list` renders it
+with `renderCard`, as the AC Card block would.
+
+- The item has all of the card's fields: content (heading level, date, two actions) and options (card
+  action, the modifiers of each card type, image cropping, line clamps, theme).
+- The model shows each card field only for the item types it applies to, and the block drops an option
+  that belongs to another card type.
+- A card without a theme of its own takes the list's.
+- Teasers and Key figure items stay plain teasers.
+
 ### Table of contents layout
 
 To put a table of contents beside the content it lists, set the section's **Layout** to "Table of

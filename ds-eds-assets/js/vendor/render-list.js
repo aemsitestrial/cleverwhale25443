@@ -1,9 +1,13 @@
 // The list: List() with its items as teasers, the theme, item type, grid and spacing lists as
-// classes on the root, and the CSS bundle the item type needs.
+// classes on the root, and the CSS bundle the item type needs. An item whose type is a card type
+// is that card: renderCard() renders it with all of the card's content and options, as the Card
+// block would, inside the list's item.
 import { List } from '../list.js';
 import { addClasses, setDataAttributes } from './eds-component.js';
 import { patchPicture } from './patch-picture.js';
 import uniqueId from './unique-id.js';
+import renderCard, { CARD_EDITABLE_PROPS } from './render-card.js';
+import { typeMeta as cardTypeMeta } from '../../options/card.js';
 
 // The option lists the wrapper takes: all of them are classes on the root.
 const CLASS_LISTS = /** @type {const} */ (['themeType', 'listItemType', 'listGridRows', 'spacingMy', 'spacingMb']);
@@ -12,15 +16,34 @@ const CLASS_LISTS = /** @type {const} */ (['themeType', 'listItemType', 'listGri
 
 /** @typedef {import('./eds-family.js').TeaserContent} TeaserContent */
 
+// The card option lists an item of a card type takes: those of the card types the listItemType
+// list offers (content, AEM, icon), the card action, the clamps and the theme. The card type is the
+// item type's; the spacing lists are the list's.
+const ITEM_CARD_LISTS = /** @type {const} */ ([
+  'cardAction', 'cardContentModifier', 'cardImageCroppingType', 'cardAemModifier', 'cardIconType',
+  'cardIconVariant', 'headlineLineClamp', 'descriptionLineClamp', 'themeType',
+]);
+
 /**
- * One item, a teaser: the teaser family's content (`imagePath`, `pretitle`, `title`,
- * `description`, `link` as `{ url }` and `picture`), and `itemStyle`, the item type that replaces
- * the list's for this item. `itemStyle` is a value of the listItemType list and a class on the
- * item's teaser root; it is no Teaser prop. The family's `actions` and `titleTag` do not apply: an
- * item has no actions and its title tag is Teaser()'s own.
+ * The card options of an item, by list.
+ * @typedef {import('./eds-component.js').OptionsInput<(typeof ITEM_CARD_LISTS)[number]>} ListItemOptions
+ */
+
+/**
+ * One item: the teaser family's content (`imagePath`, `pretitle`, `title`, `description`,
+ * `date`, `link` as `{ url }`, `actions`, `titleTag` and `picture`), `itemStyle`, the item type
+ * that replaces the list's for this item, and `options`, the item's card options.
  *
- * @typedef {Pick<TeaserContent, 'imagePath' | 'pretitle' | 'title' | 'description' | 'link' | 'picture'> & {
+ * `itemStyle` is a value of the listItemType list. An item whose type is a card type (one of the
+ * type's classes is a value of the cardType list: Card AEM, Card content, Card icon) is rendered
+ * by renderCard() with its content and `options`, so it has every prop and option of that card.
+ * The list's theme is the card's when the item chooses none. Any other item (Teasers, Key figure)
+ * is a teaser with `itemStyle` as a class on its root: it takes `imagePath`, `pretitle`,
+ * `title`, `description`, `link` and `picture`, and no `options`.
+ *
+ * @typedef {Pick<TeaserContent, 'imagePath' | 'pretitle' | 'title' | 'description' | 'date' | 'link' | 'actions' | 'picture' | 'titleTag'> & {
  *   itemStyle?: ListOptions['listItemType'],
+ *   options?: ListItemOptions,
  * }} ListItem
  */
 
@@ -45,6 +68,17 @@ const ITEM_TYPE_BUNDLES = {
  */
 export function itemElements(root) {
   return [...root.querySelectorAll('.cmp-list__item')];
+}
+
+// The card type of an item type: the class of the type that is a value of the cardType list, or
+// undefined for a type that is no card.
+const CARD_TYPES = Object.keys(cardTypeMeta.types);
+/**
+ * @param {string | undefined} itemType
+ * @returns {string | undefined}
+ */
+export function cardTypeOf(itemType) {
+  return (itemType || '').split(/\s+/).find((cls) => CARD_TYPES.includes(cls));
 }
 
 // An item is a teaser without a title link, whose whole link is the item's `link`. It has an image
@@ -79,9 +113,11 @@ const EDITABLE = /** @type {const} */ ([
 ]);
 
 /** @typedef {(typeof EDITABLE)[number][0]} ListItemEditable */
+/** @typedef {(typeof CARD_EDITABLE_PROPS)[number]} ListCardEditable */
 
-// An item is `items.<n>`; its fields are `items.<n>.<prop>`.
-/** @typedef {`items.${number}` | `items.${number}.${ListItemEditable}`} ListEditable */
+// An item is `items.<n>`; its fields are `items.<n>.<prop>`. An item of a card type has the card's
+// editable props (the date and the action texts as well).
+/** @typedef {`items.${number}` | `items.${number}.${ListItemEditable | ListCardEditable}`} ListEditable */
 
 export const LIST_EDITABLE_PROPS = EDITABLE.map(([prop]) => prop);
 
@@ -93,13 +129,15 @@ export const LIST_EDITABLE_PROPS = EDITABLE.map(([prop]) => prop);
  * @param {ListItem[]} items
  * @param {import('./eds-component.js').EditableInput<ListEditable>} editable
  */
-function applyEditable(root, items, editable) {
+function applyEditable(root, items, editable, cards) {
   const elements = itemElements(root);
   items.forEach((item, index) => {
     const element = elements[index];
     if (!element) return;
     const key = `items.${index}`;
     setDataAttributes(element, editable[key]);
+    // A card has put its own editable attributes and picture on its elements.
+    if (cards[index]) return;
     EDITABLE.forEach(([prop, selector]) => {
       if (item[prop]) setDataAttributes(element.querySelector(selector), editable[`${key}.${prop}`]);
     });
@@ -127,9 +165,16 @@ export default function renderList({
   content = {}, options = {}, editable = {}, loadBundle,
 } = {}) {
   const items = content.items || [];
+  // Each bundle once: the item types' and the card types' share names.
+  const requested = new Set();
+  const loadOnce = (/** @type {string} */ file) => {
+    if (requested.has(file)) return;
+    requested.add(file);
+    loadBundle?.(file);
+  };
   const bundles = [options.listItemType, ...items.map((item) => item.itemStyle)]
     .map((type) => (type ? ITEM_TYPE_BUNDLES[type] : undefined));
-  [...new Set(bundles)].forEach((file) => file && loadBundle?.(file));
+  [...new Set(bundles)].forEach((file) => file && loadOnce(file));
 
   const classHolder = document.createElement('div');
   addClasses(classHolder, CLASS_LISTS.map((list) => options[list]));
@@ -147,6 +192,48 @@ export default function renderList({
     ':type': 'list',
     items: itemProps,
   });
-  applyEditable(root, items, editable);
+  const cards = items.map((item, index) => renderItemCard(item, index, options, editable, loadOnce));
+  itemElements(root).forEach((element, index) => {
+    const card = cards[index];
+    if (card) element.replaceChildren(card);
+  });
+  applyEditable(root, items, editable, cards);
   return root;
+}
+
+/**
+ * The card an item of a card type is, or undefined for an item of another type.
+ *
+ * @param {ListItem} item
+ * @param {number} index
+ * @param {ListOptions} listOptions
+ * @param {import('./eds-component.js').EditableInput<ListEditable>} editable
+ * @param {(file: string) => void} loadBundle
+ * @returns {HTMLElement | undefined}
+ */
+function renderItemCard(item, index, listOptions, editable, loadBundle) {
+  const cardType = cardTypeOf(item.itemStyle || listOptions.listItemType);
+  if (!cardType) return undefined;
+  const itemOptions = item.options || {};
+  // The card's content is the item's, without the item type and the options.
+  const content = { ...item };
+  delete content.itemStyle;
+  delete content.options;
+  const prefix = `items.${index}.`;
+  const cardEditable = Object.fromEntries(CARD_EDITABLE_PROPS
+    .filter((prop) => editable[`${prefix}${prop}`])
+    .map((prop) => [prop, editable[`${prefix}${prop}`]]));
+  const chosen = Object.fromEntries(ITEM_CARD_LISTS
+    .filter((list) => itemOptions[list] !== undefined)
+    .map((list) => [list, itemOptions[list]]));
+  return renderCard({
+    content,
+    options: {
+      ...(listOptions.themeType && { themeType: listOptions.themeType }),
+      ...chosen,
+      cardType: /** @type {any} */ (cardType),
+    },
+    editable: /** @type {any} */ (cardEditable),
+    loadBundle,
+  });
 }

@@ -32,20 +32,256 @@ export const FIELD_CONDITIONS = {};
 export const EDITABLE_PROPS = [];
 
 // The item's fields, one cell each, in model order.
-export const ITEM_NAMES = ['imagePath', 'pretitle', 'title', 'description', 'link', 'itemStyle'];
+export const ITEM_NAMES = [
+  'imagePath',
+  'pretitle',
+  'title',
+  'description',
+  'date',
+  'link',
+  'action1Label',
+  'action1Link',
+  'action2Label',
+  'action2Link',
+  'itemStyle',
+  'cardAction',
+  'cardAemModifier',
+  'cardContentModifier',
+  'cardIconTypeOption',
+  'cardIconVariant',
+  'cardImageCroppingTypeOption',
+  'descriptionLineClamp',
+  'headlineLineClamp',
+  'themeTypeOption',
+];
 
 // How field-rows.js reads an item field that is not plain text.
-export const ITEM_KINDS = { imagePath: 'image', description: 'html', link: 'href' };
+export const ITEM_KINDS = {
+  imagePath: 'image',
+  description: 'html',
+  link: 'href',
+  action1Link: 'href',
+  action2Link: 'href',
+  cardContentModifier: 'list',
+};
 
 // Item field -> item prop.
 export const ITEM_CONTENT_FIELDS = {
   imagePath: 'imagePath',
   pretitle: 'pretitle',
   title: 'title',
+  titleType: 'titleTag',
   description: 'description',
+  date: 'date',
   link: 'link.url',
+  action1Label: 'actions.0.title',
+  action1Link: 'actions.0.link.url',
+  action2Label: 'actions.1.title',
+  action2Link: 'actions.1.link.url',
   itemStyle: 'itemStyle',
 };
 
+// Item field -> option list of the item (`options` of the item).
+export const ITEM_OPTION_FIELDS = {
+  cardAction: { list: 'cardAction' },
+  cardAemModifier: { list: 'cardAemModifier' },
+  cardContentModifier: { list: 'cardContentModifier' },
+  cardIconTypeOption: { list: 'cardIconType' },
+  cardIconVariant: { list: 'cardIconVariant' },
+  cardImageCroppingTypeOption: { list: 'cardImageCroppingType' },
+  descriptionLineClamp: { list: 'descriptionLineClamp' },
+  headlineLineClamp: { list: 'headlineLineClamp' },
+  themeTypeOption: { list: 'themeType' },
+};
+
+// The item fields the model shows only for some item types (as in the model).
+export const ITEM_FIELD_CONDITIONS = {
+  titleType: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+  date: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+  action1Label: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+  action1Link: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+  action2Label: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+  action2Link: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+  cardAction: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+  cardAemModifier: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-card-content ac-core-teaser',
+          'ac-core-card-icon ac-core-teaser modifier-vertical modifier-solid',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+  cardContentModifier: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-card-aem ac-core-teaser',
+          'ac-core-card-icon ac-core-teaser modifier-vertical modifier-solid',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+  cardIconTypeOption: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-card-aem ac-core-teaser',
+          'ac-core-card-content ac-core-teaser',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+  cardIconVariant: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-card-aem ac-core-teaser',
+          'ac-core-card-content ac-core-teaser',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+  cardImageCroppingTypeOption: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-card-aem ac-core-teaser',
+          'ac-core-card-icon ac-core-teaser modifier-vertical modifier-solid',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+  descriptionLineClamp: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+  headlineLineClamp: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+  themeTypeOption: {
+    '!': {
+      in: [
+        { var: 'itemStyle' },
+        [
+          'ac-core-teaser',
+          'ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid',
+        ],
+      ],
+    },
+  },
+};
+
 // The item props the wrapper renders an editable element for.
-export const ITEM_EDITABLE_PROPS = ['imagePath', 'pretitle', 'title', 'description'];
+export const ITEM_EDITABLE_PROPS = [
+  'imagePath',
+  'pretitle',
+  'title',
+  'description',
+  'date',
+  'actions.0.title',
+  'actions.1.title',
+  'actions.2.title',
+  'actions.3.title',
+];

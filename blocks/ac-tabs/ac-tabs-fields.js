@@ -39,5 +39,11 @@ export const ITEM_KINDS = { content: 'html' };
 // Item field -> item prop.
 export const ITEM_CONTENT_FIELDS = { panelLabel: 'cq:panelTitle', content: 'content' };
 
+// Item field -> option list of the item (`options` of the item).
+export const ITEM_OPTION_FIELDS = {};
+
+// The item fields the model shows only for some item types (as in the model).
+export const ITEM_FIELD_CONDITIONS = {};
+
 // The item props the wrapper renders an editable element for.
 export const ITEM_EDITABLE_PROPS = ['cq:panelTitle', 'content'];

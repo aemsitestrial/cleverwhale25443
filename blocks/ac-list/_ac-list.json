@@ -194,15 +194,148 @@
           "valueType": "string"
         },
         {
+          "component": "select",
+          "name": "titleType",
+          "label": "Title type",
+          "options": [
+            {
+              "name": "H1",
+              "value": "h1"
+            },
+            {
+              "name": "H2",
+              "value": "h2"
+            },
+            {
+              "name": "H3",
+              "value": "h3"
+            },
+            {
+              "name": "H4",
+              "value": "h4"
+            },
+            {
+              "name": "H5",
+              "value": "h5"
+            }
+          ],
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
+        },
+        {
           "component": "richtext",
           "name": "description",
           "label": "Description",
           "valueType": "string"
         },
         {
+          "component": "text",
+          "name": "date",
+          "label": "Date",
+          "valueType": "string",
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
+        },
+        {
           "component": "aem-content",
           "name": "link",
           "label": "Link"
+        },
+        {
+          "component": "text",
+          "name": "action1Label",
+          "label": "Action 1 text",
+          "valueType": "string",
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "component": "aem-content",
+          "name": "action1Link",
+          "label": "Action 1 link",
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "component": "text",
+          "name": "action2Label",
+          "label": "Action 2 text",
+          "valueType": "string",
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "component": "aem-content",
+          "name": "action2Link",
+          "label": "Action 2 link",
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
         },
         {
           "component": "select",
@@ -230,6 +363,316 @@
               "value": "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
             }
           ]
+        },
+        {
+          "component": "select",
+          "name": "cardAction",
+          "label": "Card Action",
+          "options": [
+            {
+              "name": "None",
+              "value": "none"
+            },
+            {
+              "name": "Whole-card link",
+              "value": "link"
+            },
+            {
+              "name": "Buttons",
+              "value": "buttons"
+            }
+          ],
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "component": "select",
+          "name": "cardAemModifier",
+          "label": "Card Aem Modifier",
+          "options": [
+            {
+              "name": "Linked video",
+              "value": "modifier-linked-video"
+            }
+          ],
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-card-content ac-core-teaser",
+                  "ac-core-card-icon ac-core-teaser modifier-vertical modifier-solid",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "component": "multiselect",
+          "name": "cardContentModifier",
+          "label": "Card Content Modifier",
+          "options": [
+            {
+              "name": "Media filled",
+              "value": "modifier-media-filled"
+            },
+            {
+              "name": "Media filled (animated)",
+              "value": "modifier-media-filled-animation"
+            },
+            {
+              "name": "Content center",
+              "value": "modifier-content-center"
+            },
+            {
+              "name": "Banner",
+              "value": "modifier-banner"
+            },
+            {
+              "name": "Content right",
+              "value": "modifier-content-right"
+            },
+            {
+              "name": "Overlap image",
+              "value": "modifier-overlap-image"
+            }
+          ],
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-card-aem ac-core-teaser",
+                  "ac-core-card-icon ac-core-teaser modifier-vertical modifier-solid",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "component": "select",
+          "name": "cardIconTypeOption",
+          "label": "Card Icon Type",
+          "options": [
+            {
+              "name": "Vertical",
+              "value": "modifier-vertical"
+            },
+            {
+              "name": "Horizontal",
+              "value": "modifier-horizontal"
+            },
+            {
+              "name": "Centered",
+              "value": "modifier-centered"
+            }
+          ],
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-card-aem ac-core-teaser",
+                  "ac-core-card-content ac-core-teaser",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "component": "select",
+          "name": "cardIconVariant",
+          "label": "Card Icon Variant",
+          "options": [
+            {
+              "name": "Solid",
+              "value": "modifier-solid"
+            },
+            {
+              "name": "Outline",
+              "value": "modifier-outline"
+            },
+            {
+              "name": "Transparent",
+              "value": "modifier-transparent"
+            },
+            {
+              "name": "Transparent filled",
+              "value": "modifier-transparent-filled"
+            }
+          ],
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-card-aem ac-core-teaser",
+                  "ac-core-card-content ac-core-teaser",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "component": "select",
+          "name": "cardImageCroppingTypeOption",
+          "label": "Card Image Cropping Type",
+          "options": [
+            {
+              "name": "No image crop",
+              "value": "modifier-no-image-crop"
+            }
+          ],
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-card-aem ac-core-teaser",
+                  "ac-core-card-icon ac-core-teaser modifier-vertical modifier-solid",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "component": "select",
+          "name": "descriptionLineClamp",
+          "label": "Description Line Clamp",
+          "options": [
+            {
+              "name": "2 lines",
+              "value": "teaser-description-line-clamp-2"
+            },
+            {
+              "name": "4 lines",
+              "value": "teaser-description-line-clamp-4"
+            },
+            {
+              "name": "6 lines",
+              "value": "teaser-description-line-clamp-6"
+            },
+            {
+              "name": "8 lines",
+              "value": "teaser-description-line-clamp-8"
+            },
+            {
+              "name": "10 lines",
+              "value": "teaser-description-line-clamp-10"
+            },
+            {
+              "name": "12 lines",
+              "value": "teaser-description-line-clamp-12"
+            }
+          ],
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "component": "select",
+          "name": "headlineLineClamp",
+          "label": "Headline Line Clamp",
+          "options": [
+            {
+              "name": "1 line",
+              "value": "teaser-headline-line-clamp-1"
+            },
+            {
+              "name": "2 lines",
+              "value": "teaser-headline-line-clamp-2"
+            }
+          ],
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "component": "select",
+          "name": "themeTypeOption",
+          "label": "Theme Type",
+          "options": [
+            {
+              "name": "Primary",
+              "value": "style-primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "style-secondary"
+            },
+            {
+              "name": "Tertiary",
+              "value": "style-tertiary"
+            },
+            {
+              "name": "Quaternary",
+              "value": "style-quaternary"
+            }
+          ],
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "itemStyle"
+                },
+                [
+                  "ac-core-teaser",
+                  "ac-core-key-figure ac-core-teaser modifier-vertical modifier-solid"
+                ]
+              ]
+            }
+          }
         }
       ]
     }
