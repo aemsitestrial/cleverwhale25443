@@ -67,15 +67,22 @@ function buildLayout() {
 const textOf = (cell) => (cell?.textContent.trim() || '');
 const isEmptyCell = (cell) => !textOf(cell) && !cell.querySelector('img, picture, a');
 
+// The editor attributes the decorators copy from an item onto the element they decorate.
+const RESOURCE_ATTRS = ['data-aue-resource', 'data-aue-type', 'data-aue-behavior', 'data-aue-model',
+  'data-aue-label', 'data-aue-component'];
+
 /**
- * A component item as the block it is: a `.block.<name>` whose rows are the item's fields as
+ * A component item as the block it is: a `<name>` element whose rows are the item's fields as
  * key-value rows (an empty field has no row, as in a block), inside a wrapper that carries the
  * item's editor attributes, which the block's decorator moves onto what it renders.
+ *
+ * It is not a `.block`: after an edit the Universal Editor replaces the closest `.block` that
+ * has an editor resource with fresh markup (scripts/editor-support.js). That has to be this
+ * layout, which renders its items again, and not an item, whose fresh markup is a bare row.
  */
 function itemAsBlock(name, names, cells, attributes) {
   const block = document.createElement('div');
-  block.className = `${name} block`;
-  block.dataset.blockName = name;
+  block.className = name;
   const inner = document.createElement('div');
   Object.entries(attributes || {}).forEach(([attr, value]) => inner.setAttribute(attr, value));
   names.forEach((field, i) => {
@@ -118,6 +125,7 @@ function renderToc(cells, attributes, content) {
     const text = textOf(cells[spec.names.indexOf(field)]);
     return text && text !== NONE ? text : undefined;
   };
+  loadBundle('ac-table-of-content');
   const startLevel = value('startLevel') || 'h2';
   const stopLevel = value('stopLevel') || 'h3';
   const root = renderTableOfContent({
@@ -172,7 +180,8 @@ export default async function decorate(block) {
     }
     // eslint-disable-next-line no-await-in-loop
     await decorators[spec.block](item.block);
-    item.block.dataset.blockStatus = 'loaded';
+    // The decorator copied the item's resource onto the element; only what it rendered keeps it.
+    RESOURCE_ATTRS.forEach((attr) => item.block.removeAttribute(attr));
   }
   tocs.forEach(({ slot, cells, attributes }) => {
     slot.replaceWith(renderToc(cells, attributes, content));

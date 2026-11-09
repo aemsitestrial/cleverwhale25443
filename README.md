@@ -96,6 +96,7 @@ How it works:
   and behaves like the block on its own.
 - An item's first cell is its read-only "kind", filled by the item's template. The delivered page says
   nothing of an item's model, so this cell tells the block what the item is.
+- An item is not a `.block` of its own. After any edit the Universal Editor re-renders the whole layout.
 - The table of contents leaves out the titles that cards and highlights render for themselves.
 - The `toc-layout` page controller makes the sidebar sticky.
 
