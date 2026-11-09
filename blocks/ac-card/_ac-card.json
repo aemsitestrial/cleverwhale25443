@@ -157,6 +157,10 @@
           "label": "Card Aem Modifier",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Linked video",
               "value": "modifier-linked-video"
             }
@@ -222,6 +226,10 @@
           "label": "Card Feature Modifier",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Check",
               "value": "modifier-check"
             },
@@ -244,6 +252,10 @@
           "name": "cardIconTypeOption",
           "label": "Card Icon Type",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Vertical",
               "value": "modifier-vertical"
@@ -271,6 +283,10 @@
           "name": "cardIconVariant",
           "label": "Card Icon Variant",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Solid",
               "value": "modifier-solid"
@@ -303,6 +319,10 @@
           "label": "Card Image Cropping Type",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "No image crop",
               "value": "modifier-no-image-crop"
             }
@@ -328,6 +348,10 @@
           "name": "descriptionLineClamp",
           "label": "Description Line Clamp",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "2 lines",
               "value": "teaser-description-line-clamp-2"
@@ -360,6 +384,10 @@
           "label": "Headline Line Clamp",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "1 line",
               "value": "teaser-headline-line-clamp-1"
             },
@@ -374,6 +402,10 @@
           "name": "modifierVariant",
           "label": "Modifier Variant",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Solid",
               "value": "modifier-solid"
@@ -402,6 +434,10 @@
           "label": "Spacing Mb",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "mb-4 (1rem)",
               "value": "mb-4"
             },
@@ -429,6 +465,10 @@
           "label": "Spacing My",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "my-4 (1rem)",
               "value": "my-4"
             },
@@ -455,6 +495,10 @@
           "name": "themeTypeOption",
           "label": "Theme Type",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Primary",
               "value": "style-primary"

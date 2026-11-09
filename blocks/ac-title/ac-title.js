@@ -4,7 +4,9 @@
 import renderTitle from '../../ds-eds-assets/js/vendor/render-title.js';
 import { fieldsByName, valuesByName } from '../../ds-eds-assets/js/vendor/field-rows.js';
 import { componentInput } from '../../ds-eds-assets/js/vendor/component-block.js';
-import { loadBundle, readBlock, replaceBlock } from '../../scripts/ds.js';
+import {
+  loadBundle, readBlock, replaceBlock, applyNone,
+} from '../../scripts/ds.js';
 import * as fields from './ac-title-fields.js';
 
 /** @param {HTMLElement} block */
@@ -16,11 +18,11 @@ export default function decorate(block) {
   const heading = found.title?.cell?.querySelector('h1,h2,h3,h4,h5,h6');
   if (heading) values.titleType = heading.localName;
   const root = renderTitle({
-    ...componentInput(found, values, {
+    ...applyNone(componentInput(found, values, {
       contentFields: fields.CONTENT_FIELDS,
       optionFields: fields.OPTION_FIELDS,
       editableProps: fields.EDITABLE_PROPS,
-    }),
+    }), fields),
     loadBundle,
   });
   replaceBlock(block, root, wrapper);

@@ -27,6 +27,10 @@
           "label": "Start Level",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "H1",
               "value": "h1"
             },
@@ -57,6 +61,10 @@
           "name": "stopLevel",
           "label": "Stop Level",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "H1",
               "value": "h1"
@@ -89,6 +97,10 @@
           "label": "Spacing Mb",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "mb-4 (1rem)",
               "value": "mb-4"
             },
@@ -116,6 +128,10 @@
           "label": "Spacing My",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "my-4 (1rem)",
               "value": "my-4"
             },
@@ -142,6 +158,10 @@
           "name": "tocListTypeOption",
           "label": "Toc List Type",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Numbered",
               "value": "numbered"

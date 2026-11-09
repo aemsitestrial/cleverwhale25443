@@ -31,6 +31,9 @@ export const FIELD_CONDITIONS = {};
 // The content props the wrapper renders an editable element for.
 export const EDITABLE_PROPS = [];
 
+// The option lists the wrapper takes as a prop, not a class (a None choice leaves them out).
+export const PROP_LISTS = [];
+
 // The item's fields, one cell each, in model order.
 export const ITEM_NAMES = [
   'imagePath',
@@ -80,6 +83,9 @@ export const ITEM_CONTENT_FIELDS = {
   action2Link: 'actions.1.link.url',
   itemStyle: 'itemStyle',
 };
+
+// The item option lists taken as a prop, not a class (a None choice leaves them out).
+export const ITEM_PROP_LISTS = ['cardAction'];
 
 // Item field -> option list of the item (`options` of the item).
 export const ITEM_OPTION_FIELDS = {

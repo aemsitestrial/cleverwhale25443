@@ -33,6 +33,10 @@
           "label": "Spacing Mb",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "mb-4 (1rem)",
               "value": "mb-4"
             },
@@ -59,6 +63,10 @@
           "name": "spacingMy",
           "label": "Spacing My",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "my-4 (1rem)",
               "value": "my-4"
@@ -87,6 +95,10 @@
           "label": "Text Content Alignment",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Center",
               "value": "modifier-content-center"
             },
@@ -101,6 +113,10 @@
           "name": "textIcon",
           "label": "Text Icon",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Call",
               "value": "call"
@@ -149,6 +165,10 @@
           "label": "Text Large Size",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Large",
               "value": "modification-text-large"
             }
@@ -159,6 +179,10 @@
           "name": "themeTypeOption",
           "label": "Theme Type",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Primary",
               "value": "style-primary"

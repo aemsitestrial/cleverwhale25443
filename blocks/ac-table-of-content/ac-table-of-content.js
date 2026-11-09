@@ -12,7 +12,7 @@ import buildTocItems from '../../ds-eds-assets/js/vendor/build-toc-items.js';
 import { fieldsByName, valuesByName } from '../../ds-eds-assets/js/vendor/field-rows.js';
 import { componentInput } from '../../ds-eds-assets/js/vendor/component-block.js';
 import {
-  loadBundle, readBlock, replaceBlock, moveInstrumentation,
+  loadBundle, readBlock, replaceBlock, moveInstrumentation, applyNone,
 } from '../../scripts/ds.js';
 import * as fields from './ac-table-of-content-fields.js';
 
@@ -55,11 +55,11 @@ export default function decorate(block) {
   loadBundle('ac-table-of-content');
   const { own, wrapper } = readBlock(block, fields.NAMES);
   const found = fieldsByName(own, fields.NAMES);
-  const input = componentInput(found, valuesByName(found, fields.KINDS), {
+  const input = applyNone(componentInput(found, valuesByName(found, fields.KINDS), {
     contentFields: fields.CONTENT_FIELDS,
     optionFields: fields.OPTION_FIELDS,
     editableProps: [],
-  });
+  }), fields);
   const { startLevel = 'h2', stopLevel = 'h3' } = input.content;
   const render = () => renderTableOfContent({
     ...input,

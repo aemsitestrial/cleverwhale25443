@@ -43,6 +43,10 @@
           "label": "List Grid Rows",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Grid row 2",
               "value": "ds-brand-list-per-2"
             },
@@ -65,6 +69,10 @@
           "name": "listItemTypeOption",
           "label": "List Item Type",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Teasers",
               "value": "ac-core-teaser"
@@ -93,6 +101,10 @@
           "label": "Spacing Mb",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "mb-4 (1rem)",
               "value": "mb-4"
             },
@@ -120,6 +132,10 @@
           "label": "Spacing My",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "my-4 (1rem)",
               "value": "my-4"
             },
@@ -146,6 +162,10 @@
           "name": "themeTypeOption",
           "label": "Theme Type",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Primary",
               "value": "style-primary"
@@ -343,6 +363,10 @@
           "label": "Item type",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Teasers",
               "value": "ac-core-teaser"
             },
@@ -401,6 +425,10 @@
           "name": "cardAemModifier",
           "label": "Card Aem Modifier",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Linked video",
               "value": "modifier-linked-video"
@@ -474,6 +502,10 @@
           "label": "Card Icon Type",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Vertical",
               "value": "modifier-vertical"
             },
@@ -507,6 +539,10 @@
           "name": "cardIconVariant",
           "label": "Card Icon Variant",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Solid",
               "value": "modifier-solid"
@@ -546,6 +582,10 @@
           "label": "Card Image Cropping Type",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "No image crop",
               "value": "modifier-no-image-crop"
             }
@@ -571,6 +611,10 @@
           "name": "descriptionLineClamp",
           "label": "Description Line Clamp",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "2 lines",
               "value": "teaser-description-line-clamp-2"
@@ -616,6 +660,10 @@
           "label": "Headline Line Clamp",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "1 line",
               "value": "teaser-headline-line-clamp-1"
             },
@@ -643,6 +691,10 @@
           "name": "themeTypeOption",
           "label": "Theme Type",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Primary",
               "value": "style-primary"

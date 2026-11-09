@@ -74,6 +74,10 @@
           "label": "Download Density",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Compact",
               "value": "modifier-compact"
             }
@@ -84,6 +88,10 @@
           "name": "spacingMb",
           "label": "Spacing Mb",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "mb-4 (1rem)",
               "value": "mb-4"
@@ -112,6 +120,10 @@
           "label": "Spacing My",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "my-4 (1rem)",
               "value": "my-4"
             },
@@ -138,6 +150,10 @@
           "name": "themeTypeOption",
           "label": "Theme Type",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Primary",
               "value": "style-primary"

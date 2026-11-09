@@ -50,6 +50,13 @@ const commonLists = await importOptions('common.js');
 // ---------------------------------------------------------------------------------------------
 // Names and fields
 
+// The value of the "None" choice a select starts with: the field adds nothing. scripts/ds.js
+// (applyNone, clearNoneSectionFields) reads it: an option list chosen as None is given empty, so it
+// adds no class and replaces the wrapper's default; a content prop or a list the wrapper takes as a
+// prop (PROP_LISTS) is left out, so the component's own default applies.
+const NONE = '_none';
+const NONE_OPTION = { name: 'None', value: NONE };
+
 const HEADINGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((h) => ({ name: h.toUpperCase(), value: h }));
 const label = (name) => name
   .replace(/^cq:/, '')
@@ -109,7 +116,7 @@ function contentFields(block, content) {
       }, prop, 'boolean');
     } else if (spec.kind === 'enum' && ['startLevel', 'stopLevel'].includes(prop)) {
       add({
-        component: 'select', name: prop, label: label(prop), options: HEADINGS,
+        component: 'select', name: prop, label: label(prop), options: [NONE_OPTION, ...HEADINGS],
       }, prop, 'text');
     } else if (spec.kind === 'enum') {
       // container gridVariant/contentWidth: selects, added with the options
@@ -137,11 +144,27 @@ function contentFields(block, content) {
   return fields;
 }
 
-const selectField = (name, fieldLabel, values, multiple = false) => ({
+// The option lists that cannot be empty: the wrapper puts its first value in place of an empty
+// one (`required` in render-banner.js), so a None choice would not add nothing.
+const NO_EMPTY_LISTS = ['sectionTeaserImage', 'promoBannerStyle'];
+
+// Whether an option list's select gets the None choice: not the type list of a family (the type
+// decides the fields), not a list that cannot be empty, and not a list that has a value of its own
+// for "none" (cardAction).
+const takesNone = (list, values, typeList) => list !== typeList
+  && !NO_EMPTY_LISTS.includes(list)
+  && !values.some(({ value }) => value === 'none');
+
+// A select (a multiselect for several values, which the author clears by deselecting). A single
+// select starts with the None choice unless `none` is false.
+const selectField = (name, fieldLabel, values, multiple = false, { none = true } = {}) => ({
   component: multiple ? 'multiselect' : 'select',
   name,
   label: fieldLabel,
-  options: values.map(({ value, label: optionLabel }) => ({ name: optionLabel, value })),
+  options: [
+    ...(none && !multiple ? [NONE_OPTION] : []),
+    ...values.map(({ value, label: optionLabel }) => ({ name: optionLabel, value })),
+  ],
 });
 
 // A JsonLogic condition (the subset model-conditions.js evaluates) that shows a field only for the
@@ -228,10 +251,11 @@ function blockFiles(block, spec) {
     .sort(([a], [b]) => (b === meta?.list) - (a === meta?.list))
     .map(([list, s]) => {
       if (block === 'ac-title' && list === 'headingTag') {
-        return { list, s, field: selectField('titleType', 'Title type', s.values) };
+        return { list, s, field: selectField('titleType', 'Title type', s.values, false, { none: false }) };
       }
       const name = fieldName(list, { select: true, base: contentNames });
-      return { list, s, field: selectField(name, label(list), s.values, s.multiple) };
+      const none = takesNone(list, s.values, meta?.list);
+      return { list, s, field: selectField(name, label(list), s.values, s.multiple, { none }) };
     });
   const typeField = meta && options.find((o) => o.list === meta.list).field.name;
   const conditions = {};
@@ -286,6 +310,8 @@ function blockFiles(block, spec) {
     OPTION_FIELDS: Object.fromEntries(options.map((o) => [o.field.name, { list: o.list }])),
     FIELD_CONDITIONS: conditions,
     EDITABLE_PROPS: (spec.editable || []).map((e) => e.prop).filter((p) => !p.startsWith('`')),
+    PROP_LISTS: Object.entries(spec.options || {})
+      .filter(([, o]) => o.appliedAs === 'prop').map(([list]) => list).sort(),
   };
   if (meta) table.TYPE_META = { list: meta.list, default: meta.default };
 
@@ -300,7 +326,8 @@ function blockFiles(block, spec) {
     const itemNames = item.map((c) => c.field.name);
     const itemOptions = Object.entries(itemSpec.options || {}).map(([list, s]) => {
       const name = fieldName(list, { select: true, base: itemNames });
-      return { list, s, field: selectField(name, label(list), s.values, s.multiple) };
+      const none = takesNone(list, s.values);
+      return { list, s, field: selectField(name, label(list), s.values, s.multiple, { none }) };
     });
     const itemConditions = block === 'ac-list'
       ? listItemConditions(item, itemOptions, spec.options.listItemType.values)
@@ -331,6 +358,7 @@ function blockFiles(block, spec) {
         ...itemOptions.filter((o) => o.s.multiple).map((o) => [o.field.name, 'list']),
       ]),
       ITEM_CONTENT_FIELDS: Object.fromEntries(item.map((c) => [c.field.name, c.path])),
+      ITEM_PROP_LISTS: itemOptions.filter((o) => o.s.appliedAs === 'prop').map((o) => o.list).sort(),
       ITEM_OPTION_FIELDS: Object.fromEntries(itemOptions
         .map((o) => [o.field.name, { list: o.list }])),
       ITEM_FIELD_CONDITIONS: itemConditions,
@@ -372,6 +400,8 @@ const COMMENTS = {
   OPTION_FIELDS: 'Field -> option list of the wrapper.',
   FIELD_CONDITIONS: 'The option fields the model shows only for some types (as in the model).',
   EDITABLE_PROPS: 'The content props the wrapper renders an editable element for.',
+  PROP_LISTS: 'The option lists the wrapper takes as a prop, not a class (a None choice leaves them out).',
+  ITEM_PROP_LISTS: 'The item option lists taken as a prop, not a class (a None choice leaves them out).',
   TYPE_META: 'The type list of the family and its default type (options typeMeta).',
   ITEM_NAMES: 'The item\'s fields, one cell each, in model order.',
   ITEM_KINDS: 'How field-rows.js reads an item field that is not plain text.',
@@ -423,7 +453,10 @@ const sectionFields = [
     ...selectField('layout', 'Layout', [{ value: 'toc', label: 'Table of contents beside the content' }]),
     description: 'Table of contents: the section\'s AC Table Of Content goes into a sticky sidebar beside the rest of the section',
   },
-  selectField('contentWidth', 'Content width', [...containerLists.contentWidth, { value: 'bleed', label: 'Full bleed' }]),
+  // No None: a section without a width is the default width (12).
+  selectField('contentWidth', 'Content width', [
+    ...containerLists.contentWidth, { value: 'bleed', label: 'Full bleed' },
+  ], false, { none: false }),
   selectField('padding', 'Padding (top and bottom)', commonLists.spacingPy),
   selectField('paddingTop', 'Padding top', commonLists.spacingPt),
   selectField('paddingBottom', 'Padding bottom', commonLists.spacingPb),

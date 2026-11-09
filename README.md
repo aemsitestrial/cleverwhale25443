@@ -42,6 +42,26 @@ npm run ds:blocks    # regenerates the ac-* models and field tables, then compon
 The site serves the files in `ds-eds-assets/`, which are committed; the package is not an npm
 dependency, so `npm ci` does not need the archive.
 
+### The None choice
+
+Every select starts with **None** (stored as `_none`; `tools/ds-blocks/generate.mjs` adds it), so an
+author can clear a choice. `applyNone` and `clearNoneSectionFields` in `scripts/ds.js` handle it:
+
+- **Class lists** (theme, modifiers, spacing, clamps): None adds no class, and it also replaces the
+  component's default. For example, a card with theme None has no `style-primary`.
+- **Lists the component takes as a prop** (icon, link target, list type), content selects (start and
+  stop level) and a list item's "Item type": None leaves the value out, so the component's own default
+  (or the list's item type) applies.
+- **Section fields** (grid, padding, margin, layout): None adds nothing.
+
+Some selects have no None:
+
+- the type of a family (card type, banner type, text content type);
+- the heading level folded into a title;
+- the section's content width (empty means the default width);
+- the banner's section teaser image and promo banner style, which cannot be empty;
+- the card action, which has its own "None".
+
 ### AC List items
 
 An AC List Item whose type is a card type (Card content, Card AEM or Card icon) is that card. Its type is

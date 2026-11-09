@@ -78,6 +78,74 @@ export function replaceBlock(block, root, wrapper) {
   block.append(root);
 }
 
+// ---- The None choice ---------------------------------------------------------------------------
+
+// The value of the "None" choice every select of the models starts with (tools/ds-blocks/
+// generate.mjs): the field adds nothing.
+export const NONE = '_none';
+
+// An option value without the None choice: '' for a single value, the other values for several.
+function withoutNone(value) {
+  if (typeof value !== 'string' || !value.includes(NONE)) return value;
+  return value.split(',').map((v) => v.trim()).filter((v) => v && v !== NONE).join(',');
+}
+
+/** Content props without the None choice: a prop chosen as None is left out. */
+function contentWithoutNone(content) {
+  return Object.fromEntries(Object.entries(content).filter(([, v]) => v !== NONE));
+}
+
+/**
+ * Options without the None choice. A class list chosen as None is given empty: it adds no class
+ * and replaces the wrapper's default (a card's theme). A list the wrapper takes as a prop is left
+ * out, so the component's own default applies.
+ * @param {Record<string, any>} options
+ * @param {string[]} [propLists]
+ */
+function optionsWithoutNone(options, propLists = []) {
+  return Object.fromEntries(Object.entries(options).flatMap(([list, value]) => {
+    const clean = withoutNone(value);
+    if (clean === value) return [[list, value]];
+    if (!clean && propLists.includes(list)) return [];
+    return [[list, clean]];
+  }));
+}
+
+/**
+ * The design system's input with the None choices applied (see NONE): the block's content props
+ * and options, and its items' when it has items.
+ * @param {{ content?: object, options?: object }} input
+ * @param {object} fields the block's <block>-fields.js
+ */
+export function applyNone(input, fields) {
+  const content = contentWithoutNone(input.content || {});
+  if (Array.isArray(content.items)) {
+    content.items = content.items.map((item) => {
+      const clean = contentWithoutNone(item);
+      if (clean.options) clean.options = optionsWithoutNone(clean.options, fields.ITEM_PROP_LISTS);
+      return clean;
+    });
+  }
+  return {
+    ...input,
+    content,
+    options: optionsWithoutNone(input.options || {}, fields.PROP_LISTS),
+  };
+}
+
+/**
+ * Removes the section fields chosen as None (grid, spacing, layout) before the sections are
+ * decorated, so they add nothing.
+ * @param {Element} main
+ */
+export function clearNoneSectionFields(main) {
+  main.querySelectorAll(':scope > .section').forEach((section) => {
+    Object.keys(section.dataset).forEach((key) => {
+      if (section.dataset[key] === NONE) delete section.dataset[key];
+    });
+  });
+}
+
 /**
  * Decorates a block of one design-system component: reads its rows by the field table in its
  * <block>-fields.js, renders the component with `render` and loads the block's own bundle.
@@ -88,7 +156,7 @@ export function decorateComponentBlock(block, { bundle, render, fields }) {
   loadBundle(bundle);
   const { own, wrapper } = readBlock(block, fields.NAMES);
   const root = renderComponentBlock(own, {
-    render: (input) => render({ ...input, loadBundle }),
+    render: (input) => render({ ...applyNone(input, fields), loadBundle }),
     names: fields.NAMES,
     kinds: fields.KINDS,
     contentFields: fields.CONTENT_FIELDS,
@@ -144,15 +212,16 @@ export function containerInput(own, items, fields) {
     Object.entries(item.editable).forEach(([prop, attributes]) => {
       editable[`items.${index}.${prop}`] = attributes;
     });
+    // A None choice is applied by applyNone, which the container block calls on this input.
     const itemOptions = Object.fromEntries(Object.entries(item.options)
-      .filter(([, v]) => v !== undefined && v !== ''));
+      .filter(([, v]) => v !== undefined));
     return {
       ...item.content,
       ...(Object.keys(itemOptions).length && { options: itemOptions }),
     };
   });
   input.editable = editable;
-  return input;
+  return applyNone(input, fields);
 }
 
 export { editorAttributes, moveInstrumentation };

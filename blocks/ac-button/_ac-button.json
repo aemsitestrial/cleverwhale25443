@@ -38,6 +38,10 @@
           "label": "Button Grid Carousel Switch",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Grid",
               "value": "ac-core-grid-button active text-capitalize"
             },
@@ -52,6 +56,10 @@
           "name": "buttonIcon",
           "label": "Button Icon",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Chevron right",
               "value": "chevron-right"
@@ -112,6 +120,10 @@
           "label": "Button Icon Position",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Leading",
               "value": "modifier-leading"
             },
@@ -126,6 +138,10 @@
           "name": "buttonTheme",
           "label": "Button Theme",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Primary positive",
               "value": "style-primary-positive"
@@ -150,6 +166,10 @@
           "label": "Link Target",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Same tab",
               "value": "_self"
             },
@@ -164,6 +184,10 @@
           "name": "modifierVariant",
           "label": "Modifier Variant",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Solid",
               "value": "modifier-solid"
@@ -183,6 +207,10 @@
           "name": "spacingMb",
           "label": "Spacing Mb",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "mb-4 (1rem)",
               "value": "mb-4"
@@ -210,6 +238,10 @@
           "name": "spacingMy",
           "label": "Spacing My",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "my-4 (1rem)",
               "value": "my-4"

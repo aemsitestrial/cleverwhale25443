@@ -130,6 +130,10 @@
           "label": "Description Line Clamp",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "2 lines",
               "value": "teaser-description-line-clamp-2"
             },
@@ -161,6 +165,10 @@
           "label": "Headline Line Clamp",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "1 line",
               "value": "teaser-headline-line-clamp-1"
             },
@@ -175,6 +183,10 @@
           "name": "spacingMb",
           "label": "Spacing Mb",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "mb-4 (1rem)",
               "value": "mb-4"
@@ -203,6 +215,10 @@
           "label": "Spacing My",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "my-4 (1rem)",
               "value": "my-4"
             },
@@ -229,6 +245,10 @@
           "name": "textContentModifier",
           "label": "Text Content Modifier",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Content center",
               "value": "modifier-content-center"
@@ -268,6 +288,10 @@
           "name": "themeTypeOption",
           "label": "Theme Type",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Primary",
               "value": "style-primary"

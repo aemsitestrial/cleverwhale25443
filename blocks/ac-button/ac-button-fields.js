@@ -38,3 +38,6 @@ export const FIELD_CONDITIONS = {};
 
 // The content props the wrapper renders an editable element for.
 export const EDITABLE_PROPS = ['text'];
+
+// The option lists the wrapper takes as a prop, not a class (a None choice leaves them out).
+export const PROP_LISTS = ['buttonIcon', 'linkTarget'];

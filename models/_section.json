@@ -54,6 +54,10 @@
           "label": "Grid",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "1 column",
               "value": "grid-col-1"
             },
@@ -88,6 +92,10 @@
           "name": "layout",
           "label": "Layout",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Table of contents beside the content",
               "value": "toc"
@@ -128,6 +136,10 @@
           "label": "Padding (top and bottom)",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "py-4 (1rem)",
               "value": "py-4"
             },
@@ -154,6 +166,10 @@
           "name": "paddingTop",
           "label": "Padding top",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "pt-4 (1rem)",
               "value": "pt-4"
@@ -182,6 +198,10 @@
           "label": "Padding bottom",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "pb-4 (1rem)",
               "value": "pb-4"
             },
@@ -208,6 +228,10 @@
           "name": "margin",
           "label": "Margin (top and bottom)",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "my-4 (1rem)",
               "value": "my-4"
@@ -236,6 +260,10 @@
           "label": "Margin top",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "mt-4 (1rem)",
               "value": "mt-4"
             },
@@ -262,6 +290,10 @@
           "name": "marginBottom",
           "label": "Margin bottom",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "mb-4 (1rem)",
               "value": "mb-4"

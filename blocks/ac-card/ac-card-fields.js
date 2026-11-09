@@ -121,5 +121,8 @@ export const EDITABLE_PROPS = [
   'actions.3.title',
 ];
 
+// The option lists the wrapper takes as a prop, not a class (a None choice leaves them out).
+export const PROP_LISTS = ['cardAction'];
+
 // The type list of the family and its default type (options typeMeta).
 export const TYPE_META = { list: 'cardType', default: 'ac-core-card-content' };

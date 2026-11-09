@@ -27,6 +27,10 @@
           "label": "Grid Variant",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "1 column",
               "value": "grid-col-1"
             },
@@ -62,6 +66,10 @@
           "label": "Content Width",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Narrow (6)",
               "value": "6"
             },
@@ -84,6 +92,10 @@
           "name": "blockContainerVariant",
           "label": "Block Container Variant",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Quote Section",
               "value": "ac-core-block-quote-section"
@@ -124,6 +136,10 @@
           "label": "Carousel Variant",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Splide Carousel",
               "value": "ac-core-splide-carousel ds-splide-carousel"
             },
@@ -138,6 +154,10 @@
           "name": "filterBlockVariant",
           "label": "Filter Block Variant",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Filter block",
               "value": "ac-core-block-teasers-with-filter"
@@ -161,6 +181,10 @@
           "name": "spacingMb",
           "label": "Spacing Mb",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "mb-4 (1rem)",
               "value": "mb-4"
@@ -189,6 +213,10 @@
           "label": "Spacing Mt",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "mt-4 (1rem)",
               "value": "mt-4"
             },
@@ -215,6 +243,10 @@
           "name": "spacingMy",
           "label": "Spacing My",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "my-4 (1rem)",
               "value": "my-4"
@@ -243,6 +275,10 @@
           "label": "Spacing Pb",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "pb-4 (1rem)",
               "value": "pb-4"
             },
@@ -269,6 +305,10 @@
           "name": "spacingPt",
           "label": "Spacing Pt",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "pt-4 (1rem)",
               "value": "pt-4"
@@ -297,6 +337,10 @@
           "label": "Spacing Py",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "py-4 (1rem)",
               "value": "py-4"
             },
@@ -324,6 +368,10 @@
           "label": "Theme Type",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Primary",
               "value": "style-primary"
             },
@@ -346,6 +394,10 @@
           "name": "tocLayout",
           "label": "Toc Layout",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "TOC",
               "value": "ds-brand-block-toc-layout"

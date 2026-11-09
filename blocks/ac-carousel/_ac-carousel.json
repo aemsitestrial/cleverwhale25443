@@ -43,6 +43,10 @@
           "label": "Carousel Item Type",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Image",
               "value": "image"
             },
@@ -66,6 +70,10 @@
           "label": "Carousel Theme",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Primary",
               "value": "style-primary"
             },
@@ -80,6 +88,10 @@
           "name": "spacingMb",
           "label": "Spacing Mb",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "mb-4 (1rem)",
               "value": "mb-4"
@@ -107,6 +119,10 @@
           "name": "spacingMy",
           "label": "Spacing My",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "my-4 (1rem)",
               "value": "my-4"

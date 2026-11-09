@@ -154,6 +154,10 @@
           "label": "Banner Content Alignment",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Content center",
               "value": "modifier-content-center"
             },
@@ -187,6 +191,10 @@
           "name": "bannerReverseContent",
           "label": "Banner Reverse Content",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Reverse",
               "value": "modifier-reverse-content"
@@ -230,6 +238,10 @@
           "label": "Description Line Clamp",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "2 lines",
               "value": "teaser-description-line-clamp-2"
             },
@@ -260,6 +272,10 @@
           "name": "headlineLineClamp",
           "label": "Headline Line Clamp",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "1 line",
               "value": "teaser-headline-line-clamp-1"
@@ -330,6 +346,10 @@
           "label": "Spacing Mb",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "mb-4 (1rem)",
               "value": "mb-4"
             },
@@ -356,6 +376,10 @@
           "name": "spacingMy",
           "label": "Spacing My",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "my-4 (1rem)",
               "value": "my-4"
@@ -384,6 +408,10 @@
           "label": "Startpage Banner Modifier",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Reverse",
               "value": "modifier-reverse-content"
             },
@@ -406,6 +434,10 @@
           "name": "stickyBannerContentTypeOption",
           "label": "Sticky Banner Content Type",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Contact",
               "value": "modifier-contact"
@@ -433,6 +465,10 @@
           "name": "themeTypeOption",
           "label": "Theme Type",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Primary",
               "value": "style-primary"

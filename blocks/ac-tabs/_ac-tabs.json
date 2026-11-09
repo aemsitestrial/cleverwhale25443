@@ -49,6 +49,10 @@
           "label": "Spacing Mb",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "mb-4 (1rem)",
               "value": "mb-4"
             },
@@ -75,6 +79,10 @@
           "name": "spacingMy",
           "label": "Spacing My",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "my-4 (1rem)",
               "value": "my-4"
@@ -103,6 +111,10 @@
           "label": "Tabs Layout",
           "options": [
             {
+              "name": "None",
+              "value": "_none"
+            },
+            {
               "name": "Responsive",
               "value": "ds-brand-responsive-select-run-js ds-container-query"
             },
@@ -117,6 +129,10 @@
           "name": "themeTypeOption",
           "label": "Theme Type",
           "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
             {
               "name": "Primary",
               "value": "style-primary"

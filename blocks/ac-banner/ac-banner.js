@@ -5,14 +5,16 @@
 // its tag. The fields of the other types are hidden by the model's conditions and dropped here too.
 import renderBanner from '../../ds-eds-assets/js/vendor/render-banner.js';
 import { renderTeaserFamilyBlock } from '../../ds-eds-assets/js/vendor/teaser-family.js';
-import { loadBundle, readBlock, replaceBlock } from '../../scripts/ds.js';
+import {
+  loadBundle, readBlock, replaceBlock, applyNone,
+} from '../../scripts/ds.js';
 import * as fields from './ac-banner-fields.js';
 
 /** @param {HTMLElement} block */
 export default function decorate(block) {
   const { own, wrapper } = readBlock(block, fields.NAMES);
   const root = renderTeaserFamilyBlock(own, {
-    render: renderBanner,
+    render: (input) => renderBanner(applyNone(input, fields)),
     names: fields.NAMES,
     kinds: fields.KINDS,
     contentFields: fields.CONTENT_FIELDS,

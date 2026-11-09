@@ -16,7 +16,9 @@ import {
 } from '../ds-eds-assets/js/vendor/page-glue.js';
 import nestByParent, { isAuthoringContext } from '../ds-eds-assets/js/vendor/nest-by-parent.js';
 import { startPageControllers } from '../ds-eds-assets/js/vendor/start-page-controllers.js';
-import { NESTABLE_SELECTOR, LAYOUT_MODELS, decorateTocSections } from './ds.js';
+import {
+  NESTABLE_SELECTOR, LAYOUT_MODELS, decorateTocSections, clearNoneSectionFields,
+} from './ds.js';
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -89,6 +91,8 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  // A section field chosen as None (grid, spacing, layout) adds nothing.
+  clearNoneSectionFields(main);
   // The design system's container on each section, from its section fields (background, grid,
   // content width, spacing). After decorateBlocks, before the blocks load.
   decorateContainerSections(main);
