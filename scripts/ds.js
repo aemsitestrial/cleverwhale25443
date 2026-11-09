@@ -161,6 +161,9 @@ export { editorAttributes, moveInstrumentation };
 
 // The section field "Layout" and its value for the table of contents layout.
 export const TOC_LAYOUT = 'toc';
+// The name the layout's sidebar takes for nesting: a block whose "Nest inside" is this name goes
+// into the sidebar, under the table of contents (nest-by-parent.js, in scripts/scripts.js).
+export const TOC_SIDEBAR = 'toc-sidebar';
 
 /** div.container.responsivegrid.<cls> > div.cmp-container [> div.aem-Grid] > children */
 function layoutContainer(cls, children, grid = true) {
@@ -183,8 +186,10 @@ function layoutContainer(cls, children, grid = true) {
  * Puts a section whose "Layout" is "Table of contents" into the design system's table of contents
  * layout (BlockTableOfContentLayout): its AC Table Of Content blocks go into the sticky sidebar,
  * everything else of the section into the content column beside it, so the navigation and the
- * content it lists are one section. The toc-layout page controller makes the sidebar sticky and
- * marks the heading in view. The controller handles one layout per page (the first).
+ * content it lists are one section. A block whose "Nest inside" is "toc-sidebar" (TOC_SIDEBAR) is
+ * moved under the table of contents in the sidebar, in page order. The toc-layout page controller
+ * makes the sidebar sticky and marks the heading in view. The controller handles one layout per
+ * page (the first).
  *
  * Runs after decorateContainerSections (the layout sits inside the section's container) and again
  * after an edit in the Universal Editor; a section that has the layout is left as it is, except
@@ -209,7 +214,11 @@ export function decorateTocSections(main) {
     const contentItems = loose.filter((wrapper) => !isToc(wrapper));
 
     if (existing) {
-      existing.querySelector('.ds-brand-sticky-container > .cmp-container')?.append(...sidebarItems);
+      // Before the blocks nested into the sidebar: the table of contents stays on top.
+      const sidebar = existing.querySelector('.ds-brand-sticky-container > .cmp-container');
+      const firstNested = sidebar?.querySelector(':scope > .block[data-parent-id]');
+      if (firstNested) firstNested.before(...sidebarItems);
+      else sidebar?.append(...sidebarItems);
       existing.querySelector('.TOC-content-container > .cmp-container > .aem-Grid')?.append(...contentItems);
       return;
     }
@@ -222,6 +231,10 @@ export function decorateTocSections(main) {
       ]),
       layoutContainer(`TOC-content-container ${column}`, contentItems),
     ]);
+    // The sidebar is a place to nest blocks into, under the table of contents: a card, a banner,
+    // any block whose "Nest inside" is TOC_SIDEBAR.
+    const sidebar = layout.querySelector('.ds-brand-sticky-container > .cmp-container');
+    sidebar.dataset.nestId = TOC_SIDEBAR;
     holder.append(layout);
     delete section.dataset.layout;
   });

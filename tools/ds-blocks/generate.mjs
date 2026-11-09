@@ -162,7 +162,8 @@ const NEST_FIELD = {
   component: 'text',
   name: 'parentId',
   label: 'Nest inside',
-  description: 'The name of the AC Container this block is moved into. Empty: it stays where it is.',
+  description: 'The name of the AC Container this block is moved into, or toc-sidebar for the '
+    + 'sidebar of a table of contents section (under the navigation). Empty: it stays where it is.',
 };
 const NAME_FIELD = {
   component: 'text',

@@ -67,6 +67,9 @@ inside the section:
 - the rest of the section goes into the content column (`TOC-content-container`);
 - the list holds only the headings of that column.
 
+To put a card (or any other AC block) in the sidebar under the navigation, add the block to the
+section and set its "Nest inside" field to `toc-sidebar`. The sidebar holds the blocks in page order.
+
 The `toc-layout` page controller makes the sidebar sticky and marks the heading in view. It handles one
 layout per page.
 
