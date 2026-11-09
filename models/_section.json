@@ -315,7 +315,6 @@
         "cards",
         "columns",
         "fragment",
-        "ac-table-of-content-layout",
         "ac-card",
         "ac-banner",
         "ac-container",
@@ -334,8 +333,7 @@
         "ac-table",
         "ac-tabs",
         "ac-text",
-        "ac-title",
-        "ac-toc-layout"
+        "ac-title"
       ]
     }
   ]

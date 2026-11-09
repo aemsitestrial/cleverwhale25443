@@ -190,8 +190,6 @@ const NEST_FIELD = {
   label: 'Nest inside',
   description: 'The name of the AC Container this block is moved into. Empty: it stays where it is.',
 };
-// The nesting fields of a block's model, which an item of the table of contents layout leaves out.
-const NEST_FIELDS_OF_BLOCK = ['parentId', 'nestId'];
 const NAME_FIELD = {
   component: 'text',
   name: 'nestId',
@@ -435,8 +433,6 @@ function fieldsModule(block, spec, table) {
 }
 
 const written = [];
-// The model fields of each block written, for the items of the table of contents layout.
-const blockModels = {};
 Object.entries(contract)
   .filter(([block, spec]) => !spec.itemOf && !SKIPPED_BLOCKS.includes(block))
   .forEach(([block, spec]) => {
@@ -445,148 +441,11 @@ Object.entries(contract)
     const { json, table } = blockFiles(block, spec);
     writeFileSync(join(dir, `_${block}.json`), `${JSON.stringify(json, null, 2)}\n`);
     writeFileSync(join(dir, `${block}-fields.js`), fieldsModule(block, spec, table));
-    blockModels[block] = json.models[0].fields;
     const css = join(dir, `${block}.css`);
     if (!existsSync(css)) writeFileSync(css, `/* The CSS of ${block} comes from the design system package (loadBundle in ${block}.js). */\n`);
     written.push(block);
   });
 console.log(`ds-blocks: ${written.length} blocks (${written.join(', ')})`);
-
-// ---------------------------------------------------------------------------------------------
-// AC Table Of Content Layout: the design system's BlockTableOfContentLayout (as on the wiki page
-// of ac-core-lib), a sticky sidebar beside a content column. The Universal Editor puts no block
-// inside a block, so what the layout holds are its items: a Table of contents item, and an item
-// of each component kind below with the fields of that component's block and a "Place" field
-// (sidebar or content). blocks/ac-toc-layout/ac-toc-layout.js renders each item with that
-// block's own decorator. The delivered page says nothing of an item's model, so each item model
-// starts with a read-only "kind" field, which its template fills.
-
-// The ids of the block's definition, model and filter, and of its items (ac-toc-layout-<kind>):
-// authored content keeps them, so they stay. The block's folder and class are its title as a class
-// name, which is how the delivered page names a block: ac-table-of-content-layout.
-const TOC_LAYOUT = 'ac-toc-layout';
-const TOC_LAYOUT_BLOCK = 'ac-table-of-content-layout';
-// The component kinds an item can be: kind -> block.
-const TOC_LAYOUT_KINDS = {
-  title: 'ac-title',
-  text: 'ac-text',
-  card: 'ac-card',
-  'text-content': 'ac-text-content',
-  image: 'ac-image',
-  button: 'ac-button',
-  link: 'ac-link',
-  table: 'ac-table',
-  separator: 'ac-separator',
-  download: 'ac-download',
-};
-const kindField = (kind) => ({
-  component: 'text', name: 'kind', label: 'Kind', valueType: 'string', value: kind, readOnly: true,
-});
-const PLACE_FIELD = {
-  component: 'select',
-  name: 'place',
-  label: 'Place',
-  value: 'content',
-  options: [{ name: 'Content', value: 'content' }, { name: 'Sidebar', value: 'sidebar' }],
-};
-const tocContract = JSON.parse(readFileSync(join(PACKAGE, 'contracts/field-contract.json'), 'utf8'))
-  .blocks['ac-table-of-content'];
-const TOC_ITEM_FIELDS = [
-  kindField('toc'),
-  {
-    component: 'select', name: 'startLevel', label: 'Start level', options: [NONE_OPTION, ...HEADINGS],
-  },
-  {
-    component: 'select', name: 'stopLevel', label: 'Stop level', options: [NONE_OPTION, ...HEADINGS],
-  },
-  selectField('tocListTypeOption', 'List type', tocContract.options.tocListType.values),
-];
-const tocItems = [
-  {
-    id: `${TOC_LAYOUT}-toc`, title: 'Table of contents', kind: 'toc', fields: TOC_ITEM_FIELDS,
-  },
-  ...Object.entries(TOC_LAYOUT_KINDS).filter(([, block]) => blockModels[block])
-    .map(([kind, block]) => ({
-      id: `${TOC_LAYOUT}-${kind}`,
-      title: `${block.replace(/^ac-/, '').split('-').map((w) => w[0].toUpperCase() + w.slice(1)).join(' ')}`,
-      kind,
-      block,
-      fields: [
-        kindField(kind),
-        ...blockModels[block].filter((f) => !NEST_FIELDS_OF_BLOCK.includes(f.name)),
-        PLACE_FIELD,
-      ],
-    })),
-];
-const tocLayoutTitle = 'AC Table Of Content Layout';
-const tocLayoutJson = {
-  definitions: [
-    {
-      title: tocLayoutTitle,
-      id: TOC_LAYOUT,
-      plugins: {
-        xwalk: {
-          page: {
-            resourceType: 'core/franklin/components/block/v1/block',
-            template: {
-              name: tocLayoutTitle, model: TOC_LAYOUT, 'key-value': true, filter: TOC_LAYOUT,
-            },
-          },
-        },
-      },
-    },
-    ...tocItems.map((item) => ({
-      title: item.title,
-      id: item.id,
-      plugins: {
-        xwalk: {
-          page: {
-            resourceType: 'core/franklin/components/block/v1/block/item',
-            template: {
-              name: item.title, model: item.id, kind: item.kind, ...(item.block && { place: 'content' }),
-            },
-          },
-        },
-      },
-    })),
-  ],
-  models: [
-    {
-      id: TOC_LAYOUT,
-      fields: [
-        selectField('spacingMb', 'Spacing Mb', commonLists.spacingMb),
-        selectField('spacingMy', 'Spacing My', commonLists.spacingMy),
-      ],
-    },
-    ...tocItems.map((item) => ({ id: item.id, fields: item.fields })),
-  ],
-  filters: [{ id: TOC_LAYOUT, components: tocItems.map((item) => item.id) }],
-};
-// Each item kind: the block that renders it and its fields in cell order (after "kind"; a field
-// the editor folds into another has no cell of its own).
-const tocLayoutTable = {
-  NAMES: ['spacingMb', 'spacingMy'],
-  KINDS: {},
-  OPTION_FIELDS: { spacingMb: { list: 'spacingMb' }, spacingMy: { list: 'spacingMy' } },
-  ITEMS: Object.fromEntries(tocItems.map((item) => {
-    const names = item.fields.map((f) => f.name);
-    return [item.kind, {
-      ...(item.block && { block: item.block }),
-      names: names.slice(1).filter((name) => !isFolded(name, names)),
-    }];
-  })),
-};
-const tocLayoutDir = join(ROOT, 'blocks', TOC_LAYOUT_BLOCK);
-mkdirSync(tocLayoutDir, { recursive: true });
-writeFileSync(join(tocLayoutDir, `_${TOC_LAYOUT_BLOCK}.json`), `${JSON.stringify(tocLayoutJson, null, 2)}\n`);
-writeFileSync(join(tocLayoutDir, `${TOC_LAYOUT_BLOCK}-fields.js`), [
-  '// GENERATED by tools/ds-blocks/generate.mjs: the fields of the AC Table Of Content Layout and of',
-  '// its items. Do not edit: run the generator again.',
-  '',
-  ...Object.entries(tocLayoutTable).map(([name, value]) => `export const ${name} = ${toJs(value)};\n`),
-].join('\n'));
-written.push(TOC_LAYOUT);
-console.log(`ds-blocks: ${TOC_LAYOUT_BLOCK} (${TOC_LAYOUT}) with ${tocItems.length} item kinds`);
 
 // The section: its model gets the design system's section fields, which decorateContainerSections
 // (ds-eds-assets/js/vendor/page-glue.js) reads, and its filter allows every ac-* block.
@@ -622,7 +481,8 @@ const sectionFilter = section.filters.find((f) => f.id === 'section');
 sectionFilter.components = [
   ...sectionFilter.components
     .filter((c) => !written.includes(c) && !SKIPPED_BLOCKS.includes(c)
-      && c !== 'ac-block-table-of-content-layout'),
+      && !['ac-block-table-of-content-layout', 'ac-toc-layout', 'ac-table-of-content-layout']
+        .includes(c)),
   ...written,
 ];
 writeFileSync(sectionFile, `${JSON.stringify(section, null, 2)}\n`);

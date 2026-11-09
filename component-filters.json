@@ -16,7 +16,6 @@
       "cards",
       "columns",
       "fragment",
-      "ac-table-of-content-layout",
       "ac-card",
       "ac-banner",
       "ac-container",
@@ -35,8 +34,7 @@
       "ac-table",
       "ac-tabs",
       "ac-text",
-      "ac-title",
-      "ac-toc-layout"
+      "ac-title"
     ]
   },
   {
@@ -61,22 +59,6 @@
     "id": "ac-splide-carousel",
     "components": [
       "ac-splide-carousel-item"
-    ]
-  },
-  {
-    "id": "ac-toc-layout",
-    "components": [
-      "ac-toc-layout-toc",
-      "ac-toc-layout-title",
-      "ac-toc-layout-text",
-      "ac-toc-layout-card",
-      "ac-toc-layout-text-content",
-      "ac-toc-layout-image",
-      "ac-toc-layout-button",
-      "ac-toc-layout-link",
-      "ac-toc-layout-table",
-      "ac-toc-layout-separator",
-      "ac-toc-layout-download"
     ]
   },
   {
