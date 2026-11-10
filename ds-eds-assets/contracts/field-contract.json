@@ -1557,6 +1557,84 @@
       "options": {},
       "editable": []
     },
+    "ac-block-table-of-content-layout": {
+      "wrapper": "render-block-table-of-content-layout",
+      "content": {
+        "sidebar": {
+          "kind": "list",
+          "type": "readonly HTMLElement[]",
+          "items": {
+            "kind": "element",
+            "type": "HTMLElement"
+          },
+          "required": false
+        },
+        "children": {
+          "kind": "list",
+          "type": "readonly HTMLElement[]",
+          "items": {
+            "kind": "element",
+            "type": "HTMLElement"
+          },
+          "required": false
+        }
+      },
+      "options": {
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        }
+      },
+      "editable": []
+    },
     "ac-button": {
       "wrapper": "render-button",
       "content": {

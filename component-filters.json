@@ -35,6 +35,7 @@
       "ac-tabs",
       "ac-text",
       "ac-title",
+      "ac-block-table-of-content-layout",
       "ac-nav-header",
       "ac-nav-links",
       "ac-nav-languages",
@@ -45,6 +46,22 @@
     "id": "ac-accordion",
     "components": [
       "ac-accordion-item"
+    ]
+  },
+  {
+    "id": "ac-block-table-of-content-layout",
+    "components": [
+      "ac-block-table-of-content-layout-toc",
+      "ac-block-table-of-content-layout-title",
+      "ac-block-table-of-content-layout-text",
+      "ac-block-table-of-content-layout-card",
+      "ac-block-table-of-content-layout-text-content",
+      "ac-block-table-of-content-layout-image",
+      "ac-block-table-of-content-layout-button",
+      "ac-block-table-of-content-layout-link",
+      "ac-block-table-of-content-layout-table",
+      "ac-block-table-of-content-layout-separator",
+      "ac-block-table-of-content-layout-download"
     ]
   },
   {

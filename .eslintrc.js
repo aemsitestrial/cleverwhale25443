@@ -28,6 +28,18 @@ module.exports = {
       'ac-carousel-item': 6,
       'ac-list-item': 20,
       'ac-splide-carousel-item': 6,
+      // The items of the AC Block Table Of Content Layout: a "kind" cell, the fields of the
+      // component they render, one cell each, and a "Place" cell.
+      'ac-block-table-of-content-layout-title': 7,
+      'ac-block-table-of-content-layout-text': 9,
+      'ac-block-table-of-content-layout-card': 26,
+      'ac-block-table-of-content-layout-text-content': 19,
+      'ac-block-table-of-content-layout-image': 6,
+      'ac-block-table-of-content-layout-button': 12,
+      'ac-block-table-of-content-layout-link': 10,
+      'ac-block-table-of-content-layout-table': 6,
+      'ac-block-table-of-content-layout-separator': 6,
+      'ac-block-table-of-content-layout-download': 14,
     }],
   },
 };
