@@ -1,1 +1,7 @@
-/* The ac-table block's CSS comes from the design system package (loadBundle in ac-table.js). */
+/* The CSS of ac-table comes from the design system package (loadBundle in ac-table.js). */
+
+/* In the Universal Editor: an empty table, with room to click into and write it. */
+.ac-table-empty {
+  min-height: 48px;
+  border: 1px dashed #8a8a8a;
+}

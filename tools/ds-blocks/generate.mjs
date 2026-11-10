@@ -188,6 +188,32 @@ function typeCondition(typeField, meta, types) {
     : { in: [{ var: typeField }, types] };
 }
 
+// The Universal Editor's rich text toolbar for a field that holds a table (Configuring the RTE
+// for the Universal Editor): the table tools, with the row and cell dialogs (a header row or
+// header cells), and the text tools a table cell needs. A filter with an `rte` config applies to
+// the field's element when the element names it in data-aue-filter (the block's JS sets it).
+const TABLE_RTE = {
+  toolbar: {
+    format: ['bold', 'italic', 'underline', 'strike'],
+    blocks: ['paragraph', 'h2', 'h3', 'h4'],
+    list: ['bullet_list', 'ordered_list'],
+    insert: ['link', 'unlink', 'table'],
+    editor: ['removeformat', 'paste_text'],
+    sections: ['insert', 'format', 'blocks', 'list', 'editor'],
+  },
+  actions: {
+    table: {
+      wrapInParagraphs: false,
+      showTableProperties: true,
+      showRowProperties: true,
+      showCellProperties: true,
+    },
+  },
+};
+const RTE_FILTERS = {
+  'ac-table': { id: 'ac-table-text', rte: TABLE_RTE, components: ['richtext'] },
+};
+
 const NEST_FIELD = {
   component: 'text',
   name: 'parentId',
@@ -303,6 +329,9 @@ function blockFiles(block, spec) {
   }];
   const models = [{ id: block, fields: modelFields }];
   const filters = [];
+  // The table's rich text field: an editor toolbar with the table tools (scripts/ds.js
+  // RTE_FILTERS puts the filter on the field's element).
+  if (RTE_FILTERS[block]) filters.push(RTE_FILTERS[block]);
 
   const table = {
     NAMES: modelFields.map((f) => f.name).filter((n) => !['parentId', 'nestId'].includes(n)),

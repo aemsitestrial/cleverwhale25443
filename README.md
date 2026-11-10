@@ -62,6 +62,17 @@ Some selects have no None:
 - the banner's section teaser image and promo banner style, which cannot be empty;
 - the card action, which has its own "None".
 
+### AC Table
+
+The table is written in the **Text** rich text field (Insert → Table).
+
+- The field's element names the filter `ac-table-text` (`blocks/ac-table/_ac-table.json`, written by
+  `tools/ds-blocks/generate.mjs` from its `TABLE_RTE`).
+- That filter's editor toolbar has the table tools, including the Table, Row and Cell properties dialogs.
+  Use the Row type Header for a header row and the Cell type Header cell for `<th>`.
+- An empty table shows a dashed box in the editor to click into.
+- The same applies to a Table item of the AC Block Table Of Content Layout.
+
 ### AC List items
 
 An AC List Item whose type is a card type (Card content, Card AEM or Card icon) is that card. Its type is
