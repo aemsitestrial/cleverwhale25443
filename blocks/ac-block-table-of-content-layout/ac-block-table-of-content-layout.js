@@ -30,6 +30,11 @@ import {
 import * as fields from './ac-block-table-of-content-layout-fields.js';
 
 const HEADINGS = 'h1, h2, h3, h4, h5, h6';
+// The item models' ids start with the block's name.
+const MODEL_PREFIX = 'ac-block-table-of-content-layout';
+const el = (tag, className, text) => Object.assign(document.createElement(tag), {
+  className, textContent: text,
+});
 // A class the heading scan skips (build-toc-items.js ignoreClasses), set for one scan.
 const SKIP = 'ac-toc-skip';
 // The headings components render for themselves (a card's or a highlight's title), which are not
@@ -125,6 +130,7 @@ export default async function decorate(block) {
   }), fields);
   const root = renderBlockTableOfContentLayout({ ...input, loadBundle });
   const { sidebar, content } = layoutSlots(root);
+  const authoring = isAuthoringContext(document);
 
   // The components first, in order; a table of contents keeps its place in the sidebar and is
   // rendered once the content column is complete.
@@ -133,7 +139,11 @@ export default async function decorate(block) {
   // eslint-disable-next-line no-restricted-syntax
   for (const row of items) {
     const [kindCell, ...cells] = [...row.children];
-    const kind = textOf(kindCell);
+    // The kind is the item's first cell, which its template fills. In the editor the item's model
+    // names it too (ac-block-table-of-content-layout-<kind>), for an item saved without it.
+    const model = row.getAttribute('data-aue-model') || '';
+    const kind = textOf(kindCell)
+      || (model.startsWith(`${MODEL_PREFIX}-`) ? model.slice(MODEL_PREFIX.length + 1) : '');
     const spec = fields.ITEMS[kind];
     // eslint-disable-next-line no-continue
     if (!spec) continue;
@@ -158,6 +168,11 @@ export default async function decorate(block) {
     await decorators[spec.block](item.block);
     // The decorator copied the item's resource onto the element; only what it rendered keeps it.
     RESOURCE_ATTRS.forEach((attr) => item.block.removeAttribute(attr));
+    // A new item has no content yet and renders nothing to click in the editor: it says what it is.
+    if (authoring && !item.wrapper.textContent.trim() && !item.wrapper.querySelector('img')) {
+      const holder = item.wrapper.querySelector('[data-aue-resource]') || item.block;
+      holder.append(el('div', 'ac-toc-layout-placeholder', `${spec.block}: empty, fill its fields`));
+    }
   }
   tocs.forEach(({ slot, cells, attributes }) => {
     slot.replaceWith(renderToc(cells, attributes, content));

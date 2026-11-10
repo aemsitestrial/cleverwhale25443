@@ -57,7 +57,13 @@ export function applyNesting(block, rows) {
  * @param {string[]} names the block's own field names
  */
 export function readBlock(block, names) {
-  const { rows, wrapper } = blockRows(block);
+  // A block the editor instruments itself holds its rows directly. blockRows takes a first child
+  // with an editor resource for an inner wrapper of the rows, which in a container block (list,
+  // accordion, table of contents layout) is its first item: the items would be read as that item's
+  // cells, and the first item's resource would move onto the rendered block.
+  const { rows, wrapper } = block.hasAttribute('data-aue-resource')
+    ? { rows: [...block.children], wrapper: null }
+    : blockRows(block);
   applyNesting(block, rows);
   const own = rows.filter((row) => row.children.length === 2 && names.includes(nameOf(row)));
   const items = rows.filter((row) => !own.includes(row));

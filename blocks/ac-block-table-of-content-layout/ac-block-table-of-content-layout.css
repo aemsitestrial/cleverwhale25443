@@ -1,2 +1,10 @@
 /* The CSS comes from the design system package (bundle ac-block-table-of-content-layout, the
    table of contents bundle and each component's own bundle). */
+
+/* In the Universal Editor: an item without content yet. */
+.ac-toc-layout-placeholder {
+  padding: 8px;
+  border: 1px dashed #8a8a8a;
+  color: #555;
+  font: 12px/1.4 sans-serif;
+}
