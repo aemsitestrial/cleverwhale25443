@@ -1,0 +1,151 @@
+/* The section rules that the output of page-glue.js (decorateContainerSections) depends on. The
+   glue sets only an inline background-image and the class content-width-bleed on a section, and
+   adds the design system's container as the section's direct child. This file makes those work;
+   it sets no margin or padding of its own for ordinary sections, which are the site's layout.
+   Load it after the brand file. */
+
+/* Contains floated design-system roots (e.g. `.download { float: left }`) within their block
+   wrapper so they do not leak out of the section. `::after` with `clear`, not `flow-root`, which
+   would change margin collapsing. */
+main > .section > div:not(.default-content-wrapper)::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* Full bleed: a section with content width "Full bleed" gets the class content-width-bleed and no
+   container, so a site's margin, padding and max-width on the section's direct children would cap
+   and inset it (the Adobe boilerplate caps them at 1200px). They are dropped here. */
+main > .section.content-width-bleed > div {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+/* A grid section keeps the margin and padding under bleed. The glue puts the grid class
+   (grid-col-N) on the section, so the grid's .cmp-container is a plain direct-child div that the
+   rule above would strip. */
+main > .section.content-width-bleed.grid-col-1:not(.ds-composition) > div,
+main > .section.content-width-bleed.grid-col-2:not(.ds-composition) > div,
+main > .section.content-width-bleed.grid-col-3:not(.ds-composition) > div,
+main > .section.content-width-bleed.grid-col-4:not(.ds-composition) > div,
+main > .section.content-width-bleed.grid-col-5:not(.ds-composition) > div,
+main > .section.content-width-bleed.grid-col-1-2:not(.ds-composition) > div,
+main > .section.content-width-bleed.grid-col-2-1:not(.ds-composition) > div {
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* The glue writes a section's background image as an inline background-image, across the page,
+   and the content inside keeps its own width. Without a size the image tiles at its natural
+   size. It is cover-fitted and centred on the section, as the design system's container rule does
+   for a container block's image. */
+main > .section[style*='background-image'] {
+  background-size: cover;
+  background-position: center;
+}
+
+@media (width >= 900px) {
+  main > .section.content-width-bleed.grid-col-1:not(.ds-composition) > div,
+  main > .section.content-width-bleed.grid-col-2:not(.ds-composition) > div,
+  main > .section.content-width-bleed.grid-col-3:not(.ds-composition) > div,
+  main > .section.content-width-bleed.grid-col-4:not(.ds-composition) > div,
+  main > .section.content-width-bleed.grid-col-5:not(.ds-composition) > div,
+  main > .section.content-width-bleed.grid-col-1-2:not(.ds-composition) > div,
+  main > .section.content-width-bleed.grid-col-2-1:not(.ds-composition) > div {
+    padding: 0 32px;
+  }
+}
+
+/* A section inside another section keeps its own content width. The design system caps a container
+   with a descendant rule, `.ds-content-width-N .cmp-container`, so the container of a nested section
+   is also matched by the rule of the section around it; the rules have the same specificity and the
+   later one wins, which is the wider. These rules reach only the section's own container (its direct
+   child) and carry the same cap, so a nested section is narrowed like a top-level one. */
+.section.ds-content-width-1 > .cmp-container {
+  max-width: calc(1 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.section.ds-content-width-2 > .cmp-container {
+  max-width: calc(2 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.section.ds-content-width-3 > .cmp-container {
+  max-width: calc(3 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.section.ds-content-width-4 > .cmp-container {
+  max-width: calc(4 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.section.ds-content-width-5 > .cmp-container {
+  max-width: calc(5 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.section.ds-content-width-6 > .cmp-container {
+  max-width: calc(6 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.section.ds-content-width-7 > .cmp-container {
+  max-width: calc(7 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.section.ds-content-width-8 > .cmp-container {
+  max-width: calc(8 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.section.ds-content-width-9 > .cmp-container {
+  max-width: calc(9 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.section.ds-content-width-10 > .cmp-container {
+  max-width: calc(10 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.section.ds-content-width-11 > .cmp-container {
+  max-width: calc(11 / var(--ds-container-column-count) * var(--ds-container-width));
+}
+
+.section.ds-content-width-12 > .cmp-container {
+  max-width: var(--ds-container-width);
+}
+
+/* A section with a composition (the container block's filter, block container, carousel, table of
+   contents or style values) is laid out as the container block is. The block always has the grid
+   `.cmp-container > .aem-Grid` and its children are the grid's items; on a section a standalone
+   block is wrapped in `<name>-wrapper > .block` and a nested section in `.nest-cell`, so these boxes
+   stop making their own and the block or the nested section is the grid item the bundle's rules
+   expect. */
+.ds-composition .aem-Grid > :is(.nest-cell, [class$='-wrapper']),
+.ds-composition .aem-Grid > [class$='-wrapper'] > .block {
+  display: contents;
+}
+
+/* A carousel slide's wrapper also carries `aem-GridColumn`, so the `-wrapper` selector above does not
+   reach it: it gets the same treatment, so the card is the slide's item and stretches with it. */
+.ds-composition .splide__slide > .aem-GridColumn,
+.ds-composition .splide__slide > .aem-GridColumn > .block {
+  display: contents;
+}
+
+/* A section inside a composed section sits in the parent's grid, which already holds the width: the
+   default width 12 adds no padding of its own there. The grid part is `:where()` so the rule does
+   not outrank a nested block's own padding rule (a banner's card row). */
+:where(.ds-composition .aem-Grid) > .nest-cell > .section.ds-content-width-12 > .cmp-container {
+  padding-inline: 0;
+}
+
+/* A section inside a grid may be narrower than its content (a table, a carousel): a grid item is
+   as wide as its content unless it may shrink. */
+.aem-Grid > .nest-cell {
+  min-width: 0;
+}
+
+/* A container block that is the content of a section with a width sits in the section's width, which
+   already holds the side padding: a block with no width or width 12 is the same box and adds none of
+   its own on top of it. A block that names a narrower width is a narrower box, and its padding is its
+   own inner gutter. A nested section of a composition has no padding of its own (above), so its block
+   keeps the block's. */
+.section[class*='ds-content-width-']:not(.ds-composition .aem-Grid .section) > .cmp-container > [class$='-wrapper'] > .block.container:not([class*='ds-content-width-']:not(.ds-content-width-12)) > .cmp-container {
+  padding-inline: 0;
+}

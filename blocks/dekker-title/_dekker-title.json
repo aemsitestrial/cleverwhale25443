@@ -1,0 +1,185 @@
+{
+  "definitions": [
+    {
+      "title": "Dekker Title",
+      "id": "dekker-title",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Dekker Title",
+              "model": "dekker-title",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "dekker-title",
+      "fields": [
+        {
+          "component": "text",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link"
+        },
+        {
+          "component": "select",
+          "name": "titleType",
+          "label": "Title type",
+          "options": [
+            {
+              "name": "H1",
+              "value": "h1"
+            },
+            {
+              "name": "H2",
+              "value": "h2"
+            },
+            {
+              "name": "H3",
+              "value": "h3"
+            },
+            {
+              "name": "H4",
+              "value": "h4"
+            },
+            {
+              "name": "H5",
+              "value": "h5"
+            },
+            {
+              "name": "H6",
+              "value": "h6"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "spacingMb",
+          "label": "Spacing Mb",
+          "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
+            {
+              "name": "mb-0 (none)",
+              "value": "mb-0"
+            },
+            {
+              "name": "mb-4 (1rem)",
+              "value": "mb-4"
+            },
+            {
+              "name": "mb-8 (2rem)",
+              "value": "mb-8"
+            },
+            {
+              "name": "mb-12 (3rem)",
+              "value": "mb-12"
+            },
+            {
+              "name": "mb-16 (4rem)",
+              "value": "mb-16"
+            },
+            {
+              "name": "mb-20 (5rem)",
+              "value": "mb-20"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "spacingMy",
+          "label": "Spacing My",
+          "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
+            {
+              "name": "my-0 (none)",
+              "value": "my-0"
+            },
+            {
+              "name": "my-4 (1rem)",
+              "value": "my-4"
+            },
+            {
+              "name": "my-8 (2rem)",
+              "value": "my-8"
+            },
+            {
+              "name": "my-12 (3rem)",
+              "value": "my-12"
+            },
+            {
+              "name": "my-16 (4rem)",
+              "value": "my-16"
+            },
+            {
+              "name": "my-20 (5rem)",
+              "value": "my-20"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "titleAlignment",
+          "label": "Title Alignment",
+          "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
+            {
+              "name": "Center align",
+              "value": "content-center"
+            },
+            {
+              "name": "Right align",
+              "value": "content-right"
+            },
+            {
+              "name": "Left align",
+              "value": "content-left"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "titleVariant",
+          "label": "Title Variant",
+          "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
+            {
+              "name": "Highlight 1",
+              "value": "title--highlight-1"
+            },
+            {
+              "name": "Highlight 2",
+              "value": "title--highlight-2"
+            },
+            {
+              "name": "Highlight 3",
+              "value": "title--highlight-3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

@@ -1,0 +1,11 @@
+import type * as React from '../../../dom-types';
+import { ForwardedRef, HTMLAttributes } from '../../../dom-types';
+type InputBaseEventProps<T> = Pick<React.DOMAttributes<T>, 'onFocus' | 'onBlur' | 'onChange' | 'onInput'>;
+export type ElementBaseEventProps<T> = React.DOMAttributes<T>;
+export type ButtonEventTypes = ElementBaseEventProps<HTMLButtonElement | HTMLAnchorElement>;
+export type ButtonRefType = ForwardedRef<HTMLButtonElement | HTMLAnchorElement>;
+export type InputEventTypes = InputBaseEventProps<HTMLInputElement>;
+export type SelectEventTypes = ElementBaseEventProps<HTMLSelectElement>;
+export type ToggleEventTypes = Pick<InputBaseEventProps<HTMLInputElement>, 'onChange'>;
+export type LinkEventTypes = Omit<HTMLAttributes<HTMLAnchorElement | HTMLButtonElement>, 'disabled' | 'download' | 'rel' | 'target'>;
+export {};

@@ -177,10 +177,6 @@
             "value": "grid-col-4"
           },
           {
-            "name": "5 columns",
-            "value": "grid-col-5"
-          },
-          {
             "name": "1/3 + 2/3",
             "value": "grid-col-1-2"
           },
@@ -219,12 +215,82 @@
       },
       {
         "component": "select",
+        "name": "wrappersVariant",
+        "label": "Composition",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "News block",
+            "value": "ds-block-news"
+          },
+          {
+            "name": "Products block",
+            "value": "ds-block-products"
+          },
+          {
+            "name": "Teaser news block",
+            "value": "ds-block-teaser-news"
+          },
+          {
+            "name": "Key specs",
+            "value": "ds-brand-key-specs"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "backgroundVariant",
+        "label": "Background",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "Grey worm",
+            "value": "bg-color-grey-worm"
+          },
+          {
+            "name": "Grey light",
+            "value": "bg-color-grey-light"
+          },
+          {
+            "name": "Grey medium",
+            "value": "bg-color-grey-medium"
+          },
+          {
+            "name": "Grey large",
+            "value": "bg-color-grey-large"
+          },
+          {
+            "name": "Grey very light",
+            "value": "bg-color-grey-very-light"
+          },
+          {
+            "name": "Yellow",
+            "value": "bg-color-yellow"
+          },
+          {
+            "name": "Gold",
+            "value": "bg-color-gold"
+          }
+        ]
+      },
+      {
+        "component": "select",
         "name": "padding",
         "label": "Padding (top and bottom)",
         "options": [
           {
             "name": "None",
             "value": "_none"
+          },
+          {
+            "name": "py-0 (none)",
+            "value": "py-0"
           },
           {
             "name": "py-4 (1rem)",
@@ -258,6 +324,10 @@
             "value": "_none"
           },
           {
+            "name": "pt-0 (none)",
+            "value": "pt-0"
+          },
+          {
             "name": "pt-4 (1rem)",
             "value": "pt-4"
           },
@@ -287,6 +357,10 @@
           {
             "name": "None",
             "value": "_none"
+          },
+          {
+            "name": "pb-0 (none)",
+            "value": "pb-0"
           },
           {
             "name": "pb-4 (1rem)",
@@ -320,6 +394,10 @@
             "value": "_none"
           },
           {
+            "name": "my-0 (none)",
+            "value": "my-0"
+          },
+          {
             "name": "my-4 (1rem)",
             "value": "my-4"
           },
@@ -351,6 +429,10 @@
             "value": "_none"
           },
           {
+            "name": "mt-0 (none)",
+            "value": "mt-0"
+          },
+          {
             "name": "mt-4 (1rem)",
             "value": "mt-4"
           },
@@ -380,6 +462,10 @@
           {
             "name": "None",
             "value": "_none"
+          },
+          {
+            "name": "mb-0 (none)",
+            "value": "mb-0"
           },
           {
             "name": "mb-4 (1rem)",
@@ -7441,6 +7527,1268 @@
         "name": "rows",
         "value": "",
         "label": "Rows"
+      }
+    ]
+  },
+  {
+    "id": "dekker-banner",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "imagePath",
+        "label": "Image Path",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "pretitle",
+        "label": "Pretitle",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Title type",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "date",
+        "label": "Date",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "action1Label",
+        "label": "Action 1 text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "action1Link",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "name": "action2Label",
+        "label": "Action 2 text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "action2Link",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "reference",
+        "name": "backgroundImagePath",
+        "label": "Background Image Path",
+        "multi": false
+      },
+      {
+        "component": "select",
+        "name": "heroTypeOption",
+        "label": "Hero Type",
+        "options": [
+          {
+            "name": "Hero",
+            "value": "ds-brand-hero"
+          }
+        ]
+      },
+      {
+        "component": "multiselect",
+        "name": "heroModifier",
+        "label": "Hero Modifier",
+        "options": [
+          {
+            "name": "Circular",
+            "value": "ds-brand-hero--circular"
+          },
+          {
+            "name": "Gfx",
+            "value": "ds-brand-hero--gfx"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "mb-0 (none)",
+            "value": "mb-0"
+          },
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "my-0 (none)",
+            "value": "my-0"
+          },
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dekker-button",
+    "fields": [
+      {
+        "component": "text",
+        "name": "text",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "buttonLink",
+        "label": "Button Link"
+      },
+      {
+        "component": "select",
+        "name": "buttonVariant",
+        "label": "Button Variant",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "Skip content",
+            "value": "ds-brand-skip-content"
+          },
+          {
+            "name": "Secondary",
+            "value": "cmp-button--secondary"
+          },
+          {
+            "name": "Medium",
+            "value": "cmp-button--medium"
+          },
+          {
+            "name": "Semibold",
+            "value": "cmp-button--semibold"
+          },
+          {
+            "name": "Bold",
+            "value": "cmp-button--bold"
+          },
+          {
+            "name": "Md",
+            "value": "cmp-button--md"
+          },
+          {
+            "name": "Lg",
+            "value": "cmp-button--lg"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "linkTarget",
+        "label": "Link Target",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "Same tab",
+            "value": "_self"
+          },
+          {
+            "name": "New tab",
+            "value": "_blank"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "mb-0 (none)",
+            "value": "mb-0"
+          },
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "my-0 (none)",
+            "value": "my-0"
+          },
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dekker-download",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "url",
+        "label": "Url"
+      },
+      {
+        "component": "text",
+        "name": "filename",
+        "label": "Filename",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "format",
+        "label": "Format",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "size",
+        "label": "Size",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "actionLabel",
+        "label": "Action Label",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "mb-0 (none)",
+            "value": "mb-0"
+          },
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "my-0 (none)",
+            "value": "my-0"
+          },
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dekker-table",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "mb-0 (none)",
+            "value": "mb-0"
+          },
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "my-0 (none)",
+            "value": "my-0"
+          },
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dekker-teaser",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "imagePath",
+        "label": "Image Path",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "pretitle",
+        "label": "Pretitle",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Title type",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "date",
+        "label": "Date",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "action1Label",
+        "label": "Action 1 text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "action1Link",
+        "label": "Action 1 link"
+      },
+      {
+        "component": "text",
+        "name": "action2Label",
+        "label": "Action 2 text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "action2Link",
+        "label": "Action 2 link"
+      },
+      {
+        "component": "select",
+        "name": "teaserTypeOption",
+        "label": "Teaser Type",
+        "options": [
+          {
+            "name": "News card",
+            "value": "ds-brand-news-card"
+          },
+          {
+            "name": "Product card",
+            "value": "ds-brand-product-card"
+          },
+          {
+            "name": "Product teaser",
+            "value": "ds-brand-product-teaser"
+          },
+          {
+            "name": "Teaser card",
+            "value": "ds-brand-teaser-card"
+          },
+          {
+            "name": "Teaser link",
+            "value": "ds-brand-teaser-link"
+          },
+          {
+            "name": "Teaser news",
+            "value": "ds-brand-teaser-news"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "cardAction",
+        "label": "Card Action",
+        "options": [
+          {
+            "name": "None",
+            "value": "none"
+          },
+          {
+            "name": "Whole-card link",
+            "value": "link"
+          },
+          {
+            "name": "Buttons",
+            "value": "buttons"
+          }
+        ]
+      },
+      {
+        "component": "multiselect",
+        "name": "newsCardModifier",
+        "label": "News Card Modifier",
+        "options": [
+          {
+            "name": "Highlight gold",
+            "value": "ds-brand-news-card--highlight-gold"
+          },
+          {
+            "name": "Highlight grey",
+            "value": "ds-brand-news-card--highlight-grey"
+          },
+          {
+            "name": "Highlight yellow",
+            "value": "ds-brand-news-card--highlight-yellow"
+          }
+        ],
+        "condition": {
+          "!": {
+            "in": [
+              {
+                "var": "teaserTypeOption"
+              },
+              [
+                "ds-brand-product-card",
+                "ds-brand-product-teaser",
+                "ds-brand-teaser-card",
+                "ds-brand-teaser-link",
+                "ds-brand-teaser-news"
+              ]
+            ]
+          }
+        }
+      },
+      {
+        "component": "multiselect",
+        "name": "productCardModifier",
+        "label": "Product Card Modifier",
+        "options": [
+          {
+            "name": "Extended",
+            "value": "ds-brand-product-card--extended"
+          },
+          {
+            "name": "Shadow",
+            "value": "ds-brand-product-card--shadow"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "teaserTypeOption"
+            },
+            "ds-brand-product-card"
+          ]
+        }
+      },
+      {
+        "component": "multiselect",
+        "name": "productTeaserModifier",
+        "label": "Product Teaser Modifier",
+        "options": [
+          {
+            "name": "Circular",
+            "value": "ds-brand-product-teaser--circular"
+          },
+          {
+            "name": "Hightlight 1",
+            "value": "ds-brand-product-teaser--hightlight-1"
+          },
+          {
+            "name": "Hightlight 2",
+            "value": "ds-brand-product-teaser--hightlight-2"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "teaserTypeOption"
+            },
+            "ds-brand-product-teaser"
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "mb-0 (none)",
+            "value": "mb-0"
+          },
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "my-0 (none)",
+            "value": "my-0"
+          },
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "multiselect",
+        "name": "teaserCardModifier",
+        "label": "Teaser Card Modifier",
+        "options": [
+          {
+            "name": "Compact",
+            "value": "ds-brand-teaser-card--compact"
+          },
+          {
+            "name": "Extended column",
+            "value": "ds-brand-teaser-card--extended-column"
+          },
+          {
+            "name": "Extended row",
+            "value": "ds-brand-teaser-card--extended-row"
+          },
+          {
+            "name": "Highlight gold",
+            "value": "ds-brand-teaser-card--highlight-gold"
+          },
+          {
+            "name": "Highlight grey",
+            "value": "ds-brand-teaser-card--highlight-grey"
+          },
+          {
+            "name": "Highlight yellow",
+            "value": "ds-brand-teaser-card--highlight-yellow"
+          },
+          {
+            "name": "Shadow",
+            "value": "ds-brand-teaser-card--shadow"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "teaserTypeOption"
+            },
+            "ds-brand-teaser-card"
+          ]
+        }
+      },
+      {
+        "component": "multiselect",
+        "name": "teaserLinkModifier",
+        "label": "Teaser Link Modifier",
+        "options": [
+          {
+            "name": "Highlight gold",
+            "value": "ds-brand-teaser-link--highlight-gold"
+          },
+          {
+            "name": "Highlight grey",
+            "value": "ds-brand-teaser-link--highlight-grey"
+          },
+          {
+            "name": "Highlight yellow",
+            "value": "ds-brand-teaser-link--highlight-yellow"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "teaserTypeOption"
+            },
+            "ds-brand-teaser-link"
+          ]
+        }
+      },
+      {
+        "component": "multiselect",
+        "name": "teaserNewsModifier",
+        "label": "Teaser News Modifier",
+        "options": [
+          {
+            "name": "Dark gray",
+            "value": "ds-brand-teaser-news---dark-gray"
+          },
+          {
+            "name": "Gold",
+            "value": "ds-brand-teaser-news---gold"
+          },
+          {
+            "name": "Warm gray",
+            "value": "ds-brand-teaser-news--warm-gray"
+          },
+          {
+            "name": "Yellow",
+            "value": "ds-brand-teaser-news--yellow"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "teaserTypeOption"
+            },
+            "ds-brand-teaser-news"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "dekker-text",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "mb-0 (none)",
+            "value": "mb-0"
+          },
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "my-0 (none)",
+            "value": "my-0"
+          },
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "textIcon",
+        "label": "Text Icon",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "Call",
+            "value": "call"
+          },
+          {
+            "name": "Contact mail",
+            "value": "contact_mail"
+          },
+          {
+            "name": "Email",
+            "value": "email"
+          },
+          {
+            "name": "Account",
+            "value": "account"
+          },
+          {
+            "name": "Language",
+            "value": "language"
+          },
+          {
+            "name": "Arrow left",
+            "value": "arrow-left"
+          },
+          {
+            "name": "Arrow right",
+            "value": "arrow-right"
+          },
+          {
+            "name": "Pin drop",
+            "value": "pin-drop"
+          },
+          {
+            "name": "3d rotation",
+            "value": "3d-rotation"
+          },
+          {
+            "name": "Alarm",
+            "value": "alarm"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "textVariant",
+        "label": "Text Variant",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "Pretitle",
+            "value": "ds-brand-pretitle"
+          },
+          {
+            "name": "Preamble",
+            "value": "ds-brand-preamble"
+          },
+          {
+            "name": "Paragraph",
+            "value": "ds-brand-paragraph"
+          },
+          {
+            "name": "Paragraph large",
+            "value": "ds-brand-paragraph--large"
+          },
+          {
+            "name": "Quote",
+            "value": "ds-brand-quote"
+          },
+          {
+            "name": "Paragraph small",
+            "value": "ds-brand-paragraph--small"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dekker-title",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Title type",
+        "options": [
+          {
+            "name": "H1",
+            "value": "h1"
+          },
+          {
+            "name": "H2",
+            "value": "h2"
+          },
+          {
+            "name": "H3",
+            "value": "h3"
+          },
+          {
+            "name": "H4",
+            "value": "h4"
+          },
+          {
+            "name": "H5",
+            "value": "h5"
+          },
+          {
+            "name": "H6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "mb-0 (none)",
+            "value": "mb-0"
+          },
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "my-0 (none)",
+            "value": "my-0"
+          },
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "titleAlignment",
+        "label": "Title Alignment",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "Center align",
+            "value": "content-center"
+          },
+          {
+            "name": "Right align",
+            "value": "content-right"
+          },
+          {
+            "name": "Left align",
+            "value": "content-left"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "titleVariant",
+        "label": "Title Variant",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "Highlight 1",
+            "value": "title--highlight-1"
+          },
+          {
+            "name": "Highlight 2",
+            "value": "title--highlight-2"
+          },
+          {
+            "name": "Highlight 3",
+            "value": "title--highlight-3"
+          }
+        ]
       }
     ]
   },

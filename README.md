@@ -16,6 +16,37 @@ Before using the aem-boilerplate, we recommand you to go through the documentati
 Furthremore, we encourage you to watch the recordings of any of our previous presentations or sessions:
 - [Getting started with AEM Authoring and Edge Delivery Services](https://experienceleague.adobe.com/en/docs/events/experience-manager-gems-recordings/gems2024/aem-authoring-and-edge-delivery)
 
+## Brand: Dekker (ds-eds-assets-dekker)
+
+The site renders the **Dekker** brand. Its blocks are `dekker-*`, from the package
+`@ac-brandsframework/eds-assets-dekker`, installed as plain files in `ds-eds-assets-dekker/` (built in the
+atlascopco-core-components repo with `nx run dekker-lib:build-eds` and `yarn pack:eds-assets-dekker`).
+
+- `head.html` loads the Dekker reset, brand file (`dekker-lib.css`), fonts and `page-glue.css`.
+- `scripts/scripts.js` adds the Dekker body class (`ds-dekker`), builds the container on each section and
+  starts the package's page controllers. The section fields include **Composition** (News block, Products
+  block, Teaser news block, Key specs: a class on the section, with its CSS bundle) and **Background**.
+- `scripts/ds-dekker.js` holds what the `dekker-*` blocks share (the same steps as `scripts/ds.js`, bound to
+  the Dekker package). The package has no container block, so blocks are not nested.
+- Blocks: `dekker-title`, `dekker-text`, `dekker-button`, `dekker-download`, `dekker-table`, `dekker-teaser`
+  (the card types: news card, product card, teaser card, ...) and `dekker-banner` (hero). `dekker-tabs` and
+  `dekker-carousel` are not offered yet: the package's contract has no item block for their items.
+
+To update the package and the blocks:
+
+```sh
+npx --yes --package ./ac-brandsframework-eds-assets-dekker-<version>.tgz eds-assets-install --to ds-eds-assets-dekker
+node tools/ds-blocks/generate.mjs --package ds-eds-assets-dekker --prefix dekker --title Dekker && npm run build:json
+```
+
+The generator writes each block's model and field table on every run, and its `dekker-*.js` once, when the
+block has none (after that the file is the site's). The section filter offers the blocks of the package
+the generator ran for last.
+
+The Atlas Copco package (`ds-eds-assets/`, the `ac-*` blocks, `scripts/ds.js`) stays in the repository
+but no page loads its brand any more: the `ac-*` blocks are out of the section filter, and the header
+and footer (built on the AC header) are unstyled until the Dekker package ships its own.
+
 ## Design system (ds-eds-assets)
 
 The `ac-*` blocks render the Atlas Copco design system from the package `@ac-brandsframework/eds-assets`,

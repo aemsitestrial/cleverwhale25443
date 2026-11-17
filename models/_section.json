@@ -74,10 +74,6 @@
               "value": "grid-col-4"
             },
             {
-              "name": "5 columns",
-              "value": "grid-col-5"
-            },
-            {
               "name": "1/3 + 2/3",
               "value": "grid-col-1-2"
             },
@@ -116,12 +112,82 @@
         },
         {
           "component": "select",
+          "name": "wrappersVariant",
+          "label": "Composition",
+          "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
+            {
+              "name": "News block",
+              "value": "ds-block-news"
+            },
+            {
+              "name": "Products block",
+              "value": "ds-block-products"
+            },
+            {
+              "name": "Teaser news block",
+              "value": "ds-block-teaser-news"
+            },
+            {
+              "name": "Key specs",
+              "value": "ds-brand-key-specs"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "backgroundVariant",
+          "label": "Background",
+          "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
+            {
+              "name": "Grey worm",
+              "value": "bg-color-grey-worm"
+            },
+            {
+              "name": "Grey light",
+              "value": "bg-color-grey-light"
+            },
+            {
+              "name": "Grey medium",
+              "value": "bg-color-grey-medium"
+            },
+            {
+              "name": "Grey large",
+              "value": "bg-color-grey-large"
+            },
+            {
+              "name": "Grey very light",
+              "value": "bg-color-grey-very-light"
+            },
+            {
+              "name": "Yellow",
+              "value": "bg-color-yellow"
+            },
+            {
+              "name": "Gold",
+              "value": "bg-color-gold"
+            }
+          ]
+        },
+        {
+          "component": "select",
           "name": "padding",
           "label": "Padding (top and bottom)",
           "options": [
             {
               "name": "None",
               "value": "_none"
+            },
+            {
+              "name": "py-0 (none)",
+              "value": "py-0"
             },
             {
               "name": "py-4 (1rem)",
@@ -155,6 +221,10 @@
               "value": "_none"
             },
             {
+              "name": "pt-0 (none)",
+              "value": "pt-0"
+            },
+            {
               "name": "pt-4 (1rem)",
               "value": "pt-4"
             },
@@ -184,6 +254,10 @@
             {
               "name": "None",
               "value": "_none"
+            },
+            {
+              "name": "pb-0 (none)",
+              "value": "pb-0"
             },
             {
               "name": "pb-4 (1rem)",
@@ -217,6 +291,10 @@
               "value": "_none"
             },
             {
+              "name": "my-0 (none)",
+              "value": "my-0"
+            },
+            {
               "name": "my-4 (1rem)",
               "value": "my-4"
             },
@@ -248,6 +326,10 @@
               "value": "_none"
             },
             {
+              "name": "mt-0 (none)",
+              "value": "mt-0"
+            },
+            {
               "name": "mt-4 (1rem)",
               "value": "mt-4"
             },
@@ -277,6 +359,10 @@
             {
               "name": "None",
               "value": "_none"
+            },
+            {
+              "name": "mb-0 (none)",
+              "value": "mb-0"
             },
             {
               "name": "mb-4 (1rem)",
@@ -315,26 +401,13 @@
         "cards",
         "columns",
         "fragment",
-        "ac-card",
-        "ac-banner",
-        "ac-container",
-        "ac-text-content",
-        "ac-accordion",
-        "ac-button",
-        "ac-carousel",
-        "ac-download",
-        "ac-embed-iframe",
-        "ac-embed-video",
-        "ac-image",
-        "ac-link",
-        "ac-list",
-        "ac-separator",
-        "ac-splide-carousel",
-        "ac-table",
-        "ac-tabs",
-        "ac-text",
-        "ac-title",
-        "ac-block-table-of-content-layout",
+        "dekker-teaser",
+        "dekker-banner",
+        "dekker-button",
+        "dekker-download",
+        "dekker-table",
+        "dekker-text",
+        "dekker-title",
         "ac-nav-header",
         "ac-nav-links",
         "ac-nav-languages",

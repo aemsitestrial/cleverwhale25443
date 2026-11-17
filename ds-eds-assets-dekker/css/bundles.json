@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "roots": [
+    "foundational/reset.css",
+    "foundational/dekker-lib.css"
+  ],
+  "order": [
+    "dekker-block-news",
+    "dekker-block-products",
+    "dekker-block-teaser-news",
+    "dekker-key-specs",
+    "button--dekker-button",
+    "carousel",
+    "teaser--image",
+    "dekker-news-card--dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news",
+    "dekker-hero",
+    "dekker-hero-carousel--dekker-product-teaser-carousel",
+    "download--dekker-download",
+    "tabs--dekker-tabs",
+    "dekker-table",
+    "text--dekker-text",
+    "title--dekker-title"
+  ],
+  "parts": {
+    "button--dekker-button": {
+      "file": "graph/button--dekker-button.css",
+      "components": [
+        "button",
+        "dekker-button"
+      ]
+    },
+    "carousel": {
+      "file": "graph/carousel.css",
+      "components": [
+        "carousel"
+      ]
+    },
+    "dekker-block-news": {
+      "file": "graph/dekker-block-news.css",
+      "components": [
+        "dekker-block-news"
+      ]
+    },
+    "dekker-block-products": {
+      "file": "graph/dekker-block-products.css",
+      "components": [
+        "dekker-block-products"
+      ]
+    },
+    "dekker-block-teaser-news": {
+      "file": "graph/dekker-block-teaser-news.css",
+      "components": [
+        "dekker-block-teaser-news"
+      ]
+    },
+    "dekker-hero": {
+      "file": "graph/dekker-hero.css",
+      "components": [
+        "dekker-hero"
+      ]
+    },
+    "dekker-hero-carousel--dekker-product-teaser-carousel": {
+      "file": "graph/dekker-hero-carousel--dekker-product-teaser-carousel.css",
+      "components": [
+        "dekker-hero-carousel",
+        "dekker-product-teaser-carousel"
+      ]
+    },
+    "dekker-key-specs": {
+      "file": "graph/dekker-key-specs.css",
+      "components": [
+        "dekker-key-specs"
+      ]
+    },
+    "dekker-news-card--dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news": {
+      "file": "graph/dekker-news-card--dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news.css",
+      "components": [
+        "dekker-news-card",
+        "dekker-product-card",
+        "dekker-product-teaser",
+        "dekker-teaser-card",
+        "dekker-teaser-link",
+        "dekker-teaser-news"
+      ]
+    },
+    "dekker-table": {
+      "file": "graph/dekker-table.css",
+      "components": [
+        "dekker-table"
+      ]
+    },
+    "download--dekker-download": {
+      "file": "graph/download--dekker-download.css",
+      "components": [
+        "download",
+        "dekker-download"
+      ]
+    },
+    "tabs--dekker-tabs": {
+      "file": "graph/tabs--dekker-tabs.css",
+      "components": [
+        "tabs",
+        "dekker-tabs"
+      ]
+    },
+    "teaser--image": {
+      "file": "graph/teaser--image.css",
+      "components": [
+        "teaser",
+        "image"
+      ]
+    },
+    "text--dekker-text": {
+      "file": "graph/text--dekker-text.css",
+      "components": [
+        "text",
+        "dekker-text"
+      ]
+    },
+    "title--dekker-title": {
+      "file": "graph/title--dekker-title.css",
+      "components": [
+        "title",
+        "dekker-title"
+      ]
+    }
+  },
+  "bundles": {
+    "dekker-banner": {
+      "parts": [
+        "teaser--image",
+        "dekker-hero"
+      ]
+    },
+    "dekker-block-news": {
+      "parts": [
+        "dekker-block-news"
+      ]
+    },
+    "dekker-block-products": {
+      "parts": [
+        "dekker-block-products"
+      ]
+    },
+    "dekker-block-teaser-news": {
+      "parts": [
+        "dekker-block-teaser-news"
+      ]
+    },
+    "dekker-button": {
+      "parts": [
+        "button--dekker-button"
+      ]
+    },
+    "dekker-carousel": {
+      "parts": [
+        "carousel",
+        "teaser--image",
+        "dekker-news-card--dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news",
+        "dekker-hero-carousel--dekker-product-teaser-carousel"
+      ]
+    },
+    "dekker-download": {
+      "parts": [
+        "download--dekker-download"
+      ]
+    },
+    "dekker-key-specs": {
+      "parts": [
+        "dekker-key-specs"
+      ]
+    },
+    "dekker-table": {
+      "parts": [
+        "dekker-table"
+      ]
+    },
+    "dekker-tabs": {
+      "parts": [
+        "tabs--dekker-tabs",
+        "dekker-table"
+      ]
+    },
+    "dekker-teaser": {
+      "parts": [
+        "teaser--image",
+        "dekker-news-card--dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news"
+      ]
+    },
+    "dekker-text": {
+      "parts": [
+        "text--dekker-text"
+      ]
+    },
+    "dekker-title": {
+      "parts": [
+        "title--dekker-title"
+      ]
+    }
+  }
+}

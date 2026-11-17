@@ -1,0 +1,155 @@
+{
+  "definitions": [
+    {
+      "title": "Dekker Table",
+      "id": "dekker-table",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Dekker Table",
+              "model": "dekker-table",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "dekker-table",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "text",
+          "label": "Text",
+          "valueType": "string"
+        },
+        {
+          "component": "select",
+          "name": "spacingMb",
+          "label": "Spacing Mb",
+          "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
+            {
+              "name": "mb-0 (none)",
+              "value": "mb-0"
+            },
+            {
+              "name": "mb-4 (1rem)",
+              "value": "mb-4"
+            },
+            {
+              "name": "mb-8 (2rem)",
+              "value": "mb-8"
+            },
+            {
+              "name": "mb-12 (3rem)",
+              "value": "mb-12"
+            },
+            {
+              "name": "mb-16 (4rem)",
+              "value": "mb-16"
+            },
+            {
+              "name": "mb-20 (5rem)",
+              "value": "mb-20"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "spacingMy",
+          "label": "Spacing My",
+          "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
+            {
+              "name": "my-0 (none)",
+              "value": "my-0"
+            },
+            {
+              "name": "my-4 (1rem)",
+              "value": "my-4"
+            },
+            {
+              "name": "my-8 (2rem)",
+              "value": "my-8"
+            },
+            {
+              "name": "my-12 (3rem)",
+              "value": "my-12"
+            },
+            {
+              "name": "my-16 (4rem)",
+              "value": "my-16"
+            },
+            {
+              "name": "my-20 (5rem)",
+              "value": "my-20"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "dekker-table-text",
+      "rte": {
+        "toolbar": {
+          "format": [
+            "bold",
+            "italic",
+            "underline",
+            "strike"
+          ],
+          "blocks": [
+            "paragraph",
+            "h2",
+            "h3",
+            "h4"
+          ],
+          "list": [
+            "bullet_list",
+            "ordered_list"
+          ],
+          "insert": [
+            "link",
+            "unlink",
+            "table"
+          ],
+          "editor": [
+            "removeformat",
+            "paste_text"
+          ],
+          "sections": [
+            "insert",
+            "format",
+            "blocks",
+            "list",
+            "editor"
+          ]
+        },
+        "actions": {
+          "table": {
+            "wrapInParagraphs": false,
+            "showTableProperties": true,
+            "showRowProperties": true,
+            "showCellProperties": true
+          }
+        }
+      },
+      "components": [
+        "richtext"
+      ]
+    }
+  ]
+}

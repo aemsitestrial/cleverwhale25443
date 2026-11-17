@@ -1,0 +1,418 @@
+{
+  "definitions": [
+    {
+      "title": "Dekker Teaser",
+      "id": "dekker-teaser",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Dekker Teaser",
+              "model": "dekker-teaser",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "dekker-teaser",
+      "fields": [
+        {
+          "component": "reference",
+          "name": "imagePath",
+          "label": "Image Path",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "pretitle",
+          "label": "Pretitle",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "title",
+          "label": "Title",
+          "valueType": "string"
+        },
+        {
+          "component": "select",
+          "name": "titleType",
+          "label": "Title type",
+          "options": [
+            {
+              "name": "H1",
+              "value": "h1"
+            },
+            {
+              "name": "H2",
+              "value": "h2"
+            },
+            {
+              "name": "H3",
+              "value": "h3"
+            },
+            {
+              "name": "H4",
+              "value": "h4"
+            },
+            {
+              "name": "H5",
+              "value": "h5"
+            }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "label": "Description",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "date",
+          "label": "Date",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Link"
+        },
+        {
+          "component": "text",
+          "name": "action1Label",
+          "label": "Action 1 text",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "name": "action1Link",
+          "label": "Action 1 link"
+        },
+        {
+          "component": "text",
+          "name": "action2Label",
+          "label": "Action 2 text",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "name": "action2Link",
+          "label": "Action 2 link"
+        },
+        {
+          "component": "select",
+          "name": "teaserTypeOption",
+          "label": "Teaser Type",
+          "options": [
+            {
+              "name": "News card",
+              "value": "ds-brand-news-card"
+            },
+            {
+              "name": "Product card",
+              "value": "ds-brand-product-card"
+            },
+            {
+              "name": "Product teaser",
+              "value": "ds-brand-product-teaser"
+            },
+            {
+              "name": "Teaser card",
+              "value": "ds-brand-teaser-card"
+            },
+            {
+              "name": "Teaser link",
+              "value": "ds-brand-teaser-link"
+            },
+            {
+              "name": "Teaser news",
+              "value": "ds-brand-teaser-news"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "cardAction",
+          "label": "Card Action",
+          "options": [
+            {
+              "name": "None",
+              "value": "none"
+            },
+            {
+              "name": "Whole-card link",
+              "value": "link"
+            },
+            {
+              "name": "Buttons",
+              "value": "buttons"
+            }
+          ]
+        },
+        {
+          "component": "multiselect",
+          "name": "newsCardModifier",
+          "label": "News Card Modifier",
+          "options": [
+            {
+              "name": "Highlight gold",
+              "value": "ds-brand-news-card--highlight-gold"
+            },
+            {
+              "name": "Highlight grey",
+              "value": "ds-brand-news-card--highlight-grey"
+            },
+            {
+              "name": "Highlight yellow",
+              "value": "ds-brand-news-card--highlight-yellow"
+            }
+          ],
+          "condition": {
+            "!": {
+              "in": [
+                {
+                  "var": "teaserTypeOption"
+                },
+                [
+                  "ds-brand-product-card",
+                  "ds-brand-product-teaser",
+                  "ds-brand-teaser-card",
+                  "ds-brand-teaser-link",
+                  "ds-brand-teaser-news"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "component": "multiselect",
+          "name": "productCardModifier",
+          "label": "Product Card Modifier",
+          "options": [
+            {
+              "name": "Extended",
+              "value": "ds-brand-product-card--extended"
+            },
+            {
+              "name": "Shadow",
+              "value": "ds-brand-product-card--shadow"
+            }
+          ],
+          "condition": {
+            "==": [
+              {
+                "var": "teaserTypeOption"
+              },
+              "ds-brand-product-card"
+            ]
+          }
+        },
+        {
+          "component": "multiselect",
+          "name": "productTeaserModifier",
+          "label": "Product Teaser Modifier",
+          "options": [
+            {
+              "name": "Circular",
+              "value": "ds-brand-product-teaser--circular"
+            },
+            {
+              "name": "Hightlight 1",
+              "value": "ds-brand-product-teaser--hightlight-1"
+            },
+            {
+              "name": "Hightlight 2",
+              "value": "ds-brand-product-teaser--hightlight-2"
+            }
+          ],
+          "condition": {
+            "==": [
+              {
+                "var": "teaserTypeOption"
+              },
+              "ds-brand-product-teaser"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "spacingMb",
+          "label": "Spacing Mb",
+          "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
+            {
+              "name": "mb-0 (none)",
+              "value": "mb-0"
+            },
+            {
+              "name": "mb-4 (1rem)",
+              "value": "mb-4"
+            },
+            {
+              "name": "mb-8 (2rem)",
+              "value": "mb-8"
+            },
+            {
+              "name": "mb-12 (3rem)",
+              "value": "mb-12"
+            },
+            {
+              "name": "mb-16 (4rem)",
+              "value": "mb-16"
+            },
+            {
+              "name": "mb-20 (5rem)",
+              "value": "mb-20"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "spacingMy",
+          "label": "Spacing My",
+          "options": [
+            {
+              "name": "None",
+              "value": "_none"
+            },
+            {
+              "name": "my-0 (none)",
+              "value": "my-0"
+            },
+            {
+              "name": "my-4 (1rem)",
+              "value": "my-4"
+            },
+            {
+              "name": "my-8 (2rem)",
+              "value": "my-8"
+            },
+            {
+              "name": "my-12 (3rem)",
+              "value": "my-12"
+            },
+            {
+              "name": "my-16 (4rem)",
+              "value": "my-16"
+            },
+            {
+              "name": "my-20 (5rem)",
+              "value": "my-20"
+            }
+          ]
+        },
+        {
+          "component": "multiselect",
+          "name": "teaserCardModifier",
+          "label": "Teaser Card Modifier",
+          "options": [
+            {
+              "name": "Compact",
+              "value": "ds-brand-teaser-card--compact"
+            },
+            {
+              "name": "Extended column",
+              "value": "ds-brand-teaser-card--extended-column"
+            },
+            {
+              "name": "Extended row",
+              "value": "ds-brand-teaser-card--extended-row"
+            },
+            {
+              "name": "Highlight gold",
+              "value": "ds-brand-teaser-card--highlight-gold"
+            },
+            {
+              "name": "Highlight grey",
+              "value": "ds-brand-teaser-card--highlight-grey"
+            },
+            {
+              "name": "Highlight yellow",
+              "value": "ds-brand-teaser-card--highlight-yellow"
+            },
+            {
+              "name": "Shadow",
+              "value": "ds-brand-teaser-card--shadow"
+            }
+          ],
+          "condition": {
+            "==": [
+              {
+                "var": "teaserTypeOption"
+              },
+              "ds-brand-teaser-card"
+            ]
+          }
+        },
+        {
+          "component": "multiselect",
+          "name": "teaserLinkModifier",
+          "label": "Teaser Link Modifier",
+          "options": [
+            {
+              "name": "Highlight gold",
+              "value": "ds-brand-teaser-link--highlight-gold"
+            },
+            {
+              "name": "Highlight grey",
+              "value": "ds-brand-teaser-link--highlight-grey"
+            },
+            {
+              "name": "Highlight yellow",
+              "value": "ds-brand-teaser-link--highlight-yellow"
+            }
+          ],
+          "condition": {
+            "==": [
+              {
+                "var": "teaserTypeOption"
+              },
+              "ds-brand-teaser-link"
+            ]
+          }
+        },
+        {
+          "component": "multiselect",
+          "name": "teaserNewsModifier",
+          "label": "Teaser News Modifier",
+          "options": [
+            {
+              "name": "Dark gray",
+              "value": "ds-brand-teaser-news---dark-gray"
+            },
+            {
+              "name": "Gold",
+              "value": "ds-brand-teaser-news---gold"
+            },
+            {
+              "name": "Warm gray",
+              "value": "ds-brand-teaser-news--warm-gray"
+            },
+            {
+              "name": "Yellow",
+              "value": "ds-brand-teaser-news--yellow"
+            }
+          ],
+          "condition": {
+            "==": [
+              {
+                "var": "teaserTypeOption"
+              },
+              "ds-brand-teaser-news"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

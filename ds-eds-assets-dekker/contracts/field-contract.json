@@ -1,0 +1,1528 @@
+{
+  "rows": {
+    "titleType": {
+      "readBy": "js/vendor/teaser-family.js",
+      "reads": "The heading level of a Teaser-family title. A `title` field with a `titleType` field beside it arrives as one cell holding an `<h1>` to `<h5>` element, and no `titleType` row. The reader takes the level from that element's tag into the content prop `titleTag`; a cell with no heading keeps any `titleType` row it was given. The Title block takes its level as the option list `headingTag` instead (h2 when none is chosen)."
+    }
+  },
+  "blocks": {
+    "dekker-teaser": {
+      "wrapper": "render-teaser",
+      "content": {
+        "imagePath": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "pretitle": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "title": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "description": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "date": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "link": {
+          "kind": "link",
+          "type": "TeaserLink",
+          "fields": {
+            "url": {
+              "kind": "string",
+              "type": "string",
+              "required": true
+            }
+          },
+          "required": false
+        },
+        "actions": {
+          "kind": "list",
+          "type": "readonly (TeaserActionContent | undefined)[]",
+          "items": {
+            "kind": "object",
+            "type": "TeaserActionContent",
+            "fields": {
+              "title": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "link": {
+                "kind": "link",
+                "type": "TeaserLink",
+                "fields": {
+                  "url": {
+                    "kind": "string",
+                    "type": "string",
+                    "required": true
+                  }
+                },
+                "required": false
+              }
+            }
+          },
+          "required": false
+        },
+        "picture": {
+          "kind": "element",
+          "type": "HTMLElement",
+          "required": false
+        },
+        "titleTag": {
+          "kind": "enum",
+          "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\"",
+          "values": [
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5"
+          ],
+          "required": false
+        }
+      },
+      "options": {
+        "cardAction": {
+          "appliedAs": "prop",
+          "multiple": false,
+          "values": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "link",
+              "label": "Whole-card link"
+            },
+            {
+              "value": "buttons",
+              "label": "Buttons"
+            }
+          ]
+        },
+        "newsCardModifier": {
+          "appliedAs": "class",
+          "multiple": true,
+          "values": [
+            {
+              "value": "ds-brand-news-card--highlight-gold",
+              "label": "Highlight gold"
+            },
+            {
+              "value": "ds-brand-news-card--highlight-grey",
+              "label": "Highlight grey"
+            },
+            {
+              "value": "ds-brand-news-card--highlight-yellow",
+              "label": "Highlight yellow"
+            }
+          ]
+        },
+        "productCardModifier": {
+          "appliedAs": "class",
+          "multiple": true,
+          "values": [
+            {
+              "value": "ds-brand-product-card--extended",
+              "label": "Extended"
+            },
+            {
+              "value": "ds-brand-product-card--shadow",
+              "label": "Shadow"
+            }
+          ]
+        },
+        "productTeaserModifier": {
+          "appliedAs": "class",
+          "multiple": true,
+          "values": [
+            {
+              "value": "ds-brand-product-teaser--circular",
+              "label": "Circular"
+            },
+            {
+              "value": "ds-brand-product-teaser--hightlight-1",
+              "label": "Hightlight 1"
+            },
+            {
+              "value": "ds-brand-product-teaser--hightlight-2",
+              "label": "Hightlight 2"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-0",
+              "label": "mb-0 (none)"
+            },
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-0",
+              "label": "my-0 (none)"
+            },
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "teaserCardModifier": {
+          "appliedAs": "class",
+          "multiple": true,
+          "values": [
+            {
+              "value": "ds-brand-teaser-card--compact",
+              "label": "Compact"
+            },
+            {
+              "value": "ds-brand-teaser-card--extended-column",
+              "label": "Extended column"
+            },
+            {
+              "value": "ds-brand-teaser-card--extended-row",
+              "label": "Extended row"
+            },
+            {
+              "value": "ds-brand-teaser-card--highlight-gold",
+              "label": "Highlight gold"
+            },
+            {
+              "value": "ds-brand-teaser-card--highlight-grey",
+              "label": "Highlight grey"
+            },
+            {
+              "value": "ds-brand-teaser-card--highlight-yellow",
+              "label": "Highlight yellow"
+            },
+            {
+              "value": "ds-brand-teaser-card--shadow",
+              "label": "Shadow"
+            }
+          ]
+        },
+        "teaserLinkModifier": {
+          "appliedAs": "class",
+          "multiple": true,
+          "values": [
+            {
+              "value": "ds-brand-teaser-link--highlight-gold",
+              "label": "Highlight gold"
+            },
+            {
+              "value": "ds-brand-teaser-link--highlight-grey",
+              "label": "Highlight grey"
+            },
+            {
+              "value": "ds-brand-teaser-link--highlight-yellow",
+              "label": "Highlight yellow"
+            }
+          ]
+        },
+        "teaserNewsModifier": {
+          "appliedAs": "class",
+          "multiple": true,
+          "values": [
+            {
+              "value": "ds-brand-teaser-news---dark-gray",
+              "label": "Dark gray"
+            },
+            {
+              "value": "ds-brand-teaser-news---gold",
+              "label": "Gold"
+            },
+            {
+              "value": "ds-brand-teaser-news--warm-gray",
+              "label": "Warm gray"
+            },
+            {
+              "value": "ds-brand-teaser-news--yellow",
+              "label": "Yellow"
+            }
+          ]
+        },
+        "teaserType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ds-brand-news-card",
+              "label": "News card"
+            },
+            {
+              "value": "ds-brand-product-card",
+              "label": "Product card"
+            },
+            {
+              "value": "ds-brand-product-teaser",
+              "label": "Product teaser"
+            },
+            {
+              "value": "ds-brand-teaser-card",
+              "label": "Teaser card"
+            },
+            {
+              "value": "ds-brand-teaser-link",
+              "label": "Teaser link"
+            },
+            {
+              "value": "ds-brand-teaser-news",
+              "label": "Teaser news"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "imagePath",
+          "selector": ".cmp-image"
+        },
+        {
+          "prop": "pretitle",
+          "selector": ".cmp-teaser__pretitle"
+        },
+        {
+          "prop": "title",
+          "selector": ".cmp-teaser__title"
+        },
+        {
+          "prop": "description",
+          "selector": ".cmp-teaser__description"
+        },
+        {
+          "prop": "date",
+          "selector": ".cmp-teaser__date"
+        },
+        {
+          "prop": "actions.0.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.1.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.2.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.3.title",
+          "selector": null
+        }
+      ]
+    },
+    "dekker-banner": {
+      "wrapper": "render-banner",
+      "content": {
+        "imagePath": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "pretitle": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "title": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "description": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "date": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "link": {
+          "kind": "link",
+          "type": "TeaserLink",
+          "fields": {
+            "url": {
+              "kind": "string",
+              "type": "string",
+              "required": true
+            }
+          },
+          "required": false
+        },
+        "actions": {
+          "kind": "list",
+          "type": "readonly (TeaserActionContent | undefined)[]",
+          "items": {
+            "kind": "object",
+            "type": "TeaserActionContent",
+            "fields": {
+              "title": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "link": {
+                "kind": "link",
+                "type": "TeaserLink",
+                "fields": {
+                  "url": {
+                    "kind": "string",
+                    "type": "string",
+                    "required": true
+                  }
+                },
+                "required": false
+              }
+            }
+          },
+          "required": false
+        },
+        "picture": {
+          "kind": "element",
+          "type": "HTMLElement",
+          "required": false
+        },
+        "titleTag": {
+          "kind": "enum",
+          "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\"",
+          "values": [
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5"
+          ],
+          "required": false
+        },
+        "backgroundImagePath": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        }
+      },
+      "options": {
+        "heroModifier": {
+          "appliedAs": "class",
+          "multiple": true,
+          "values": [
+            {
+              "value": "ds-brand-hero--circular",
+              "label": "Circular"
+            },
+            {
+              "value": "ds-brand-hero--gfx",
+              "label": "Gfx"
+            }
+          ]
+        },
+        "heroType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ds-brand-hero",
+              "label": "Hero"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-0",
+              "label": "mb-0 (none)"
+            },
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-0",
+              "label": "my-0 (none)"
+            },
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "imagePath",
+          "selector": ".cmp-image"
+        },
+        {
+          "prop": "pretitle",
+          "selector": ".cmp-teaser__pretitle"
+        },
+        {
+          "prop": "title",
+          "selector": ".cmp-teaser__title"
+        },
+        {
+          "prop": "description",
+          "selector": ".cmp-teaser__description"
+        },
+        {
+          "prop": "date",
+          "selector": ".cmp-teaser__date"
+        },
+        {
+          "prop": "actions.0.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.1.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.2.title",
+          "selector": null
+        },
+        {
+          "prop": "actions.3.title",
+          "selector": null
+        }
+      ]
+    },
+    "dekker-button": {
+      "wrapper": "render-button",
+      "content": {
+        "text": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "buttonLink": {
+          "kind": "link",
+          "type": "Omit<ILink, \"valid\">",
+          "fields": {
+            "url": {
+              "kind": "string",
+              "type": "string",
+              "required": true
+            }
+          },
+          "required": false
+        }
+      },
+      "options": {
+        "buttonVariant": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ds-brand-skip-content",
+              "label": "Skip content"
+            },
+            {
+              "value": "cmp-button--secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "cmp-button--medium",
+              "label": "Medium"
+            },
+            {
+              "value": "cmp-button--semibold",
+              "label": "Semibold"
+            },
+            {
+              "value": "cmp-button--bold",
+              "label": "Bold"
+            },
+            {
+              "value": "cmp-button--md",
+              "label": "Md"
+            },
+            {
+              "value": "cmp-button--lg",
+              "label": "Lg"
+            }
+          ]
+        },
+        "linkTarget": {
+          "appliedAs": "prop",
+          "multiple": false,
+          "values": [
+            {
+              "value": "_self",
+              "label": "Same tab"
+            },
+            {
+              "value": "_blank",
+              "label": "New tab"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-0",
+              "label": "mb-0 (none)"
+            },
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-0",
+              "label": "my-0 (none)"
+            },
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "text",
+          "selector": ".cmp-button__text"
+        }
+      ]
+    },
+    "dekker-carousel": {
+      "wrapper": "render-carousel",
+      "content": {
+        "items": {
+          "kind": "list",
+          "type": "CarouselItem[]",
+          "items": {
+            "kind": "object",
+            "type": "CarouselItem",
+            "fields": {
+              "imagePath": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "alt": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "title": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "pretitle": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "description": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "link": {
+                "kind": "link",
+                "type": "{ url?: string | undefined; }",
+                "fields": {
+                  "url": {
+                    "kind": "string",
+                    "type": "string",
+                    "required": false
+                  }
+                },
+                "required": false
+              }
+            }
+          },
+          "required": false
+        }
+      },
+      "options": {
+        "carouselItemType": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "teaser",
+              "label": "Teaser"
+            },
+            {
+              "value": "hero-teaser",
+              "label": "Hero teaser"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "hero",
+              "label": "Hero image"
+            }
+          ]
+        },
+        "carouselStyle": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ds-brand-product-teaser-carousel",
+              "label": "Product teaser carousel"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-0",
+              "label": "mb-0 (none)"
+            },
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-0",
+              "label": "my-0 (none)"
+            },
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "`items.${number}`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.imagePath`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.pretitle`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.title`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.description`",
+          "selector": null
+        }
+      ]
+    },
+    "dekker-download": {
+      "wrapper": "render-download",
+      "content": {
+        "title": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "description": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "url": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "filename": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "format": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "size": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "actionText": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "image": {
+          "kind": "object",
+          "type": "Partial<Pick<DownloadImageProps, \"src\">>",
+          "fields": {
+            "src": {
+              "kind": "string",
+              "type": "string",
+              "required": false
+            }
+          },
+          "required": false
+        }
+      },
+      "options": {
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-0",
+              "label": "mb-0 (none)"
+            },
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-0",
+              "label": "my-0 (none)"
+            },
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "title",
+          "selector": ".cmp-download__title-link"
+        },
+        {
+          "prop": "description",
+          "selector": ".cmp-download__description"
+        },
+        {
+          "prop": "actionText",
+          "selector": ".cmp-download__action-text"
+        },
+        {
+          "prop": "image.src",
+          "selector": ".cmp-image"
+        }
+      ]
+    },
+    "dekker-table": {
+      "wrapper": "render-table",
+      "content": {
+        "text": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        }
+      },
+      "options": {
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-0",
+              "label": "mb-0 (none)"
+            },
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-0",
+              "label": "my-0 (none)"
+            },
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "text",
+          "selector": ".cmp-text"
+        }
+      ]
+    },
+    "dekker-tabs": {
+      "wrapper": "render-tabs",
+      "content": {
+        "items": {
+          "kind": "list",
+          "type": "readonly TabsItem[]",
+          "items": {
+            "kind": "object",
+            "type": "TabsItem",
+            "fields": {
+              "cq:panelTitle": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              },
+              "content": {
+                "kind": "string",
+                "type": "string",
+                "required": false
+              }
+            }
+          },
+          "required": false
+        },
+        "useResponsiveSelect": {
+          "kind": "boolean",
+          "type": "boolean",
+          "required": false
+        },
+        "useBrandClassName": {
+          "kind": "boolean",
+          "type": "boolean",
+          "required": false
+        }
+      },
+      "options": {
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-0",
+              "label": "mb-0 (none)"
+            },
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-0",
+              "label": "my-0 (none)"
+            },
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "`items.${number}`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.content`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.cq:panelTitle`",
+          "selector": null
+        },
+        {
+          "prop": "`items.${number}.panel`",
+          "selector": null
+        }
+      ]
+    },
+    "dekker-text": {
+      "wrapper": "render-text",
+      "content": {
+        "text": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        }
+      },
+      "options": {
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-0",
+              "label": "mb-0 (none)"
+            },
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-0",
+              "label": "my-0 (none)"
+            },
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "textIcon": {
+          "appliedAs": "prop",
+          "multiple": false,
+          "values": [
+            {
+              "value": "call",
+              "label": "Call"
+            },
+            {
+              "value": "contact_mail",
+              "label": "Contact mail"
+            },
+            {
+              "value": "email",
+              "label": "Email"
+            },
+            {
+              "value": "account",
+              "label": "Account"
+            },
+            {
+              "value": "language",
+              "label": "Language"
+            },
+            {
+              "value": "arrow-left",
+              "label": "Arrow left"
+            },
+            {
+              "value": "arrow-right",
+              "label": "Arrow right"
+            },
+            {
+              "value": "pin-drop",
+              "label": "Pin drop"
+            },
+            {
+              "value": "3d-rotation",
+              "label": "3d rotation"
+            },
+            {
+              "value": "alarm",
+              "label": "Alarm"
+            }
+          ]
+        },
+        "textVariant": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "ds-brand-pretitle",
+              "label": "Pretitle"
+            },
+            {
+              "value": "ds-brand-preamble",
+              "label": "Preamble"
+            },
+            {
+              "value": "ds-brand-paragraph",
+              "label": "Paragraph"
+            },
+            {
+              "value": "ds-brand-paragraph--large",
+              "label": "Paragraph large"
+            },
+            {
+              "value": "ds-brand-quote",
+              "label": "Quote"
+            },
+            {
+              "value": "ds-brand-paragraph--small",
+              "label": "Paragraph small"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "text",
+          "selector": ".cmp-text"
+        }
+      ]
+    },
+    "dekker-title": {
+      "wrapper": "render-title",
+      "content": {
+        "text": {
+          "kind": "string",
+          "type": "string",
+          "required": false
+        },
+        "link": {
+          "kind": "link",
+          "type": "Omit<{ valid: boolean; attributes?: { [key: string]: string; } | undefined; url: string; }, \"valid\" | \"attributes\">",
+          "fields": {
+            "url": {
+              "kind": "string",
+              "type": "string",
+              "required": true
+            }
+          },
+          "required": false
+        }
+      },
+      "options": {
+        "headingTag": {
+          "appliedAs": "prop",
+          "multiple": false,
+          "values": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            }
+          ]
+        },
+        "spacingMb": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "mb-0",
+              "label": "mb-0 (none)"
+            },
+            {
+              "value": "mb-4",
+              "label": "mb-4 (1rem)"
+            },
+            {
+              "value": "mb-8",
+              "label": "mb-8 (2rem)"
+            },
+            {
+              "value": "mb-12",
+              "label": "mb-12 (3rem)"
+            },
+            {
+              "value": "mb-16",
+              "label": "mb-16 (4rem)"
+            },
+            {
+              "value": "mb-20",
+              "label": "mb-20 (5rem)"
+            }
+          ]
+        },
+        "spacingMy": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "my-0",
+              "label": "my-0 (none)"
+            },
+            {
+              "value": "my-4",
+              "label": "my-4 (1rem)"
+            },
+            {
+              "value": "my-8",
+              "label": "my-8 (2rem)"
+            },
+            {
+              "value": "my-12",
+              "label": "my-12 (3rem)"
+            },
+            {
+              "value": "my-16",
+              "label": "my-16 (4rem)"
+            },
+            {
+              "value": "my-20",
+              "label": "my-20 (5rem)"
+            }
+          ]
+        },
+        "titleAlignment": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "content-center",
+              "label": "Center align"
+            },
+            {
+              "value": "content-right",
+              "label": "Right align"
+            },
+            {
+              "value": "content-left",
+              "label": "Left align"
+            }
+          ]
+        },
+        "titleVariant": {
+          "appliedAs": "class",
+          "multiple": false,
+          "values": [
+            {
+              "value": "title--highlight-1",
+              "label": "Highlight 1"
+            },
+            {
+              "value": "title--highlight-2",
+              "label": "Highlight 2"
+            },
+            {
+              "value": "title--highlight-3",
+              "label": "Highlight 3"
+            }
+          ]
+        }
+      },
+      "editable": [
+        {
+          "prop": "text",
+          "selector": ".cmp-title__text"
+        }
+      ]
+    }
+  }
+}

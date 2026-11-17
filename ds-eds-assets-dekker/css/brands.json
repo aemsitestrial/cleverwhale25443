@@ -1,0 +1,10 @@
+{
+  "dekker-lib": {
+    "bodyClasses": [
+      "ds-dekker"
+    ],
+    "pathPrefix": null,
+    "navPath": "/nav",
+    "homePath": "/"
+  }
+}

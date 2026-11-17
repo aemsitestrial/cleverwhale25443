@@ -11,14 +11,14 @@ import {
   loadSections,
   loadCSS,
 } from './aem.js';
+// The site's brand is Dekker: its design system package is ds-eds-assets-dekker (the dekker-*
+// blocks, scripts/ds-dekker.js). The Atlas Copco package (ds-eds-assets, the ac-* blocks,
+// scripts/ds.js) stays in the repository, but the page no longer loads its brand.
 import {
   applyBrandBodyClasses, decorateContainerSections, attachNestRefreshListeners,
-} from '../ds-eds-assets/js/vendor/page-glue.js';
-import nestByParent, { isAuthoringContext } from '../ds-eds-assets/js/vendor/nest-by-parent.js';
-import { startPageControllers } from '../ds-eds-assets/js/vendor/start-page-controllers.js';
-import {
-  NESTABLE_SELECTOR, LAYOUT_MODELS, clearNoneSectionFields,
-} from './ds.js';
+} from '../ds-eds-assets-dekker/js/vendor/page-glue.js';
+import { startPageControllers } from '../ds-eds-assets-dekker/js/vendor/start-page-controllers.js';
+import { loadBundle, isAuthoringContext, clearNoneSectionFields } from './ds-dekker.js';
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -94,18 +94,16 @@ export function decorateMain(main) {
   // A section field chosen as None (grid, spacing) adds nothing.
   clearNoneSectionFields(main);
   // The design system's container on each section, from its section fields (background, grid,
-  // content width, spacing). After decorateBlocks, before the blocks load.
-  decorateContainerSections(main);
+  // content width, composition, spacing). After decorateBlocks, before the blocks load. A
+  // composition (News block, Key specs, ...) loads its CSS bundle through loadBundle.
+  decorateContainerSections(main, { loadBundle });
 }
 
 /**
- * The design system's page steps, once the blocks are decorated: blocks that name a container in
- * their "Nest inside" field move into it, then the page controllers start (carousels, anchor
- * links, header and footer). Both are safe to run again.
- * @param {Element} main The main element
+ * The design system's page steps, once the blocks are decorated: the page controllers start. The
+ * Dekker package has no container block, so no block is nested. Safe to run again.
  */
-async function finishDesignSystemPage(main) {
-  nestByParent(main, { layoutSelector: NESTABLE_SELECTOR, layoutModels: LAYOUT_MODELS });
+async function finishDesignSystemPage() {
   await startPageControllers(document, {
     inEditor: isAuthoringContext(document),
     onWarning(problems) {
@@ -122,7 +120,7 @@ async function finishDesignSystemPage(main) {
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
-  // The design system's body classes (ac-core, ds-atlascopco): its CSS is scoped under them.
+  // The design system's body class (ds-dekker): its CSS is scoped under it.
   applyBrandBodyClasses();
   const main = doc.querySelector('main');
   if (main) {
@@ -148,9 +146,9 @@ async function loadEager(doc) {
 async function loadLazy(doc) {
   const main = doc.querySelector('main');
   await loadSections(main);
-  await finishDesignSystemPage(main);
+  await finishDesignSystemPage();
   // The Universal Editor swaps in a decorated block after an edit without running the page steps.
-  attachNestRefreshListeners(main, () => finishDesignSystemPage(main));
+  attachNestRefreshListeners(main, () => finishDesignSystemPage());
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;

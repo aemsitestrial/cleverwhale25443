@@ -16,26 +16,13 @@
       "cards",
       "columns",
       "fragment",
-      "ac-card",
-      "ac-banner",
-      "ac-container",
-      "ac-text-content",
-      "ac-accordion",
-      "ac-button",
-      "ac-carousel",
-      "ac-download",
-      "ac-embed-iframe",
-      "ac-embed-video",
-      "ac-image",
-      "ac-link",
-      "ac-list",
-      "ac-separator",
-      "ac-splide-carousel",
-      "ac-table",
-      "ac-tabs",
-      "ac-text",
-      "ac-title",
-      "ac-block-table-of-content-layout",
+      "dekker-teaser",
+      "dekker-banner",
+      "dekker-button",
+      "dekker-download",
+      "dekker-table",
+      "dekker-text",
+      "dekker-title",
       "ac-nav-header",
       "ac-nav-links",
       "ac-nav-languages",
@@ -175,6 +162,56 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "dekker-table-text",
+    "rte": {
+      "toolbar": {
+        "format": [
+          "bold",
+          "italic",
+          "underline",
+          "strike"
+        ],
+        "blocks": [
+          "paragraph",
+          "h2",
+          "h3",
+          "h4"
+        ],
+        "list": [
+          "bullet_list",
+          "ordered_list"
+        ],
+        "insert": [
+          "link",
+          "unlink",
+          "table"
+        ],
+        "editor": [
+          "removeformat",
+          "paste_text"
+        ],
+        "sections": [
+          "insert",
+          "format",
+          "blocks",
+          "list",
+          "editor"
+        ]
+      },
+      "actions": {
+        "table": {
+          "wrapInParagraphs": false,
+          "showTableProperties": true,
+          "showRowProperties": true,
+          "showCellProperties": true
+        }
+      }
+    },
+    "components": [
+      "richtext"
     ]
   }
 ]

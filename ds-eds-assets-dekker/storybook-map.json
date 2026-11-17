@@ -1,0 +1,166 @@
+{
+  "_generated": "by tools/eds-emitter/storybook/build-storybook-map.js -- do not hand-edit",
+  "host": "https://test.acg-brands-designsystem.pages.dev/storybook/",
+  "blocks": {
+    "dekker-banner": {
+      "types": [
+        {
+          "class": "ds-brand-hero",
+          "lib": "dekker-lib",
+          "stories": [
+            {
+              "title": "Components/Hero",
+              "id": "components-hero--default",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-hero--default"
+            }
+          ]
+        }
+      ]
+    },
+    "dekker-button": {
+      "lib": "dekker-lib",
+      "stories": [
+        {
+          "title": "Components/Button",
+          "id": "components-button--primary",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-button--primary"
+        }
+      ]
+    },
+    "dekker-carousel": {
+      "lib": "dekker-lib",
+      "stories": [
+        {
+          "title": "Components/Hero Carousel",
+          "id": "components-hero-carousel--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-hero-carousel--default"
+        }
+      ]
+    },
+    "dekker-download": {
+      "lib": "dekker-lib",
+      "stories": [
+        {
+          "title": "Components/Download",
+          "id": "components-download--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-download--default"
+        }
+      ]
+    },
+    "dekker-table": {
+      "lib": "dekker-lib",
+      "stories": [
+        {
+          "title": "Components/Table",
+          "id": "components-table--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-table--default"
+        }
+      ]
+    },
+    "dekker-tabs": {
+      "lib": "dekker-lib",
+      "stories": [
+        {
+          "title": "Components/Tabs",
+          "id": "components-tabs--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-tabs--default"
+        }
+      ]
+    },
+    "dekker-teaser": {
+      "types": [
+        {
+          "class": "ds-brand-news-card",
+          "lib": "dekker-lib",
+          "stories": [
+            {
+              "title": "Components/News Card",
+              "id": "components-news-card--default",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-news-card--default"
+            }
+          ]
+        },
+        {
+          "class": "ds-brand-product-card",
+          "lib": "dekker-lib",
+          "stories": [
+            {
+              "title": "Components/Product Card",
+              "id": "components-product-card--default",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-product-card--default"
+            }
+          ]
+        },
+        {
+          "class": "ds-brand-product-teaser",
+          "lib": "dekker-lib",
+          "stories": [
+            {
+              "title": "Components/Product Teaser",
+              "id": "components-product-teaser--default",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-product-teaser--default"
+            }
+          ]
+        },
+        {
+          "class": "ds-brand-teaser-card",
+          "lib": "dekker-lib",
+          "stories": [
+            {
+              "title": "Components/Teaser Card",
+              "id": "components-teaser-card--default",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-teaser-card--default"
+            }
+          ]
+        },
+        {
+          "class": "ds-brand-teaser-link",
+          "lib": "dekker-lib",
+          "stories": [
+            {
+              "title": "Components/Teaser Link",
+              "id": "components-teaser-link--default",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-teaser-link--default"
+            }
+          ]
+        },
+        {
+          "class": "ds-brand-teaser-news",
+          "lib": "dekker-lib",
+          "stories": [
+            {
+              "title": "Components/Teaser News",
+              "id": "components-teaser-news--image-primary",
+              "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-teaser-news--image-primary"
+            }
+          ]
+        }
+      ]
+    },
+    "dekker-text": {
+      "lib": "dekker-lib",
+      "stories": [
+        {
+          "title": "Components/Text",
+          "id": "components-text--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-text--default"
+        },
+        {
+          "title": "Components/Text/Text Variants",
+          "id": "components-text-text-variants--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-text-text-variants--default"
+        }
+      ]
+    },
+    "dekker-title": {
+      "lib": "dekker-lib",
+      "stories": [
+        {
+          "title": "Components/Title",
+          "id": "components-title--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-title--default"
+        }
+      ]
+    }
+  }
+}
