@@ -240,7 +240,7 @@
           },
           {
             "name": "News carousel",
-            "value": "ds-splide-carousel ds-splide-carousel-news"
+            "value": "ds-splide-carousel ds-splide-carousel-news ds-brand-splide-carousel"
           },
           {
             "name": "Products block",
@@ -260,7 +260,7 @@
           },
           {
             "name": "Products carousel",
-            "value": "ds-splide-carousel ds-splide-carousel-products"
+            "value": "ds-splide-carousel ds-splide-carousel-products ds-brand-splide-carousel"
           },
           {
             "name": "Teaser news block",

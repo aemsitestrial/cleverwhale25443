@@ -62,3 +62,154 @@ export function compositionOf(options = {}) {
     sectionClass: wrapper ? 'ds-composition' : '',
   };
 }
+
+/**
+ * One part of a composition's React block: a container (`class` adds its classes) whose grid holds the
+ * blocks it takes, in their order on the page, laid out by `grid` (the Grid values of a section; none:
+ * one block per row).
+ * @typedef {{ class?: string, blocks: string[], grid?: string }} CompositionPart
+ */
+
+// The parts of the compositions whose React block lays its blocks out in containers of its own (the
+// News block: a heading and a button in a row, the cards in a carousel), by composition value. A page
+// section with the composition and its blocks inside is arranged into these parts by the site.
+/** @type {Record<string, CompositionPart[]>} */
+export const LAYOUTS = {
+  "ds-block-news": [
+    {
+      "blocks": [
+        "dekker-title",
+        "dekker-button"
+      ],
+      "grid": "grid-col-2"
+    },
+    {
+      "class": "ds-splide-carousel ds-splide-carousel-news ds-brand-splide-carousel",
+      "blocks": [
+        "dekker-teaser"
+      ],
+      "grid": "grid-col-3"
+    }
+  ],
+  "ds-block-news ds-block-news--worm-grey": [
+    {
+      "blocks": [
+        "dekker-title",
+        "dekker-button"
+      ],
+      "grid": "grid-col-2"
+    },
+    {
+      "class": "ds-splide-carousel ds-splide-carousel-news ds-brand-splide-carousel",
+      "blocks": [
+        "dekker-teaser"
+      ],
+      "grid": "grid-col-3"
+    }
+  ],
+  "ds-block-news ds-block-news--dark-grey": [
+    {
+      "blocks": [
+        "dekker-title",
+        "dekker-button"
+      ],
+      "grid": "grid-col-2"
+    },
+    {
+      "class": "ds-splide-carousel ds-splide-carousel-news ds-brand-splide-carousel",
+      "blocks": [
+        "dekker-teaser"
+      ],
+      "grid": "grid-col-3"
+    }
+  ],
+  "ds-block-news ds-block-news--very-light-grey": [
+    {
+      "blocks": [
+        "dekker-title",
+        "dekker-button"
+      ],
+      "grid": "grid-col-2"
+    },
+    {
+      "class": "ds-splide-carousel ds-splide-carousel-news ds-brand-splide-carousel",
+      "blocks": [
+        "dekker-teaser"
+      ],
+      "grid": "grid-col-3"
+    }
+  ],
+  "ds-block-products": [
+    {
+      "blocks": [
+        "dekker-title",
+        "dekker-text"
+      ]
+    },
+    {
+      "class": "ds-splide-carousel ds-splide-carousel-products ds-brand-splide-carousel",
+      "blocks": [
+        "dekker-teaser"
+      ],
+      "grid": "grid-col-3"
+    }
+  ],
+  "ds-block-products ds-block-products--worm-grey": [
+    {
+      "blocks": [
+        "dekker-title",
+        "dekker-text"
+      ]
+    },
+    {
+      "class": "ds-splide-carousel ds-splide-carousel-products ds-brand-splide-carousel",
+      "blocks": [
+        "dekker-teaser"
+      ],
+      "grid": "grid-col-3"
+    }
+  ],
+  "ds-block-products ds-block-products--dark-grey": [
+    {
+      "blocks": [
+        "dekker-title",
+        "dekker-text"
+      ]
+    },
+    {
+      "class": "ds-splide-carousel ds-splide-carousel-products ds-brand-splide-carousel",
+      "blocks": [
+        "dekker-teaser"
+      ],
+      "grid": "grid-col-3"
+    }
+  ],
+  "ds-block-products ds-block-products--very-light-grey": [
+    {
+      "blocks": [
+        "dekker-title",
+        "dekker-text"
+      ]
+    },
+    {
+      "class": "ds-splide-carousel ds-splide-carousel-products ds-brand-splide-carousel",
+      "blocks": [
+        "dekker-teaser"
+      ],
+      "grid": "grid-col-3"
+    }
+  ]
+};
+
+/**
+ * The parts of the composition a section carries, by its classes: the layout of the composition value
+ * whose classes it has all of (the longest such value, so a colour variant finds its own).
+ * @param {Element} section
+ * @returns {CompositionPart[] | null}
+ */
+export function layoutOf(section) {
+  const value = Object.keys(LAYOUTS)
+    .filter((key) => key.split(/\s+/).every((cls) => section.classList.contains(cls)))
+    .sort((a, b) => b.length - a.length)[0];
+  return value ? LAYOUTS[value] : null;
+}

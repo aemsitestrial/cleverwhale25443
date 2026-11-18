@@ -27,23 +27,22 @@ atlascopco-core-components repo with `nx run dekker-lib:build-eds` and `yarn pac
   starts the package's page controllers. The section fields include **Composition** (News block and News
   carousel, Products block and Products carousel, Teaser news block, Key specs: a class on the section,
   with its CSS bundle) and **Background**.
-- **Nested sections and the React structure** (`scripts/nest-sections.js`): a section with **Nest inside**
-  set to another section's **Name** moves into that section's grid. A composed section and its nested
-  sections then get the structure of the React block (`alignToAemGrid`): each nested section is a
-  `.container.aem-GridColumn` of the parent's grid, each block is an item of its section's grid (no
-  wrapper), and the section's **Grid** becomes the items' AEM column classes (2 columns: 6 + 6; 3
-  columns: 4 + 4 + 4; no Grid: each item a full-width `.aem-Grid` row), so the React blocks' stylesheets
-  apply as they are.
-  - **News block**: a section with Composition *News block* (or a colour: *News block: Dark grey*, ...)
-    and Name `news`; nested in it (Nest inside `news`): a section with Grid *2 columns* (Dekker Title,
-    Dekker Button), then a section with Composition *News carousel* and Grid *3 columns* (Dekker Teasers,
-    type *News card*, modifier *Highlight gold*).
-  - **Products block**: Composition *Products block* and Name `products`; nested in it: a section with
-    no Grid (Dekker Title, Dekker Text), then a section with Composition *Products carousel* and Grid
-    *3 columns* (Dekker Teasers, type *Product card*, modifiers *Extended* and *Shadow*).
-  - **Teaser news block**: one section, Composition *Teaser news block*, a Grid for the columns, Dekker
-    Teasers of type *Teaser news*.
+- **Compositions and the React structure** (`scripts/nest-sections.js`): a section with a
+  **Composition** holds ordinary blocks; the site gives it the structure of the React block
+  (`alignToAemGrid`). A composition with a layout (the package's `layoutOf`) takes its blocks into the
+  React block's parts, each a `.container` of the AEM grid with its blocks in columns, so the React
+  blocks' stylesheets apply as they are.
+  - **News block**: one section, Composition *News block* (or a colour: *News block: Dark grey*, ...),
+    with a Dekker Title, a Dekker Button and a Dekker Teaser per card (type *News card*, modifier
+    *Highlight gold*). The title and the button go into the head row (6 + 6), the cards into the
+    carousel (4 each).
+  - **Products block**: one section, Composition *Products block*, with a Dekker Title, a Dekker Text
+    and a Dekker Teaser per card (type *Product card*, modifiers *Extended* and *Shadow*).
+  - **Teaser news block**: one section, Composition *Teaser news block*, a **Grid** for the columns,
+    Dekker Teasers of type *Teaser news*.
   - The carousels are started by the package's page controller (not in the Universal Editor).
+  - A section with **Nest inside** set to another section's **Name** moves into that section's grid,
+    for a composition built from sections (a part with a class is also a Composition value).
 - `scripts/ds-dekker.js` holds what the `dekker-*` blocks share (the same steps as `scripts/ds.js`, bound to
   the Dekker package). Blocks are not nested into blocks; sections are nested into sections.
 - Blocks: `dekker-title`, `dekker-text`, `dekker-button`, `dekker-download`, `dekker-table`, `dekker-teaser`

@@ -19,6 +19,8 @@
 // decorateContainerSections, nestSections and alignToAemGrid after it and before the sections load.
 // Running them again (after an edit in the Universal Editor) changes only what is not done yet.
 
+import { layoutOf } from '../ds-eds-assets-dekker/js/vendor/container-composition.js';
+
 const WARNING = 'nest-section-warning';
 const GRID = ['aem-Grid', 'aem-Grid--12', 'aem-Grid--default--12'];
 const COLUMN = 'aem-GridColumn';
@@ -118,8 +120,69 @@ function gridOf(section) {
   return grid;
 }
 
+/** The block an item of a grid is: the block itself, or the one block of its wrapper. */
+const blockIn = (child) => {
+  if (child.matches('.block')) return child;
+  return child.matches('[class$="-wrapper"]') && child.children.length === 1
+    && child.firstElementChild.matches('.block') ? child.firstElementChild : null;
+};
+
 /**
- * Gives a composed section and every section nested in it the React blocks' AEM grid structure.
+ * Gives the items of a grid their column classes for `gridKey` (a Grid value, or "rows"), the block
+ * of a wrapper standing in for its wrapper, as a React block's column is.
+ * @param {Element} grid
+ * @param {string} gridKey
+ * @param {boolean} slides the grid is a carousel's: its items are its slides
+ */
+function alignItems(grid, gridKey, slides) {
+  const widths = WIDTHS[gridKey] || [12];
+  [...grid.children].forEach((child, index) => {
+    const block = blockIn(child);
+    if (block && block !== child) child.replaceWith(block);
+    const item = block || child;
+    if (item.matches('.section, .ds-composition-part') || item.classList.contains(COLUMN)
+      || item.classList.contains('aem-Grid')) return;
+    if (gridKey === 'rows') item.classList.add(...GRID);
+    else item.classList.add(...columnOf(widths[index % widths.length]), ...(slides ? ['splide__slide'] : []));
+  });
+}
+
+/**
+ * The containers of a composition's parts in `grid` (the layout of container-composition.js),
+ * made the first time: a `.container` with the part's classes, a full-width item of the grid, with
+ * its own grid inside, as the React block writes it.
+ * @typedef {import('../ds-eds-assets-dekker/js/vendor/container-composition.js').CompositionPart}
+ *   CompositionPart
+ * @param {Element} grid
+ * @param {CompositionPart[]} layout
+ */
+function partsIn(grid, layout) {
+  return layout.map((part, index) => {
+    let element = grid.querySelector(`:scope > .ds-composition-part[data-part="${index}"]`);
+    if (!element) {
+      element = document.createElement('div');
+      element.className = 'container responsivegrid ds-composition-part';
+      if (part.class) element.classList.add(...part.class.split(/\s+/));
+      element.classList.add(...columnOf(12));
+      element.dataset.part = String(index);
+      const container = document.createElement('div');
+      container.className = 'cmp-container';
+      const inner = document.createElement('div');
+      inner.classList.add(...GRID);
+      container.append(inner);
+      element.append(container);
+      const next = grid.querySelector(`:scope > .ds-composition-part[data-part="${index + 1}"]`);
+      grid.insertBefore(element, next);
+    }
+    return { part, element, grid: element.querySelector(':scope > .cmp-container > .aem-Grid') };
+  });
+}
+
+/**
+ * Gives a composed section and every section nested in it the React blocks' AEM grid structure. A
+ * composition with a layout (the News block) takes its blocks into its parts (the heading and
+ * the button in a row, the cards in a carousel), in their order on the page; a block no part takes
+ * stays an item of the section's grid.
  * @param {Element} main
  * @param {Set<Element>} explicitWidths the sections that name their content width (widthsOf)
  */
@@ -133,15 +196,12 @@ export function alignToAemGrid(main, explicitWidths = new Set()) {
     if (!section.dataset.aemGrid) {
       // The block's root, and each of its parts, is a full-width item of the grid around it.
       section.classList.add(...columnOf(12));
-      if (nested) {
-        // A part of the block: a container that is a full-width item of its parent's grid, with no
-        // content width of its own unless the section names one (the React block's inner containers
-        // have none).
-        if (!explicitWidths.has(section)) {
-          section.classList.remove('content-width-bleed');
-          [...section.classList].filter((cls) => /^ds-content-width-\d+$/.test(cls))
-            .forEach((cls) => section.classList.remove(cls));
-        }
+      if (nested && !explicitWidths.has(section)) {
+        // A part of the block: no content width of its own unless the section names one (the React
+        // block's inner containers have none).
+        section.classList.remove('content-width-bleed');
+        [...section.classList].filter((cls) => /^ds-content-width-\d+$/.test(cls))
+          .forEach((cls) => section.classList.remove(cls));
       }
       // The section's Grid becomes the items' column classes; the AEM grid lays them out. A section
       // with no Grid stacks its items as rows of the grid (`.aem-Grid` each), as the React blocks
@@ -152,22 +212,19 @@ export function alignToAemGrid(main, explicitWidths = new Set()) {
     }
     const grid = gridOf(section);
     if (!grid) return;
-    const rows = section.dataset.aemGrid === 'rows';
-    const widths = WIDTHS[section.dataset.aemGrid] || [12];
-    // A carousel's items are its slides, as the React blocks mark them.
-    const slides = section.classList.contains('ds-splide-carousel');
-    [...grid.children].forEach((child, index) => {
-      // A block's wrapper goes: the block is the item, as a React block's column is.
-      let item = child;
-      const block = child.matches('[class$="-wrapper"]') && child.children.length === 1
-        && child.firstElementChild.matches('.block') ? child.firstElementChild : null;
-      if (block) {
-        child.replaceWith(block);
-        item = block;
-      }
-      if (item.matches('.section') || item.classList.contains(COLUMN) || item.classList.contains('aem-Grid')) return;
-      if (rows) item.classList.add(...GRID);
-      else item.classList.add(...columnOf(widths[index % widths.length]), ...(slides ? ['splide__slide'] : []));
-    });
+    const layout = !nested && layoutOf(section);
+    if (layout) {
+      const parts = partsIn(grid, layout);
+      [...grid.children].forEach((child) => {
+        const block = blockIn(child);
+        const name = block?.dataset.blockName || block?.classList[0];
+        const target = name && parts.find(({ part }) => part.blocks.includes(name));
+        if (!target) return;
+        if (block !== child) child.remove();
+        target.grid.append(block);
+      });
+      parts.forEach(({ part, element, grid: partGrid }) => alignItems(partGrid, part.grid || 'rows', element.classList.contains('ds-splide-carousel')));
+    }
+    alignItems(grid, section.dataset.aemGrid, section.classList.contains('ds-splide-carousel'));
   });
 }
