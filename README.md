@@ -24,30 +24,13 @@ atlascopco-core-components repo with `nx run dekker-lib:build-eds` and `yarn pac
 
 - `head.html` loads the Dekker reset, brand file (`dekker-lib.css`), fonts and `page-glue.css`.
 - `scripts/scripts.js` adds the Dekker body class (`ds-dekker`), builds the container on each section and
-  starts the package's page controllers. The section fields include **Composition** (News block and News
-  carousel, Products block and Products carousel, Teaser news block, Key specs: a class on the section,
-  with its CSS bundle) and **Background**.
-- **Compositions and the React structure** (`scripts/nest-sections.js`): a section with a
-  **Composition** holds ordinary blocks; the site gives it the structure of the React block
-  (`alignToAemGrid`). A composition with a layout (the package's `layoutOf`) takes its blocks into the
-  React block's parts, each a `.container` of the AEM grid with its blocks in columns, so the React
-  blocks' stylesheets apply as they are.
-  - **News block**: one section, Composition *News block* (or a colour: *News block: Dark grey*, ...),
-    with a Dekker Title, a Dekker Button and a Dekker Teaser per card (type *News card*, modifier
-    *Highlight gold*). The title and the button go into the head row (6 + 6), the cards into the
-    carousel (4 each).
-  - **Products block**: one section, Composition *Products block*, with a Dekker Title, a Dekker Text
-    and a Dekker Teaser per card (type *Product card*, modifiers *Extended* and *Shadow*).
-  - **Teaser news block**: one section, Composition *Teaser news block*, a **Grid** for the columns,
-    Dekker Teasers of type *Teaser news*.
-  - The carousels are started by the package's page controller (not in the Universal Editor).
-  - A section with **Nest inside** set to another section's **Name** moves into that section's grid,
-    for a composition built from sections (a part with a class is also a Composition value).
+  starts the package's page controllers. The section fields include **Composition** (Key specs: a class
+  on the section, with its CSS bundle) and **Background**.
 - `scripts/ds-dekker.js` holds what the `dekker-*` blocks share (the same steps as `scripts/ds.js`, bound to
-  the Dekker package). Blocks are not nested into blocks; sections are nested into sections.
+  the Dekker package). The package has no container block, so blocks are not nested.
 - Blocks: `dekker-title`, `dekker-text`, `dekker-button`, `dekker-download`, `dekker-table`, `dekker-teaser`
   (the card types: news card, product card, teaser card, ...), `dekker-banner` (hero), `dekker-tabs` (a
-  Dekker Tabs Item per tab), `dekker-carousel` (a Dekker Carousel Item per slide; the hero and product
+  Dekker Tabs Item per tab) and `dekker-carousel` (a Dekker Carousel Item per slide; the hero and product
   teaser carousels are its item type and style).
 
 To update the package and the blocks:

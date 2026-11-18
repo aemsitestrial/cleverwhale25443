@@ -33,37 +33,3 @@ startPageControllers(root, { inEditor, onWarning })
 | `hookOptions` | The brand's own selectors and classes a hook works with, keyed by the hook's name. The runner is shared by every brand and names no brand class. |
 
 ## Entries, in start order
-
-### dekker-carousel-ds-splide-carousel-news
-
-| Field | Value |
-| --- | --- |
-| `name` | `dekker-carousel-ds-splide-carousel-news` |
-| `selector` | `.ds-splide-carousel-news:not(.ds-splide-carousel--initialized)` |
-| `controllers` | 1. `./splide-composition-controller.js`, export `SplideCompositionController`, constructed, then `init()` |
-| `options` | `carouselClass`: `"ds-splide-carousel-news"`; `perPage`: `3`; `type`: `"slide"`; `arrows`: `false`; `breakpoints`: `"responsiveSlidesThree"` |
-| `instances` | none |
-| `inEditor` | no |
-| `startOnce` | none |
-| `startWhen` | none |
-| `showWhileStarting` | no |
-| `afterStart` | none |
-| `hook` | `maskStartedCarousels`: Hides each carousel that is already mounted from the controller, by its class (`hookOptions` `carouselClass`), for the length of the start, so the controller does not mount it a second time.<br>`markCarouselSlides`: Before the controller starts, puts the class `aem-GridColumn` on each child of the grid (`.cmp-container > .aem-Grid`) of every carousel that has not started, where it is missing. The carousel controller finds its slides by that class; a container block sets it itself, and a page section's grid children (block wrappers) do not have it. |
-| `hookOptions` | `maskStartedCarousels`: `carouselClass`: `"ds-splide-carousel-news"` |
-
-### dekker-carousel-ds-splide-carousel-products
-
-| Field | Value |
-| --- | --- |
-| `name` | `dekker-carousel-ds-splide-carousel-products` |
-| `selector` | `.ds-splide-carousel-products:not(.ds-splide-carousel--initialized)` |
-| `controllers` | 1. `./splide-composition-controller.js`, export `SplideCompositionController`, constructed, then `init()` |
-| `options` | `carouselClass`: `"ds-splide-carousel-products"`; `perPage`: `3`; `type`: `"slide"`; `breakpoints`: `"responsiveSlidesThree"` |
-| `instances` | none |
-| `inEditor` | no |
-| `startOnce` | none |
-| `startWhen` | none |
-| `showWhileStarting` | no |
-| `afterStart` | none |
-| `hook` | `maskStartedCarousels`: Hides each carousel that is already mounted from the controller, by its class (`hookOptions` `carouselClass`), for the length of the start, so the controller does not mount it a second time.<br>`markCarouselSlides`: Before the controller starts, puts the class `aem-GridColumn` on each child of the grid (`.cmp-container > .aem-Grid`) of every carousel that has not started, where it is missing. The carousel controller finds its slides by that class; a container block sets it itself, and a page section's grid children (block wrappers) do not have it. |
-| `hookOptions` | `maskStartedCarousels`: `carouselClass`: `"ds-splide-carousel-products"` |

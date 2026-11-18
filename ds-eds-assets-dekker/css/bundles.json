@@ -5,10 +5,6 @@
     "foundational/dekker-lib.css"
   ],
   "order": [
-    "splide-carousel",
-    "dekker-block-news",
-    "dekker-block-products",
-    "dekker-block-teaser-news",
     "dekker-key-specs",
     "button--dekker-button",
     "carousel",
@@ -34,24 +30,6 @@
       "file": "graph/carousel.css",
       "components": [
         "carousel"
-      ]
-    },
-    "dekker-block-news": {
-      "file": "graph/dekker-block-news.css",
-      "components": [
-        "dekker-block-news"
-      ]
-    },
-    "dekker-block-products": {
-      "file": "graph/dekker-block-products.css",
-      "components": [
-        "dekker-block-products"
-      ]
-    },
-    "dekker-block-teaser-news": {
-      "file": "graph/dekker-block-teaser-news.css",
-      "components": [
-        "dekker-block-teaser-news"
       ]
     },
     "dekker-hero": {
@@ -97,12 +75,6 @@
         "dekker-download"
       ]
     },
-    "splide-carousel": {
-      "file": "graph/splide-carousel.css",
-      "components": [
-        "splide-carousel"
-      ]
-    },
     "tabs--dekker-tabs": {
       "file": "graph/tabs--dekker-tabs.css",
       "components": [
@@ -137,23 +109,6 @@
       "parts": [
         "teaser--image",
         "dekker-hero"
-      ]
-    },
-    "dekker-block-news": {
-      "parts": [
-        "splide-carousel",
-        "dekker-block-news"
-      ]
-    },
-    "dekker-block-products": {
-      "parts": [
-        "splide-carousel",
-        "dekker-block-products"
-      ]
-    },
-    "dekker-block-teaser-news": {
-      "parts": [
-        "dekker-block-teaser-news"
       ]
     },
     "dekker-button": {

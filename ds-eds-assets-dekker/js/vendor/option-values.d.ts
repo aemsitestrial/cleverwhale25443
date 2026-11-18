@@ -36,7 +36,7 @@ export interface OptionValues {
   textVariant: 'ds-brand-pretitle' | 'ds-brand-preamble' | 'ds-brand-paragraph' | 'ds-brand-paragraph--large' | 'ds-brand-quote' | 'ds-brand-paragraph--small';
   titleAlignment: 'content-center' | 'content-right' | 'content-left';
   titleVariant: 'title--highlight-1' | 'title--highlight-2' | 'title--highlight-3';
-  wrappersVariant: 'ds-block-news' | 'ds-block-news ds-block-news--worm-grey' | 'ds-block-news ds-block-news--dark-grey' | 'ds-block-news ds-block-news--very-light-grey' | 'ds-splide-carousel ds-splide-carousel-news ds-brand-splide-carousel' | 'ds-block-products' | 'ds-block-products ds-block-products--worm-grey' | 'ds-block-products ds-block-products--dark-grey' | 'ds-block-products ds-block-products--very-light-grey' | 'ds-splide-carousel ds-splide-carousel-products ds-brand-splide-carousel' | 'ds-block-teaser-news' | 'ds-brand-key-specs';
+  wrappersVariant: 'ds-brand-key-specs';
 }
 
 export type OptionList = keyof OptionValues;

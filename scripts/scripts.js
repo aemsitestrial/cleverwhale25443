@@ -19,7 +19,6 @@ import {
 } from '../ds-eds-assets-dekker/js/vendor/page-glue.js';
 import { startPageControllers } from '../ds-eds-assets-dekker/js/vendor/start-page-controllers.js';
 import { loadBundle, isAuthoringContext, clearNoneSectionFields } from './ds-dekker.js';
-import nestSections, { alignToAemGrid, widthsOf } from './nest-sections.js';
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -97,23 +96,14 @@ export function decorateMain(main) {
   // The design system's container on each section, from its section fields (background, grid,
   // content width, composition, spacing). After decorateBlocks, before the blocks load. A
   // composition (News block, Key specs, ...) loads its CSS bundle through loadBundle.
-  const explicitWidths = widthsOf(main);
   decorateContainerSections(main, { loadBundle });
-  // A section whose "Nest inside" names another section's "Name" moves into its grid: the parts
-  // of a composition (the News block's head row and carousel) are sections nested in its section.
-  // The composition then gets the React block's structure: the AEM grid, its items in columns.
-  nestSections(main, { editing: isAuthoringContext(document) });
-  alignToAemGrid(main, explicitWidths);
 }
 
 /**
- * The design system's page steps, once the blocks are decorated: sections an edit brought in are
- * nested, then the page controllers start (the carousel of a composition). Safe to run again.
- * @param {Element} main The main element
+ * The design system's page steps, once the blocks are decorated: the page controllers start. The
+ * Dekker package has no container block, so no block is nested. Safe to run again.
  */
-async function finishDesignSystemPage(main) {
-  nestSections(main, { editing: isAuthoringContext(document) });
-  alignToAemGrid(main);
+async function finishDesignSystemPage() {
   await startPageControllers(document, {
     inEditor: isAuthoringContext(document),
     onWarning(problems) {
@@ -156,9 +146,9 @@ async function loadEager(doc) {
 async function loadLazy(doc) {
   const main = doc.querySelector('main');
   await loadSections(main);
-  await finishDesignSystemPage(main);
+  await finishDesignSystemPage();
   // The Universal Editor swaps in a decorated block after an edit without running the page steps.
-  attachNestRefreshListeners(main, () => finishDesignSystemPage(main));
+  attachNestRefreshListeners(main, () => finishDesignSystemPage());
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;

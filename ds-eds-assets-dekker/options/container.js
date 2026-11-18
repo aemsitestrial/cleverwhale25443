@@ -19,17 +19,6 @@ export const gridVariant = [
 ];
 
 export const wrappersVariant = [
-  { value: 'ds-block-news', label: 'News block' },
-  { value: 'ds-block-news ds-block-news--worm-grey', label: 'News block: Worm grey' },
-  { value: 'ds-block-news ds-block-news--dark-grey', label: 'News block: Dark grey' },
-  { value: 'ds-block-news ds-block-news--very-light-grey', label: 'News block: Very light grey' },
-  { value: 'ds-splide-carousel ds-splide-carousel-news ds-brand-splide-carousel', label: 'News carousel' },
-  { value: 'ds-block-products', label: 'Products block' },
-  { value: 'ds-block-products ds-block-products--worm-grey', label: 'Products block: Worm grey' },
-  { value: 'ds-block-products ds-block-products--dark-grey', label: 'Products block: Dark grey' },
-  { value: 'ds-block-products ds-block-products--very-light-grey', label: 'Products block: Very light grey' },
-  { value: 'ds-splide-carousel ds-splide-carousel-products ds-brand-splide-carousel', label: 'Products carousel' },
-  { value: 'ds-block-teaser-news', label: 'Teaser news block' },
   { value: 'ds-brand-key-specs', label: 'Key specs' },
 ];
 
