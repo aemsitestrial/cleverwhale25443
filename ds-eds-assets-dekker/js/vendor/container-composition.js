@@ -10,7 +10,16 @@ import { wrappersVariant, backgroundVariant } from '../../options/container.js';
 // and in brand.json bundles.compositions.
 /** @type {Record<string, string>} */
 export const WRAPPER_BUNDLES = {
+  'ds-block-news': 'dekker-block-news',
+  'ds-block-news ds-block-news--worm-grey': 'dekker-block-news',
+  'ds-block-news ds-block-news--dark-grey': 'dekker-block-news',
+  'ds-block-news ds-block-news--very-light-grey': 'dekker-block-news',
+  'ds-splide-carousel ds-splide-carousel-news': 'dekker-block-news',
   'ds-block-products': 'dekker-block-products',
+  'ds-block-products ds-block-products--worm-grey': 'dekker-block-products',
+  'ds-block-products ds-block-products--dark-grey': 'dekker-block-products',
+  'ds-block-products ds-block-products--very-light-grey': 'dekker-block-products',
+  'ds-splide-carousel ds-splide-carousel-products': 'dekker-block-products',
   'ds-block-teaser-news': 'dekker-block-teaser-news',
   'ds-brand-key-specs': 'dekker-key-specs',
 };
@@ -30,7 +39,13 @@ export const oneOf = (list, value) => (value !== undefined && valuesOf(list).inc
  * nothing. The brand's container has no container style, so `libClass` is always false.
  *
  * @param {{ wrappersVariant?: string, backgroundVariant?: string }} [options]
- * @returns {{ classes: string[], bundles: string[], libClass: boolean }}
+ * @returns {{ classes: string[], bundles: string[], libClass: boolean, aemGrid: boolean, carousel: boolean, sectionClass: string }}
+ *   `aemGrid` is true for a composition: the container block always renders `.cmp-container >
+ *   .aem-Grid`, and the composition's stylesheet and the carousel controller read it, so a section
+ *   with a composition has the grid too. `carousel` is true for a carousel composition
+ *   (`ds-splide-carousel`), whose slides take `aem-GridColumn`. `sectionClass` is the class a page
+ *   section with a composition carries, which css/page-glue.css lays out as the container block, and
+ *   in which a section nested in it sits in a `.nest-cell`.
  */
 export function compositionOf(options = {}) {
   const wrapper = oneOf(wrappersVariant, options.wrappersVariant);
@@ -42,5 +57,8 @@ export function compositionOf(options = {}) {
     classes: [wrapper, background].filter(Boolean),
     bundles,
     libClass: false,
+    aemGrid: !!wrapper,
+    carousel: wrapper.split(/\s+/).includes('ds-splide-carousel'),
+    sectionClass: wrapper ? 'ds-composition' : '',
   };
 }

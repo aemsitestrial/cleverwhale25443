@@ -18,7 +18,6 @@
       "fragment",
       "dekker-teaser",
       "dekker-banner",
-      "dekker-block-news",
       "dekker-button",
       "dekker-carousel",
       "dekker-download",
@@ -165,12 +164,6 @@
       "image",
       "button",
       "title"
-    ]
-  },
-  {
-    "id": "dekker-block-news",
-    "components": [
-      "dekker-block-news-item"
     ]
   },
   {

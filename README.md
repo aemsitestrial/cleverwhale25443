@@ -24,15 +24,26 @@ atlascopco-core-components repo with `nx run dekker-lib:build-eds` and `yarn pac
 
 - `head.html` loads the Dekker reset, brand file (`dekker-lib.css`), fonts and `page-glue.css`.
 - `scripts/scripts.js` adds the Dekker body class (`ds-dekker`), builds the container on each section and
-  starts the package's page controllers. The section fields include **Composition** (Products
-  block, Teaser news block, Key specs: a class on the section, with its CSS bundle) and **Background**.
+  starts the package's page controllers. The section fields include **Composition** (News block and News
+  carousel, Products block and Products carousel, Teaser news block, Key specs: a class on the section,
+  with its CSS bundle) and **Background**.
+- **Nested sections** (`scripts/nest-sections.js`): a section with **Nest inside** set to another section's
+  **Name** moves into that section's grid (in a `.nest-cell`). A composition is built this way, as the AC
+  and ACG packages build theirs. The **News block**: a section with Composition *News block* and Name
+  `news`; in it, a section with Grid *2 columns* (a Dekker Title and a Dekker Button) and a section with
+  Composition *News carousel* (Dekker Teasers of type *News card*), both with Nest inside `news`. The
+  carousel is started by the package's page controller, not in the Universal Editor. The **Products
+  block** is built the same way: Composition *Products block*; a section with a Dekker Title and a Dekker
+  Text; a section with Composition *Products carousel* (Dekker Teasers of type *Product card*, Extended,
+  Shadow). The **Teaser news block** is one section: Composition *Teaser news block*, a Grid for the
+  columns, Dekker Teasers of type *Teaser news*. Each block's colours are variants of its Composition
+  (*News block: Dark grey*, ...).
 - `scripts/ds-dekker.js` holds what the `dekker-*` blocks share (the same steps as `scripts/ds.js`, bound to
-  the Dekker package). The package has no container block, so blocks are not nested.
+  the Dekker package). Blocks are not nested into blocks; sections are nested into sections.
 - Blocks: `dekker-title`, `dekker-text`, `dekker-button`, `dekker-download`, `dekker-table`, `dekker-teaser`
   (the card types: news card, product card, teaser card, ...), `dekker-banner` (hero), `dekker-tabs` (a
   Dekker Tabs Item per tab), `dekker-carousel` (a Dekker Carousel Item per slide; the hero and product
-  teaser carousels are its item type and style) and `dekker-block-news` (the News block: a heading and a button in a row, a Dekker Block News Item per
-  news card, shown as a carousel; the carousel is not started in the Universal Editor).
+  teaser carousels are its item type and style).
 
 To update the package and the blocks:
 

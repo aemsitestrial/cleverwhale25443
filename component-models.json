@@ -223,8 +223,44 @@
             "value": "_none"
           },
           {
+            "name": "News block",
+            "value": "ds-block-news"
+          },
+          {
+            "name": "News block: Worm grey",
+            "value": "ds-block-news ds-block-news--worm-grey"
+          },
+          {
+            "name": "News block: Dark grey",
+            "value": "ds-block-news ds-block-news--dark-grey"
+          },
+          {
+            "name": "News block: Very light grey",
+            "value": "ds-block-news ds-block-news--very-light-grey"
+          },
+          {
+            "name": "News carousel",
+            "value": "ds-splide-carousel ds-splide-carousel-news"
+          },
+          {
             "name": "Products block",
             "value": "ds-block-products"
+          },
+          {
+            "name": "Products block: Worm grey",
+            "value": "ds-block-products ds-block-products--worm-grey"
+          },
+          {
+            "name": "Products block: Dark grey",
+            "value": "ds-block-products ds-block-products--dark-grey"
+          },
+          {
+            "name": "Products block: Very light grey",
+            "value": "ds-block-products ds-block-products--very-light-grey"
+          },
+          {
+            "name": "Products carousel",
+            "value": "ds-splide-carousel ds-splide-carousel-products"
           },
           {
             "name": "Teaser news block",
@@ -484,6 +520,18 @@
             "value": "mb-20"
           }
         ]
+      },
+      {
+        "component": "text",
+        "name": "nestId",
+        "label": "Name",
+        "description": "The name sections give in \"Nest inside\" to be moved into this section."
+      },
+      {
+        "component": "text",
+        "name": "parentId",
+        "label": "Nest inside",
+        "description": "The Name of the section this section is moved into, as an item of its grid. Empty: it stays where it is."
       }
     ]
   },
@@ -7714,132 +7762,6 @@
             "value": "my-20"
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "dekker-block-news",
-    "fields": [
-      {
-        "component": "text",
-        "name": "heading",
-        "label": "Heading",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "buttonLabel",
-        "label": "Button Label",
-        "valueType": "string"
-      },
-      {
-        "component": "aem-content",
-        "name": "buttonLink",
-        "label": "Button Link"
-      },
-      {
-        "component": "select",
-        "name": "spacingMb",
-        "label": "Spacing Mb",
-        "options": [
-          {
-            "name": "None",
-            "value": "_none"
-          },
-          {
-            "name": "mb-0 (none)",
-            "value": "mb-0"
-          },
-          {
-            "name": "mb-4 (1rem)",
-            "value": "mb-4"
-          },
-          {
-            "name": "mb-8 (2rem)",
-            "value": "mb-8"
-          },
-          {
-            "name": "mb-12 (3rem)",
-            "value": "mb-12"
-          },
-          {
-            "name": "mb-16 (4rem)",
-            "value": "mb-16"
-          },
-          {
-            "name": "mb-20 (5rem)",
-            "value": "mb-20"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "name": "spacingMy",
-        "label": "Spacing My",
-        "options": [
-          {
-            "name": "None",
-            "value": "_none"
-          },
-          {
-            "name": "my-0 (none)",
-            "value": "my-0"
-          },
-          {
-            "name": "my-4 (1rem)",
-            "value": "my-4"
-          },
-          {
-            "name": "my-8 (2rem)",
-            "value": "my-8"
-          },
-          {
-            "name": "my-12 (3rem)",
-            "value": "my-12"
-          },
-          {
-            "name": "my-16 (4rem)",
-            "value": "my-16"
-          },
-          {
-            "name": "my-20 (5rem)",
-            "value": "my-20"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "dekker-block-news-item",
-    "fields": [
-      {
-        "component": "reference",
-        "name": "imagePath",
-        "label": "Image Path",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Title",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "description",
-        "label": "Description",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "date",
-        "label": "Date",
-        "valueType": "string"
-      },
-      {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link"
       }
     ]
   },

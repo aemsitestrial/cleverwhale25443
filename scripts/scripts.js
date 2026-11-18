@@ -19,6 +19,7 @@ import {
 } from '../ds-eds-assets-dekker/js/vendor/page-glue.js';
 import { startPageControllers } from '../ds-eds-assets-dekker/js/vendor/start-page-controllers.js';
 import { loadBundle, isAuthoringContext, clearNoneSectionFields } from './ds-dekker.js';
+import nestSections from './nest-sections.js';
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -97,13 +98,18 @@ export function decorateMain(main) {
   // content width, composition, spacing). After decorateBlocks, before the blocks load. A
   // composition (News block, Key specs, ...) loads its CSS bundle through loadBundle.
   decorateContainerSections(main, { loadBundle });
+  // A section whose "Nest inside" names another section's "Name" moves into its grid: the parts
+  // of a composition (the News block's head row and carousel) are sections nested in its section.
+  nestSections(main, { editing: isAuthoringContext(document) });
 }
 
 /**
- * The design system's page steps, once the blocks are decorated: the page controllers start. The
- * Dekker package has no container block, so no block is nested. Safe to run again.
+ * The design system's page steps, once the blocks are decorated: sections an edit brought in are
+ * nested, then the page controllers start (the carousel of a composition). Safe to run again.
+ * @param {Element} main The main element
  */
-async function finishDesignSystemPage() {
+async function finishDesignSystemPage(main) {
+  nestSections(main, { editing: isAuthoringContext(document) });
   await startPageControllers(document, {
     inEditor: isAuthoringContext(document),
     onWarning(problems) {
@@ -146,9 +152,9 @@ async function loadEager(doc) {
 async function loadLazy(doc) {
   const main = doc.querySelector('main');
   await loadSections(main);
-  await finishDesignSystemPage();
+  await finishDesignSystemPage(main);
   // The Universal Editor swaps in a decorated block after an edit without running the page steps.
-  attachNestRefreshListeners(main, () => finishDesignSystemPage());
+  attachNestRefreshListeners(main, () => finishDesignSystemPage(main));
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;

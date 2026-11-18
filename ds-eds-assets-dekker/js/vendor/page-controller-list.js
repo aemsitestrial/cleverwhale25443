@@ -3,6 +3,62 @@
 // tools/eds-build/eds-config.cjs from libs/dekker-lib/src/eds/eds.config.ts (global controllers, controllers).
 
 /** @type {import('./page-controllers.js').PageControllerEntry[]} */
-const list = [];
+const list = [
+  {
+    "name": "dekker-carousel-ds-splide-carousel-news",
+    "selector": ".ds-splide-carousel-news:not(.ds-splide-carousel--initialized)",
+    "controllers": [
+      {
+        "module": "./splide-composition-controller.js",
+        "export": "SplideCompositionController",
+        "call": "init"
+      }
+    ],
+    "options": {
+      "carouselClass": "ds-splide-carousel-news",
+      "perPage": 3,
+      "type": "slide",
+      "arrows": false,
+      "breakpoints": "responsiveSlidesThree"
+    },
+    "inEditor": false,
+    "hook": [
+      "maskStartedCarousels",
+      "markCarouselSlides"
+    ],
+    "hookOptions": {
+      "maskStartedCarousels": {
+        "carouselClass": "ds-splide-carousel-news"
+      }
+    }
+  },
+  {
+    "name": "dekker-carousel-ds-splide-carousel-products",
+    "selector": ".ds-splide-carousel-products:not(.ds-splide-carousel--initialized)",
+    "controllers": [
+      {
+        "module": "./splide-composition-controller.js",
+        "export": "SplideCompositionController",
+        "call": "init"
+      }
+    ],
+    "options": {
+      "carouselClass": "ds-splide-carousel-products",
+      "perPage": 3,
+      "type": "slide",
+      "breakpoints": "responsiveSlidesThree"
+    },
+    "inEditor": false,
+    "hook": [
+      "maskStartedCarousels",
+      "markCarouselSlides"
+    ],
+    "hookOptions": {
+      "maskStartedCarousels": {
+        "carouselClass": "ds-splide-carousel-products"
+      }
+    }
+  }
+];
 
 export default list;

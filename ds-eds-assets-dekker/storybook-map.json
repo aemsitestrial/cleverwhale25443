@@ -17,26 +17,6 @@
         }
       ]
     },
-    "dekker-block-news": {
-      "lib": "dekker-lib",
-      "stories": [
-        {
-          "title": "Blocks/BlockNews",
-          "id": "blocks-blocknews--default",
-          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/blocks-blocknews--default"
-        }
-      ]
-    },
-    "dekker-block-news-item": {
-      "lib": "dekker-lib",
-      "stories": [
-        {
-          "title": "Blocks/BlockNews",
-          "id": "blocks-blocknews--default",
-          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/blocks-blocknews--default"
-        }
-      ]
-    },
     "dekker-button": {
       "lib": "dekker-lib",
       "stories": [

@@ -5,37 +5,41 @@
     "foundational/dekker-lib.css"
   ],
   "order": [
+    "splide-carousel",
+    "dekker-block-news",
     "dekker-block-products",
     "dekker-block-teaser-news",
     "dekker-key-specs",
-    "title",
-    "button",
+    "button--dekker-button",
     "carousel",
     "teaser--image",
+    "dekker-news-card--dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news",
     "dekker-hero",
-    "splide-carousel",
-    "dekker-title",
-    "dekker-button",
-    "dekker-news-card",
-    "dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news",
-    "dekker-blockNews",
     "dekker-hero-carousel--dekker-product-teaser-carousel",
     "download--dekker-download",
     "tabs--dekker-tabs",
     "dekker-table",
-    "text--dekker-text"
+    "text--dekker-text",
+    "title--dekker-title"
   ],
   "parts": {
-    "button": {
-      "file": "graph/button.css",
+    "button--dekker-button": {
+      "file": "graph/button--dekker-button.css",
       "components": [
-        "button"
+        "button",
+        "dekker-button"
       ]
     },
     "carousel": {
       "file": "graph/carousel.css",
       "components": [
         "carousel"
+      ]
+    },
+    "dekker-block-news": {
+      "file": "graph/dekker-block-news.css",
+      "components": [
+        "dekker-block-news"
       ]
     },
     "dekker-block-products": {
@@ -48,18 +52,6 @@
       "file": "graph/dekker-block-teaser-news.css",
       "components": [
         "dekker-block-teaser-news"
-      ]
-    },
-    "dekker-blockNews": {
-      "file": "graph/dekker-blockNews.css",
-      "components": [
-        "dekker-blockNews"
-      ]
-    },
-    "dekker-button": {
-      "file": "graph/dekker-button.css",
-      "components": [
-        "dekker-button"
       ]
     },
     "dekker-hero": {
@@ -81,15 +73,10 @@
         "dekker-key-specs"
       ]
     },
-    "dekker-news-card": {
-      "file": "graph/dekker-news-card.css",
+    "dekker-news-card--dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news": {
+      "file": "graph/dekker-news-card--dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news.css",
       "components": [
-        "dekker-news-card"
-      ]
-    },
-    "dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news": {
-      "file": "graph/dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news.css",
-      "components": [
+        "dekker-news-card",
         "dekker-product-card",
         "dekker-product-teaser",
         "dekker-teaser-card",
@@ -101,12 +88,6 @@
       "file": "graph/dekker-table.css",
       "components": [
         "dekker-table"
-      ]
-    },
-    "dekker-title": {
-      "file": "graph/dekker-title.css",
-      "components": [
-        "dekker-title"
       ]
     },
     "download--dekker-download": {
@@ -143,10 +124,11 @@
         "dekker-text"
       ]
     },
-    "title": {
-      "file": "graph/title.css",
+    "title--dekker-title": {
+      "file": "graph/title--dekker-title.css",
       "components": [
-        "title"
+        "title",
+        "dekker-title"
       ]
     }
   },
@@ -159,21 +141,13 @@
     },
     "dekker-block-news": {
       "parts": [
-        "title",
-        "button",
-        "teaser--image",
         "splide-carousel",
-        "dekker-title",
-        "dekker-button",
-        "dekker-news-card",
-        "dekker-blockNews"
+        "dekker-block-news"
       ]
-    },
-    "dekker-block-news-item": {
-      "parts": []
     },
     "dekker-block-products": {
       "parts": [
+        "splide-carousel",
         "dekker-block-products"
       ]
     },
@@ -184,16 +158,14 @@
     },
     "dekker-button": {
       "parts": [
-        "button",
-        "dekker-button"
+        "button--dekker-button"
       ]
     },
     "dekker-carousel": {
       "parts": [
         "carousel",
         "teaser--image",
-        "dekker-news-card",
-        "dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news",
+        "dekker-news-card--dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news",
         "dekker-hero-carousel--dekker-product-teaser-carousel"
       ]
     },
@@ -227,8 +199,7 @@
     "dekker-teaser": {
       "parts": [
         "teaser--image",
-        "dekker-news-card",
-        "dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news"
+        "dekker-news-card--dekker-product-card--dekker-product-teaser--dekker-teaser-card--dekker-teaser-link--dekker-teaser-news"
       ]
     },
     "dekker-text": {
@@ -238,8 +209,7 @@
     },
     "dekker-title": {
       "parts": [
-        "title",
-        "dekker-title"
+        "title--dekker-title"
       ]
     }
   }

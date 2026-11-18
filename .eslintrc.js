@@ -21,10 +21,11 @@ module.exports = {
     // The items of the design system's carousels and list (ac-*-item) have one cell per field,
     // which their blocks read by position: six for a carousel item; twenty for a list item, which
     // has every field of the card it can be. The section's design-system fields are section
-    // metadata: with the Dekker package's Composition and Background lists there are fourteen.
+    // metadata: with the Dekker package's Composition and Background lists and the nesting fields
+    // (Name, Nest inside; scripts/nest-sections.js) there are sixteen.
     'xwalk/max-cells': ['error', {
       '*': 4,
-      section: 14,
+      section: 16,
       'ac-carousel-item': 6,
       'ac-list-item': 20,
       'ac-splide-carousel-item': 6,

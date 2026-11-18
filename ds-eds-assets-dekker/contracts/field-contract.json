@@ -581,209 +581,6 @@
         }
       ]
     },
-    "dekker-block-news": {
-      "wrapper": "render-block-news",
-      "content": {
-        "heading": {
-          "kind": "string",
-          "type": "string",
-          "required": false
-        },
-        "buttonLabel": {
-          "kind": "string",
-          "type": "string",
-          "required": false
-        },
-        "buttonLink": {
-          "kind": "link",
-          "type": "{ url?: string | undefined; }",
-          "fields": {
-            "url": {
-              "kind": "string",
-              "type": "string",
-              "required": false
-            }
-          },
-          "required": false
-        },
-        "items": {
-          "kind": "list",
-          "type": "readonly BlockNewsItem[]",
-          "items": {
-            "kind": "object",
-            "type": "BlockNewsItem",
-            "fields": {
-              "imagePath": {
-                "kind": "string",
-                "type": "string",
-                "required": false
-              },
-              "title": {
-                "kind": "string",
-                "type": "string",
-                "required": false
-              },
-              "description": {
-                "kind": "string",
-                "type": "string",
-                "required": false
-              },
-              "date": {
-                "kind": "string",
-                "type": "string",
-                "required": false
-              },
-              "link": {
-                "kind": "link",
-                "type": "TeaserLink",
-                "fields": {
-                  "url": {
-                    "kind": "string",
-                    "type": "string",
-                    "required": true
-                  }
-                },
-                "required": false
-              }
-            }
-          },
-          "required": false
-        }
-      },
-      "options": {
-        "spacingMb": {
-          "appliedAs": "class",
-          "multiple": false,
-          "values": [
-            {
-              "value": "mb-0",
-              "label": "mb-0 (none)"
-            },
-            {
-              "value": "mb-4",
-              "label": "mb-4 (1rem)"
-            },
-            {
-              "value": "mb-8",
-              "label": "mb-8 (2rem)"
-            },
-            {
-              "value": "mb-12",
-              "label": "mb-12 (3rem)"
-            },
-            {
-              "value": "mb-16",
-              "label": "mb-16 (4rem)"
-            },
-            {
-              "value": "mb-20",
-              "label": "mb-20 (5rem)"
-            }
-          ]
-        },
-        "spacingMy": {
-          "appliedAs": "class",
-          "multiple": false,
-          "values": [
-            {
-              "value": "my-0",
-              "label": "my-0 (none)"
-            },
-            {
-              "value": "my-4",
-              "label": "my-4 (1rem)"
-            },
-            {
-              "value": "my-8",
-              "label": "my-8 (2rem)"
-            },
-            {
-              "value": "my-12",
-              "label": "my-12 (3rem)"
-            },
-            {
-              "value": "my-16",
-              "label": "my-16 (4rem)"
-            },
-            {
-              "value": "my-20",
-              "label": "my-20 (5rem)"
-            }
-          ]
-        }
-      },
-      "editable": [
-        {
-          "prop": "heading",
-          "selector": ".ds-block-news__head .cmp-title__text"
-        },
-        {
-          "prop": "buttonLabel",
-          "selector": ".ds-block-news__head .cmp-button__text"
-        },
-        {
-          "prop": "`items.${number}`",
-          "selector": null
-        },
-        {
-          "prop": "`items.${number}.imagePath`",
-          "selector": null
-        },
-        {
-          "prop": "`items.${number}.title`",
-          "selector": null
-        },
-        {
-          "prop": "`items.${number}.description`",
-          "selector": null
-        },
-        {
-          "prop": "`items.${number}.date`",
-          "selector": null
-        }
-      ],
-      "itemBlock": "dekker-block-news-item"
-    },
-    "dekker-block-news-item": {
-      "wrapper": "render-block-news",
-      "itemOf": "dekker-block-news",
-      "content": {
-        "imagePath": {
-          "kind": "string",
-          "type": "string",
-          "required": false
-        },
-        "title": {
-          "kind": "string",
-          "type": "string",
-          "required": false
-        },
-        "description": {
-          "kind": "string",
-          "type": "string",
-          "required": false
-        },
-        "date": {
-          "kind": "string",
-          "type": "string",
-          "required": false
-        },
-        "link": {
-          "kind": "link",
-          "type": "TeaserLink",
-          "fields": {
-            "url": {
-              "kind": "string",
-              "type": "string",
-              "required": true
-            }
-          },
-          "required": false
-        }
-      },
-      "options": {},
-      "editable": []
-    },
     "dekker-button": {
       "wrapper": "render-button",
       "content": {
@@ -1078,15 +875,15 @@
           "selector": null
         },
         {
+          "prop": "`items.${number}.pretitle`",
+          "selector": null
+        },
+        {
           "prop": "`items.${number}.title`",
           "selector": null
         },
         {
           "prop": "`items.${number}.description`",
-          "selector": null
-        },
-        {
-          "prop": "`items.${number}.pretitle`",
           "selector": null
         }
       ],

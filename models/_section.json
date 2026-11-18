@@ -120,8 +120,44 @@
               "value": "_none"
             },
             {
+              "name": "News block",
+              "value": "ds-block-news"
+            },
+            {
+              "name": "News block: Worm grey",
+              "value": "ds-block-news ds-block-news--worm-grey"
+            },
+            {
+              "name": "News block: Dark grey",
+              "value": "ds-block-news ds-block-news--dark-grey"
+            },
+            {
+              "name": "News block: Very light grey",
+              "value": "ds-block-news ds-block-news--very-light-grey"
+            },
+            {
+              "name": "News carousel",
+              "value": "ds-splide-carousel ds-splide-carousel-news"
+            },
+            {
               "name": "Products block",
               "value": "ds-block-products"
+            },
+            {
+              "name": "Products block: Worm grey",
+              "value": "ds-block-products ds-block-products--worm-grey"
+            },
+            {
+              "name": "Products block: Dark grey",
+              "value": "ds-block-products ds-block-products--dark-grey"
+            },
+            {
+              "name": "Products block: Very light grey",
+              "value": "ds-block-products ds-block-products--very-light-grey"
+            },
+            {
+              "name": "Products carousel",
+              "value": "ds-splide-carousel ds-splide-carousel-products"
             },
             {
               "name": "Teaser news block",
@@ -381,6 +417,18 @@
               "value": "mb-20"
             }
           ]
+        },
+        {
+          "component": "text",
+          "name": "nestId",
+          "label": "Name",
+          "description": "The name sections give in \"Nest inside\" to be moved into this section."
+        },
+        {
+          "component": "text",
+          "name": "parentId",
+          "label": "Nest inside",
+          "description": "The Name of the section this section is moved into, as an item of its grid. Empty: it stays where it is."
         }
       ]
     }
@@ -399,7 +447,6 @@
         "fragment",
         "dekker-teaser",
         "dekker-banner",
-        "dekker-block-news",
         "dekker-button",
         "dekker-carousel",
         "dekker-download",
