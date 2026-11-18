@@ -36,7 +36,7 @@ export interface OptionValues {
   textVariant: 'ds-brand-pretitle' | 'ds-brand-preamble' | 'ds-brand-paragraph' | 'ds-brand-paragraph--large' | 'ds-brand-quote' | 'ds-brand-paragraph--small';
   titleAlignment: 'content-center' | 'content-right' | 'content-left';
   titleVariant: 'title--highlight-1' | 'title--highlight-2' | 'title--highlight-3';
-  wrappersVariant: 'ds-block-news' | 'ds-block-products' | 'ds-block-teaser-news' | 'ds-brand-key-specs';
+  wrappersVariant: 'ds-block-products' | 'ds-block-teaser-news' | 'ds-brand-key-specs';
 }
 
 export type OptionList = keyof OptionValues;

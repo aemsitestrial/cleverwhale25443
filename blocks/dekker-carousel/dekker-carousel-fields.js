@@ -53,4 +53,4 @@ export const ITEM_OPTION_FIELDS = {};
 export const ITEM_FIELD_CONDITIONS = {};
 
 // The item props the wrapper renders an editable element for.
-export const ITEM_EDITABLE_PROPS = ['imagePath', 'pretitle', 'title', 'description'];
+export const ITEM_EDITABLE_PROPS = ['imagePath', 'title', 'description', 'pretitle'];

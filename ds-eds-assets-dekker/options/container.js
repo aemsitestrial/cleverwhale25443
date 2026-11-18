@@ -19,7 +19,6 @@ export const gridVariant = [
 ];
 
 export const wrappersVariant = [
-  { value: 'ds-block-news', label: 'News block' },
   { value: 'ds-block-products', label: 'Products block' },
   { value: 'ds-block-teaser-news', label: 'Teaser news block' },
   { value: 'ds-brand-key-specs', label: 'Key specs' },

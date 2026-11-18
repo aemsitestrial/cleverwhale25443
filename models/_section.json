@@ -120,10 +120,6 @@
               "value": "_none"
             },
             {
-              "name": "News block",
-              "value": "ds-block-news"
-            },
-            {
               "name": "Products block",
               "value": "ds-block-products"
             },
@@ -403,6 +399,7 @@
         "fragment",
         "dekker-teaser",
         "dekker-banner",
+        "dekker-block-news",
         "dekker-button",
         "dekker-carousel",
         "dekker-download",

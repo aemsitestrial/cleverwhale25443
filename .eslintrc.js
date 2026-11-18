@@ -29,6 +29,8 @@ module.exports = {
       'ac-list-item': 20,
       'ac-splide-carousel-item': 6,
       'dekker-carousel-item': 6,
+      // A card of the Dekker News block: image, title, description, date and link.
+      'dekker-block-news-item': 5,
       // The items of the AC Block Table Of Content Layout: a "kind" cell, the fields of the
       // component they render, one cell each, and a "Place" cell.
       'ac-block-table-of-content-layout-title': 7,

@@ -24,14 +24,15 @@ atlascopco-core-components repo with `nx run dekker-lib:build-eds` and `yarn pac
 
 - `head.html` loads the Dekker reset, brand file (`dekker-lib.css`), fonts and `page-glue.css`.
 - `scripts/scripts.js` adds the Dekker body class (`ds-dekker`), builds the container on each section and
-  starts the package's page controllers. The section fields include **Composition** (News block, Products
+  starts the package's page controllers. The section fields include **Composition** (Products
   block, Teaser news block, Key specs: a class on the section, with its CSS bundle) and **Background**.
 - `scripts/ds-dekker.js` holds what the `dekker-*` blocks share (the same steps as `scripts/ds.js`, bound to
   the Dekker package). The package has no container block, so blocks are not nested.
 - Blocks: `dekker-title`, `dekker-text`, `dekker-button`, `dekker-download`, `dekker-table`, `dekker-teaser`
   (the card types: news card, product card, teaser card, ...), `dekker-banner` (hero), `dekker-tabs` (a
-  Dekker Tabs Item per tab) and `dekker-carousel` (a Dekker Carousel Item per slide; the hero and product
-  teaser carousels are its item type and style).
+  Dekker Tabs Item per tab), `dekker-carousel` (a Dekker Carousel Item per slide; the hero and product
+  teaser carousels are its item type and style) and `dekker-block-news` (the News block: a heading and a button in a row, a Dekker Block News Item per
+  news card, shown as a carousel; the carousel is not started in the Universal Editor).
 
 To update the package and the blocks:
 

@@ -10,7 +10,6 @@ import { wrappersVariant, backgroundVariant } from '../../options/container.js';
 // and in brand.json bundles.compositions.
 /** @type {Record<string, string>} */
 export const WRAPPER_BUNDLES = {
-  'ds-block-news': 'dekker-block-news',
   'ds-block-products': 'dekker-block-products',
   'ds-block-teaser-news': 'dekker-block-teaser-news',
   'ds-brand-key-specs': 'dekker-key-specs',
