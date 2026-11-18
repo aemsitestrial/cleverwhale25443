@@ -19,7 +19,7 @@ import {
 } from '../ds-eds-assets-dekker/js/vendor/page-glue.js';
 import { startPageControllers } from '../ds-eds-assets-dekker/js/vendor/start-page-controllers.js';
 import { loadBundle, isAuthoringContext, clearNoneSectionFields } from './ds-dekker.js';
-import nestSections from './nest-sections.js';
+import nestSections, { alignToAemGrid, widthsOf } from './nest-sections.js';
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -97,10 +97,13 @@ export function decorateMain(main) {
   // The design system's container on each section, from its section fields (background, grid,
   // content width, composition, spacing). After decorateBlocks, before the blocks load. A
   // composition (News block, Key specs, ...) loads its CSS bundle through loadBundle.
+  const explicitWidths = widthsOf(main);
   decorateContainerSections(main, { loadBundle });
   // A section whose "Nest inside" names another section's "Name" moves into its grid: the parts
   // of a composition (the News block's head row and carousel) are sections nested in its section.
+  // The composition then gets the React block's structure: the AEM grid, its items in columns.
   nestSections(main, { editing: isAuthoringContext(document) });
+  alignToAemGrid(main, explicitWidths);
 }
 
 /**
@@ -110,6 +113,7 @@ export function decorateMain(main) {
  */
 async function finishDesignSystemPage(main) {
   nestSections(main, { editing: isAuthoringContext(document) });
+  alignToAemGrid(main);
   await startPageControllers(document, {
     inEditor: isAuthoringContext(document),
     onWarning(problems) {
