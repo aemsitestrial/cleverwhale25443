@@ -7866,6 +7866,163 @@
     ]
   },
   {
+    "id": "dekker-carousel",
+    "fields": [
+      {
+        "component": "select",
+        "name": "carouselItemTypeOption",
+        "label": "Carousel Item Type",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "Teaser",
+            "value": "teaser"
+          },
+          {
+            "name": "Hero teaser",
+            "value": "hero-teaser"
+          },
+          {
+            "name": "Image",
+            "value": "image"
+          },
+          {
+            "name": "Hero image",
+            "value": "hero"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "carouselStyle",
+        "label": "Carousel Style",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "Product teaser carousel",
+            "value": "ds-brand-product-teaser-carousel"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "mb-0 (none)",
+            "value": "mb-0"
+          },
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "my-0 (none)",
+            "value": "my-0"
+          },
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dekker-carousel-item",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "imagePath",
+        "label": "Image Path",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "alt",
+        "label": "Alt",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "pretitle",
+        "label": "Pretitle",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      }
+    ]
+  },
+  {
     "id": "dekker-download",
     "fields": [
       {
@@ -8065,6 +8222,110 @@
             "value": "my-20"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "dekker-tabs",
+    "fields": [
+      {
+        "component": "boolean",
+        "name": "useResponsiveSelect",
+        "label": "Use Responsive Select",
+        "valueType": "boolean"
+      },
+      {
+        "component": "boolean",
+        "name": "useBrandClassName",
+        "label": "Use Brand Class Name",
+        "valueType": "boolean"
+      },
+      {
+        "component": "select",
+        "name": "spacingMb",
+        "label": "Spacing Mb",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "mb-0 (none)",
+            "value": "mb-0"
+          },
+          {
+            "name": "mb-4 (1rem)",
+            "value": "mb-4"
+          },
+          {
+            "name": "mb-8 (2rem)",
+            "value": "mb-8"
+          },
+          {
+            "name": "mb-12 (3rem)",
+            "value": "mb-12"
+          },
+          {
+            "name": "mb-16 (4rem)",
+            "value": "mb-16"
+          },
+          {
+            "name": "mb-20 (5rem)",
+            "value": "mb-20"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "spacingMy",
+        "label": "Spacing My",
+        "options": [
+          {
+            "name": "None",
+            "value": "_none"
+          },
+          {
+            "name": "my-0 (none)",
+            "value": "my-0"
+          },
+          {
+            "name": "my-4 (1rem)",
+            "value": "my-4"
+          },
+          {
+            "name": "my-8 (2rem)",
+            "value": "my-8"
+          },
+          {
+            "name": "my-12 (3rem)",
+            "value": "my-12"
+          },
+          {
+            "name": "my-16 (4rem)",
+            "value": "my-16"
+          },
+          {
+            "name": "my-20 (5rem)",
+            "value": "my-20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dekker-tabs-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "panelLabel",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Content",
+        "valueType": "string"
       }
     ]
   },

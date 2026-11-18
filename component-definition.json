@@ -857,6 +857,38 @@
           }
         },
         {
+          "title": "Dekker Carousel",
+          "id": "dekker-carousel",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Dekker Carousel",
+                  "model": "dekker-carousel",
+                  "key-value": true,
+                  "filter": "dekker-carousel"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Dekker Carousel Item",
+          "id": "dekker-carousel-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Dekker Carousel Item",
+                  "model": "dekker-carousel-item"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Dekker Download",
           "id": "dekker-download",
           "plugins": {
@@ -883,6 +915,38 @@
                   "name": "Dekker Table",
                   "model": "dekker-table",
                   "key-value": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Dekker Tabs",
+          "id": "dekker-tabs",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Dekker Tabs",
+                  "model": "dekker-tabs",
+                  "key-value": true,
+                  "filter": "dekker-tabs"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Dekker Tabs Item",
+          "id": "dekker-tabs-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Dekker Tabs Item",
+                  "model": "dekker-tabs-item"
                 }
               }
             }

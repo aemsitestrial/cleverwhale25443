@@ -160,6 +160,9 @@
         "dekker-hero-carousel--dekker-product-teaser-carousel"
       ]
     },
+    "dekker-carousel-item": {
+      "parts": []
+    },
     "dekker-download": {
       "parts": [
         "download--dekker-download"
@@ -180,6 +183,9 @@
         "tabs--dekker-tabs",
         "dekker-table"
       ]
+    },
+    "dekker-tabs-item": {
+      "parts": []
     },
     "dekker-teaser": {
       "parts": [

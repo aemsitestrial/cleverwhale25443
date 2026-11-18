@@ -29,8 +29,9 @@ atlascopco-core-components repo with `nx run dekker-lib:build-eds` and `yarn pac
 - `scripts/ds-dekker.js` holds what the `dekker-*` blocks share (the same steps as `scripts/ds.js`, bound to
   the Dekker package). The package has no container block, so blocks are not nested.
 - Blocks: `dekker-title`, `dekker-text`, `dekker-button`, `dekker-download`, `dekker-table`, `dekker-teaser`
-  (the card types: news card, product card, teaser card, ...) and `dekker-banner` (hero). `dekker-tabs` and
-  `dekker-carousel` are not offered yet: the package's contract has no item block for their items.
+  (the card types: news card, product card, teaser card, ...), `dekker-banner` (hero), `dekker-tabs` (a
+  Dekker Tabs Item per tab) and `dekker-carousel` (a Dekker Carousel Item per slide; the hero and product
+  teaser carousels are its item type and style).
 
 To update the package and the blocks:
 

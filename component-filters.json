@@ -19,8 +19,10 @@
       "dekker-teaser",
       "dekker-banner",
       "dekker-button",
+      "dekker-carousel",
       "dekker-download",
       "dekker-table",
+      "dekker-tabs",
       "dekker-text",
       "dekker-title",
       "ac-nav-header",
@@ -165,6 +167,12 @@
     ]
   },
   {
+    "id": "dekker-carousel",
+    "components": [
+      "dekker-carousel-item"
+    ]
+  },
+  {
     "id": "dekker-table-text",
     "rte": {
       "toolbar": {
@@ -212,6 +220,12 @@
     },
     "components": [
       "richtext"
+    ]
+  },
+  {
+    "id": "dekker-tabs",
+    "components": [
+      "dekker-tabs-item"
     ]
   }
 ]

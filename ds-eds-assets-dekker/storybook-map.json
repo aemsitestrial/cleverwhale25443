@@ -37,6 +37,16 @@
         }
       ]
     },
+    "dekker-carousel-item": {
+      "lib": "dekker-lib",
+      "stories": [
+        {
+          "title": "Components/Hero Carousel",
+          "id": "components-hero-carousel--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-hero-carousel--default"
+        }
+      ]
+    },
     "dekker-download": {
       "lib": "dekker-lib",
       "stories": [
@@ -58,6 +68,16 @@
       ]
     },
     "dekker-tabs": {
+      "lib": "dekker-lib",
+      "stories": [
+        {
+          "title": "Components/Tabs",
+          "id": "components-tabs--default",
+          "url": "https://test.acg-brands-designsystem.pages.dev/storybook/dekker-lib/?path=/story/components-tabs--default"
+        }
+      ]
+    },
+    "dekker-tabs-item": {
       "lib": "dekker-lib",
       "stories": [
         {
